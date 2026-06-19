@@ -183,6 +183,36 @@ h2.title em { font-style: italic; color: var(--brand-pink); }
   padding: 28px 26px;
   position: relative;
 }
+a.cell {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+  cursor: pointer;
+}
+a.cell:hover {
+  transform: translateY(-3px);
+  border-color: var(--brand-pink);
+  box-shadow: 0 22px 50px rgba(245, 177, 199, 0.10);
+}
+a.cell:hover .cell-num { color: var(--brand-pink-strong); opacity: 0.32; }
+a.cell::after {
+  content: '→';
+  position: absolute;
+  bottom: 18px; right: 22px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-3);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 200ms ease, transform 200ms ease, color 200ms ease;
+}
+a.cell:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--brand-pink);
+}
 .cell .cell-num {
   position: absolute; top: 16px; right: 22px;
   font-family: 'Montserrat', sans-serif;
