@@ -12,7 +12,7 @@
 - `F` — 全屏 · `S` — 讲师备忘 · `Home / End` — 首 / 尾
 
 ## 顺序
-- 00 · `index.html` — Cover
+- 00 · `index.html` — 开始
 - 01 · `01-agenda.html` — Agenda
 - 02 · `02-positioning.html` — Part 1 · 定位
 - 03 · `03-four-layers.html` — Part 1 · 4 层

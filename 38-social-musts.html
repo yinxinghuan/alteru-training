@@ -63,7 +63,6 @@
     <div data-only="zh">
 <div class="menu-section">
 <div class="menu-section-title">开场</div>
-<a class="menu-item" href="index.html"><span class="menu-num">00</span><span>Cover</span></a>
 <a class="menu-item" href="01-agenda.html"><span class="menu-num">01</span><span>Agenda</span></a>
 </div>
 <div class="menu-section">
@@ -127,13 +126,13 @@
 </div>
 <div class="menu-section">
 <div class="menu-section-title">结尾</div>
+<a class="menu-item" href="index.html"><span class="menu-num">00</span><span>开始</span></a>
 <a class="menu-item" href="40-resources.html"><span class="menu-num">40</span><span>Resources</span></a>
 </div>
     </div>
     <div data-only="en">
 <div class="menu-section">
 <div class="menu-section-title">Intro</div>
-<a class="menu-item" href="index.html"><span class="menu-num">00</span><span>Cover</span></a>
 <a class="menu-item" href="01-agenda.html"><span class="menu-num">01</span><span>Agenda</span></a>
 </div>
 <div class="menu-section">
@@ -197,6 +196,7 @@
 </div>
 <div class="menu-section">
 <div class="menu-section-title">Resources</div>
+<a class="menu-item" href="index.html"><span class="menu-num">00</span><span>Start here</span></a>
 <a class="menu-item" href="40-resources.html"><span class="menu-num">40</span><span>Resources</span></a>
 </div>
     </div>
@@ -290,6 +290,14 @@
       const FIRST = "index.html";
       const LAST = "40-resources.html";
 
+      // Single guard so wheel / touch / key nav can't fire twice mid-unload.
+      let navigated = false;
+      function go(href) {
+        if (!href || navigated) return;
+        navigated = true;
+        location.href = href;
+      }
+
       function setLangBtn(lang) {
         document.querySelectorAll('.lang-btn .lang-zh, .lang-btn .lang-en').forEach(el => el.classList.remove('lang-active'));
         const target = document.querySelector('.lang-btn .lang-' + lang);
@@ -326,9 +334,9 @@
         if (e.key === 'Escape') { closeMenu(); return; }
         if (drawer.classList.contains('open') && (e.key === 'ArrowRight' || e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === ' ')) return;
         if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown' || e.key === 'ArrowDown') {
-          if (NEXT) location.href = NEXT;
+          go(NEXT);
         } else if (e.key === 'ArrowLeft' || e.key === 'PageUp' || e.key === 'ArrowUp') {
-          if (PREV) location.href = PREV;
+          go(PREV);
         } else if (e.key === 's' || e.key === 'S') {
           document.getElementById('speaker-notes').classList.toggle('visible');
         } else if (e.key === 'f' || e.key === 'F') {
@@ -346,6 +354,48 @@
           location.href = LAST;
         }
       });
+
+      // ── Scroll / swipe to page (deck body has overflow:hidden, so it never
+      //    scrolls natively — a wheel-down or swipe-up advances to the next
+      //    slide, matching the platform's vertical scroll-feed mental model). ──
+      const notesPanel = document.getElementById('speaker-notes');
+      function navBlocked(target) {
+        if (navigated) return true;
+        if (drawer.classList.contains('open')) return true;
+        // let the speaker-notes panel scroll its own content when open
+        if (notesPanel && notesPanel.classList.contains('visible')
+            && notesPanel.contains(target)) return true;
+        return false;
+      }
+
+      // Wheel: ignore the inertia tail carried over from the previous page's
+      // unload, then treat each fresh gesture's accumulated delta as one page.
+      let accum = 0, lastWheel = 0;
+      const READY_AT = performance.now() + 400;
+      window.addEventListener('wheel', (e) => {
+        if (navBlocked(e.target)) return;
+        const now = performance.now();
+        if (now < READY_AT) { lastWheel = now; return; }
+        if (now - lastWheel > 200) accum = 0;   // gap = new gesture
+        lastWheel = now;
+        accum += e.deltaY;
+        if (accum > 50) go(NEXT);
+        else if (accum < -50) go(PREV);
+      }, { passive: true });
+
+      // Touch: swipe up → next, swipe down → prev (vertical-feed gesture).
+      let touchY = null;
+      window.addEventListener('touchstart', (e) => {
+        touchY = e.touches[0].clientY;
+      }, { passive: true });
+      window.addEventListener('touchend', (e) => {
+        if (touchY === null) return;
+        const dy = e.changedTouches[0].clientY - touchY;
+        touchY = null;
+        if (navBlocked(e.target)) return;
+        if (dy < -55) go(NEXT);
+        else if (dy > 55) go(PREV);
+      }, { passive: true });
     })();
   </script>
 </body>

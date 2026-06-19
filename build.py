@@ -36,20 +36,20 @@ def add(slug, short, layout, body, notes="",
 # ═════════════════════════════════════════════════════════════════════
 # 00 — Cover
 # ═════════════════════════════════════════════════════════════════════
-add("cover", "Cover", "cover", """
+add("cover", "开始", "cover", """
 <span class="eyebrow"><span class="dot"></span>The AlterU Playbook · 2026 · For makers</span>
 <h1 class="title">在 AlterU 上<br/>做一个 <em>游戏</em>。</h1>
 <p class="sub">
 半天,从"AlterU 到底是什么"到"明天就能动手做一个 demo"。
 不讲代码——讲<strong>脑子里要装的模型</strong>,做出来的东西才不会被划走。
 </p>
-<p class="micro pink">↑↓ / ← → 翻页 · F 全屏 · S 备忘 · M 菜单 · L 中/EN</p>
+<p class="micro pink">滚动 / ↑↓ / ← → 翻页 · F 全屏 · S 备忘 · M 菜单 · L 中/EN</p>
 """, """
 <p>30 秒钉死目标:这是<strong>产品脑子里的模型</strong>,不是代码。
 读完应该能 elevator pitch 一款 AlterU 游戏,并知道哪些设计直觉是错的。</p>
 <p>这套 deck 半天读完最舒服。每个 Part 末尾留 2-3 分钟思考。配套游戏建议在手机上打开真机感受。</p>
 """,
-short_en="Cover",
+short_en="Start here",
 body_en="""
 <span class="eyebrow"><span class="dot"></span>The AlterU Playbook · 2026 · For makers</span>
 <h1 class="title">Building a game<br/>on <em>AlterU</em>.</h1>
@@ -58,7 +58,7 @@ Half a day, from "what is AlterU really" to "I could ship a demo tomorrow."
 Not a code tutorial — a load of <strong>the mental model</strong>
 that keeps your game from getting swiped past.
 </p>
-<p class="micro pink">↑↓ / ← → navigate · F fullscreen · S notes · M menu · L 中/EN</p>
+<p class="micro pink">scroll / ↑↓ / ← → navigate · F fullscreen · S notes · M menu · L 中/EN</p>
 """,
 notes_en="""
 <p>Nail the goal in 30 seconds: this is <strong>the product model in your head</strong>, not code. By the end, you should be able to pitch an AlterU game in an elevator and know which design instincts are wrong here.</p>
@@ -1478,6 +1478,14 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
       const FIRST = "index.html";
       const LAST = "{last_href}";
 
+      // Single guard so wheel / touch / key nav can't fire twice mid-unload.
+      let navigated = false;
+      function go(href) {{
+        if (!href || navigated) return;
+        navigated = true;
+        location.href = href;
+      }}
+
       function setLangBtn(lang) {{
         document.querySelectorAll('.lang-btn .lang-zh, .lang-btn .lang-en').forEach(el => el.classList.remove('lang-active'));
         const target = document.querySelector('.lang-btn .lang-' + lang);
@@ -1514,9 +1522,9 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
         if (e.key === 'Escape') {{ closeMenu(); return; }}
         if (drawer.classList.contains('open') && (e.key === 'ArrowRight' || e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === ' ')) return;
         if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown' || e.key === 'ArrowDown') {{
-          if (NEXT) location.href = NEXT;
+          go(NEXT);
         }} else if (e.key === 'ArrowLeft' || e.key === 'PageUp' || e.key === 'ArrowUp') {{
-          if (PREV) location.href = PREV;
+          go(PREV);
         }} else if (e.key === 's' || e.key === 'S') {{
           document.getElementById('speaker-notes').classList.toggle('visible');
         }} else if (e.key === 'f' || e.key === 'F') {{
@@ -1534,6 +1542,48 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
           location.href = LAST;
         }}
       }});
+
+      // ── Scroll / swipe to page (deck body has overflow:hidden, so it never
+      //    scrolls natively — a wheel-down or swipe-up advances to the next
+      //    slide, matching the platform's vertical scroll-feed mental model). ──
+      const notesPanel = document.getElementById('speaker-notes');
+      function navBlocked(target) {{
+        if (navigated) return true;
+        if (drawer.classList.contains('open')) return true;
+        // let the speaker-notes panel scroll its own content when open
+        if (notesPanel && notesPanel.classList.contains('visible')
+            && notesPanel.contains(target)) return true;
+        return false;
+      }}
+
+      // Wheel: ignore the inertia tail carried over from the previous page's
+      // unload, then treat each fresh gesture's accumulated delta as one page.
+      let accum = 0, lastWheel = 0;
+      const READY_AT = performance.now() + 400;
+      window.addEventListener('wheel', (e) => {{
+        if (navBlocked(e.target)) return;
+        const now = performance.now();
+        if (now < READY_AT) {{ lastWheel = now; return; }}
+        if (now - lastWheel > 200) accum = 0;   // gap = new gesture
+        lastWheel = now;
+        accum += e.deltaY;
+        if (accum > 50) go(NEXT);
+        else if (accum < -50) go(PREV);
+      }}, {{ passive: true }});
+
+      // Touch: swipe up → next, swipe down → prev (vertical-feed gesture).
+      let touchY = null;
+      window.addEventListener('touchstart', (e) => {{
+        touchY = e.touches[0].clientY;
+      }}, {{ passive: true }});
+      window.addEventListener('touchend', (e) => {{
+        if (touchY === null) return;
+        const dy = e.changedTouches[0].clientY - touchY;
+        touchY = null;
+        if (navBlocked(e.target)) return;
+        if (dy < -55) go(NEXT);
+        else if (dy > 55) go(PREV);
+      }}, {{ passive: true }});
     }})();
   </script>
 </body>
