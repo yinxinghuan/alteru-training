@@ -1648,6 +1648,13 @@ def make_outline_parts_html():
 
 
 def main():
+    # Patch SLIDES with English translations from translations.py
+    try:
+        import translations
+        translations.apply(SLIDES)
+    except Exception as e:
+        print(f"[warn] translations.apply failed: {e}")
+
     out_dir = Path("/Users/yin/alteru-training")
     out_dir.mkdir(parents=True, exist_ok=True)
     T = len(SLIDES)
