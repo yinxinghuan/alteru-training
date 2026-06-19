@@ -40,14 +40,29 @@ add("cover", "Cover", "cover", """
 <span class="eyebrow"><span class="dot"></span>Internal Training · 2026 · 设计 + 产品向</span>
 <h1 class="title">在 AlterU 上<br/>做一个 <em>游戏</em>。</h1>
 <p class="sub">
-半天，从"AlterU 到底是什么"到"明天就能动手做一个 demo"。
-不教代码——教<strong>你脑子里要装什么模型</strong>，做出来的东西才不会被划走。
+半天,从"AlterU 到底是什么"到"明天就能动手做一个 demo"。
+不教代码——教<strong>你脑子里要装什么模型</strong>,做出来的东西才不会被划走。
 </p>
-<p class="micro pink">↑↓ / ← → 翻页 · F 全屏 · S 讲师备忘 · Cmd+P 导 PDF</p>
+<p class="micro pink">↑↓ / ← → 翻页 · F 全屏 · S 讲师备忘 · M 菜单 · L 中/EN</p>
 """, """
-<p>开场 30 秒就把今天的目标说清楚：今天不学代码，学的是<strong>产品脑子里的模型</strong>。
-做完培训，希望大家能独立 elevator pitch 一款 AlterU 游戏，并知道哪些设计直觉是错的。</p>
-<p>提醒：这套 deck 半天讲完最舒服。每个 Part 末尾留 2-3 分钟问答。手机要带，到案例那部分直接打开真游戏演示。</p>
+<p>开场 30 秒就把今天的目标说清楚:今天不学代码,学的是<strong>产品脑子里的模型</strong>。
+做完培训,希望大家能独立 elevator pitch 一款 AlterU 游戏,并知道哪些设计直觉是错的。</p>
+<p>提醒:这套 deck 半天讲完最舒服。每个 Part 末尾留 2-3 分钟问答。手机要带,到案例那部分直接打开真游戏演示。</p>
+""",
+short_en="Cover",
+body_en="""
+<span class="eyebrow"><span class="dot"></span>Internal Training · 2026 · Designers + PMs</span>
+<h1 class="title">Building a game<br/>on <em>AlterU</em>.</h1>
+<p class="sub">
+Half a day, from "what is AlterU really" to "I could ship a demo tomorrow."
+We're not teaching code — we're loading <strong>the mental model</strong>
+that keeps your game from getting swiped past.
+</p>
+<p class="micro pink">↑↓ / ← → navigate · F fullscreen · S speaker notes · M menu · L 中/EN</p>
+""",
+notes_en="""
+<p>Spend the first 30 seconds nailing the goal: today is not about code. It's about the <strong>product model in your head</strong>. By the end, everyone should be able to pitch an AlterU game in an elevator and know which design instincts are wrong here.</p>
+<p>Reminder: this deck is paced for ~3.5 hours. Leave 2-3 minutes of Q&A at the end of each Part. Bring your phone — when we hit the case-study slides, open the real games and let people swipe through them.</p>
 """)
 
 
@@ -58,15 +73,31 @@ add("agenda", "Agenda", "matrix-2x2", """
 <span class="eyebrow"><span class="dot"></span>Agenda · 半天 3.5 小时</span>
 <h2 class="title">六节课。<br/>每节都有<em>一个案例</em>当锚点。</h2>
 <div class="grid" style="grid-template-columns: 1fr 1fr 1fr;">
-  <div class="cell"><span class="cell-num">1</span><h3>AlterU 是什么</h3><p>4 层模型 · 30 min · 锚点：Landing 页 hero</p></div>
-  <div class="cell"><span class="cell-num">2</span><h3>身份层怎么落地</h3><p>4 种 identity hooks · 35 min · 锚点：Kiss Wall</p></div>
-  <div class="cell"><span class="cell-num">3</span><h3>平台给你的能力</h3><p>AI 4 件套 + 数据原语 · 35 min · 锚点：Hour Capsule</p></div>
+  <div class="cell"><span class="cell-num">1</span><h3>AlterU 是什么</h3><p>4 层模型 · 30 min · 锚点:Landing 页 hero</p></div>
+  <div class="cell"><span class="cell-num">2</span><h3>身份层怎么落地</h3><p>4 种 identity hooks · 35 min · 锚点:Kiss Wall</p></div>
+  <div class="cell"><span class="cell-num">3</span><h3>平台给你的能力</h3><p>AI 4 件套 + 数据原语 · 35 min · 锚点:Hour Capsule</p></div>
   <div class="cell"><span class="cell-num">4</span><h3>7 个已验证玩法范式</h3><p>每个 1 张 poster + 1 句配方 · 50 min</p></div>
   <div class="cell"><span class="cell-num">5</span><h3>设计原则 + 反例</h3><p>2 秒规则 · 反例汇总 · 30 min</p></div>
-  <div class="cell"><span class="cell-num">6</span><h3>工作流 + 上线 checklist</h3><p>一个游戏的诞生 · 20 min</p></div>
+  <div class="cell"><span class="cell-num">6</span><h3>制作技巧 + 工作流</h3><p>美术 + agent 沟通 + 上线 checklist · 40 min</p></div>
 </div>
 """, """
-<p>提示：建议在第 3 节后休息一次，第 5 节前再休一次。如果时间紧可以砍 Part 4，把范式拆给同学课后自学。</p>
+<p>提示:建议在第 3 节后休息一次,第 5 节前再休一次。如果时间紧可以砍 Part 4,把范式拆给同学课后自学。</p>
+""",
+short_en="Agenda",
+body_en="""
+<span class="eyebrow"><span class="dot"></span>Agenda · ~3.5 hours</span>
+<h2 class="title">Seven parts.<br/>Each anchored to <em>a real case</em>.</h2>
+<div class="grid" style="grid-template-columns: 1fr 1fr 1fr;">
+  <div class="cell"><span class="cell-num">1</span><h3>What AlterU is</h3><p>The 4-layer model · 30 min · anchor: landing hero</p></div>
+  <div class="cell"><span class="cell-num">2</span><h3>Making the identity layer real</h3><p>4 identity hooks · 35 min · anchor: Kiss Wall</p></div>
+  <div class="cell"><span class="cell-num">3</span><h3>What the platform gives you</h3><p>AI quartet + data primitives · 35 min · anchor: Hour Capsule</p></div>
+  <div class="cell"><span class="cell-num">4</span><h3>Seven proven paradigms</h3><p>One poster + one recipe each · 50 min</p></div>
+  <div class="cell"><span class="cell-num">5</span><h3>Design principles + anti-patterns</h3><p>The 2-second rule · live failure log · 30 min</p></div>
+  <div class="cell"><span class="cell-num">6</span><h3>Craft + workflow</h3><p>Art tips + talking to your agent + ship checklist · 40 min</p></div>
+</div>
+""",
+notes_en="""
+<p>Pacing: take a break after Part 3 and again before Part 5. If you're tight on time, cut Part 4 — the seven paradigms work as homework reading.</p>
 """)
 
 
@@ -90,11 +121,32 @@ add("positioning", "Part 1 · 定位", "split", """
   <img src="assets/worlds/hero-vista.png" alt="A vast 3D dream chamber — the AlterU identity layer."/>
 </div>
 """, """
-<p>这张是 landing hero 的原话。请同学先朗读两遍。重点圈：<strong>Identity-driven</strong> + <strong>Your AI self becomes the protagonist</strong>。</p>
-<p>问大家：什么是 identity-driven？不是"用户登录"，是"游戏的主角就是你"。
+<p>这张是 landing hero 的原话。请同学先朗读两遍。重点圈:<strong>Identity-driven</strong> + <strong>Your AI self becomes the protagonist</strong>。</p>
+<p>问大家:什么是 identity-driven?不是"用户登录",是"游戏的主角就是你"。
 后面整个 Part 2 都在拆这件事。</p>
-<p>提醒：AlterU 是<strong>独立新品牌</strong>（试美国市场），跟 Aigram chat 是两个品牌，不要混着讲。
-底层桥层叫 Aigram 是技术细节，只在 endpoint 表里出现。</p>
+<p>提醒:AlterU 是<strong>独立新品牌</strong>(试美国市场),跟 Aigram chat 是两个品牌,不要混着讲。
+底层桥层叫 Aigram 是技术细节,只在 endpoint 表里出现。</p>
+""",
+short_en="Part 1 · Positioning",
+body_en="""
+<div class="col-text">
+  <span class="eyebrow"><span class="dot"></span>Part 1 · The one line</span>
+  <h1 class="title">Another you,<br/>one tap <em>away</em>.</h1>
+  <p class="sub">
+  Identity-driven mini-games in a single endless feed.<br/>
+  Open. Swipe. Play.<br/>
+  <strong class="pink">Your AI self becomes the protagonist.</strong>
+  </p>
+  <p class="micro">— alteru.app · landing hero · 2026</p>
+</div>
+<div class="col-visual">
+  <img src="assets/worlds/hero-vista.png" alt="A vast 3D dream chamber — the AlterU identity layer."/>
+</div>
+""",
+notes_en="""
+<p>Have the room read the landing hero copy aloud — twice. Circle two phrases: <strong>"Identity-driven"</strong> and <strong>"Your AI self becomes the protagonist."</strong></p>
+<p>Ask: what does identity-driven mean? It is <em>not</em> "users log in." It means <strong>the game's protagonist is literally you</strong>. The whole Part 2 unpacks that.</p>
+<p>Heads up: AlterU is a <strong>standalone new brand</strong> (testing the US market). It's not part of Aigram — Aigram is the underlying tech bridge, a detail that only shows up in the endpoint table. Don't conflate them in front of the audience.</p>
 """)
 
 # 03 4 层模型 overview
@@ -102,9 +154,9 @@ add("four-layers", "Part 1 · 4 层", "matrix-2x2", """
 <span class="eyebrow"><span class="dot"></span>Part 1 · 用户钦定的 4 层模型</span>
 <h2 class="title">从外到内拆 AlterU。<br/><em>只有第 2 层</em>是真差异化。</h2>
 <div class="grid">
-  <div class="cell"><span class="cell-num">1</span><span class="tag">体感层</span><h3>形式 · Form</h3><p>TikTok 式全屏竖向 scroll feed。用户<strong>感觉到</strong>就够了，不要写进 hero 文案——任何 mini-game 集合都能宣称这个。</p></div>
-  <div class="cell" style="border-color: var(--brand-pink); box-shadow: 0 0 0 1px var(--brand-pink-dim), 0 18px 40px rgba(245,177,199,0.10);"><span class="cell-num">2</span><span class="tag">🔑 差异化</span><h3>身份 · Identity</h3><p>你的 AI 自我走进<strong>别人的</strong>游戏：bartender / locksmith / boss / neighbour。Cross-user identity 是 AlterU 和"通用 mini-game 集合"的<strong class="pink">唯一</strong>真正差别。</p></div>
-  <div class="cell"><span class="cell-num">3</span><span class="tag">作品层</span><h3>内容 · Content</h3><p>AI-native（vision / gen-image / LLM）+ <strong>手做</strong>。每个游戏有作者声音，不是 procedural slop。混合 register：After Dark FMV → sensory toys → action。</p></div>
+  <div class="cell"><span class="cell-num">1</span><span class="tag">体感层</span><h3>形式 · Form</h3><p>TikTok 式全屏竖向 scroll feed。用户<strong>感觉到</strong>就够了,不要写进 hero 文案——任何 mini-game 集合都能宣称这个。</p></div>
+  <div class="cell" style="border-color: var(--brand-pink); box-shadow: 0 0 0 1px var(--brand-pink-dim), 0 18px 40px rgba(245,177,199,0.10);"><span class="cell-num">2</span><span class="tag">🔑 差异化</span><h3>身份 · Identity</h3><p>你的 AI 自我走进<strong>别人的</strong>游戏:bartender / locksmith / boss / neighbour。Cross-user identity 是 AlterU 和"通用 mini-game 集合"的<strong class="pink">唯一</strong>真正差别。</p></div>
+  <div class="cell"><span class="cell-num">3</span><span class="tag">作品层</span><h3>内容 · Content</h3><p>AI-native(vision / gen-image / LLM)+ <strong>手做</strong>。每个游戏有作者声音,不是 procedural slop。混合 register:After Dark FMV → sensory toys → action。</p></div>
   <div class="cell"><span class="cell-num">4</span><span class="tag">机制层</span><h3>社交 · Social</h3><p>Feed-as-verb：动别人内容 → 推作者。score_beat、"kept your stone"、cross-game notify。用户钦定的主攻方向，但不放 landing。</p></div>
 </div>
 """, """
