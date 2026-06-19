@@ -1401,6 +1401,8 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="_shared.css" />
+  {prefetch_next}
+  {prefetch_prev}
   <script>
     /* Apply lang BEFORE first paint to avoid flicker.
        Priority: URL ?lang=en|zh > localStorage > default zh.
@@ -1447,7 +1449,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   </section>
 
   <div class="speaker-notes" id="speaker-notes">
-    <h4><span data-only="zh">备忘 · 按 S 关闭</span><span data-only="en">Notes · S to close</span></h4>
+    <h4><span data-only="zh">{notes_label_zh}</span><span data-only="en">{notes_label_en}</span></h4>
     <div data-only="zh">
 {notes}
     </div>
@@ -1614,20 +1616,49 @@ OUTLINE_TEMPLATE = """<!DOCTYPE html>
     document.getElementById('lang-btn').addEventListener('click', toggleLang);
 
     /* Resize thumbnails to fit their tile width */
-    function sizeThumbs() {{
-      document.querySelectorAll('.outline-thumb .thumb-frame').forEach(frame => {{
-        const iframe = frame.querySelector('iframe');
-        if (!iframe) return;
-        const w = frame.clientWidth;
-        const scale = w / 1440;
-        iframe.style.transform = 'scale(' + scale.toFixed(4) + ')';
-        iframe.style.width = '1440px';
-        iframe.style.height = '810px';
-        frame.style.height = (810 * scale).toFixed(0) + 'px';
-      }});
+    function sizeThumb(frame) {{
+      const iframe = frame.querySelector('iframe');
+      if (!iframe) return;
+      const w = frame.clientWidth;
+      const scale = w / 1440;
+      iframe.style.transform = 'scale(' + scale.toFixed(4) + ')';
+      iframe.style.width = '1440px';
+      iframe.style.height = '810px';
+      frame.style.height = (810 * scale).toFixed(0) + 'px';
     }}
-    window.addEventListener('load', sizeThumbs);
-    window.addEventListener('resize', sizeThumbs);
+    function sizeAllThumbs() {{
+      document.querySelectorAll('.outline-thumb .thumb-frame').forEach(sizeThumb);
+    }}
+    window.addEventListener('load', sizeAllThumbs);
+    window.addEventListener('resize', sizeAllThumbs);
+
+    /* Lazy-mount iframes that are still using data-src.
+       Only when a thumb is within 600px of the viewport do we promote
+       data-src → src, kicking off its HTML/CSS/image fetches. This drops
+       the initial outline.html fetch graph from ~200 requests to ~20. */
+    function mountThumb(thumb) {{
+      const iframe = thumb.querySelector('iframe[data-src]');
+      if (!iframe) return;
+      iframe.src = iframe.dataset.src;
+      iframe.removeAttribute('data-src');
+      iframe.addEventListener('load', () => sizeThumb(thumb.querySelector('.thumb-frame')), {{ once: true }});
+    }}
+    if ('IntersectionObserver' in window) {{
+      const io = new IntersectionObserver((entries) => {{
+        entries.forEach(entry => {{
+          if (entry.isIntersecting) {{
+            mountThumb(entry.target);
+            io.unobserve(entry.target);
+          }}
+        }});
+      }}, {{ rootMargin: '600px 0px' }});
+      document.querySelectorAll('.outline-thumb').forEach(t => {{
+        if (t.querySelector('iframe[data-src]')) io.observe(t);
+      }});
+    }} else {{
+      /* Fallback: just mount everything */
+      document.querySelectorAll('.outline-thumb').forEach(mountThumb);
+    }}
 
     document.addEventListener('keydown', (e) => {{
       if (e.key === 'l' || e.key === 'L') toggleLang();
@@ -1665,10 +1696,18 @@ def make_outline_parts_html():
             fname = filename(idx)
             short_zh = slide["short"]
             short_en = slide["short_en"]
+            # IntersectionObserver-style lazy mount: only embed iframe src for
+            # the first 4 thumbnails; the rest carry data-src and are upgraded
+            # to live iframes as they scroll into view. This stops the page
+            # from kicking off 41 simultaneous HTML fetches on initial load.
+            iframe_attrs = (
+                f'src="{fname}"' if idx < 4
+                else f'data-src="{fname}"'
+            )
             blocks.append(
                 f'<a class="outline-thumb" href="{fname}">'
                 f'<div class="thumb-frame">'
-                f'<iframe src="{fname}" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>'
+                f'<iframe {iframe_attrs} loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>'
                 f'</div>'
                 f'<div class="thumb-meta">'
                 f'<span class="thumb-num">{idx:02d}</span>'
@@ -1681,7 +1720,11 @@ def make_outline_parts_html():
     return "\n".join(blocks)
 
 
-def main():
+def main(mode="external"):
+    """mode = 'external' (default, polished for makers) or 'internal' (trainer
+    edition with explicit 'speaker notes' label). The two modes share the same
+    SLIDES content; only the notes-label chrome differs. Internal mode is
+    emitted into ./internal/ so both versions can be served side-by-side."""
     # Patch SLIDES with English translations from translations.py
     try:
         import translations
@@ -1689,9 +1732,17 @@ def main():
     except Exception as e:
         print(f"[warn] translations.apply failed: {e}")
 
-    out_dir = Path("/Users/yin/alteru-training")
+    base = Path("/Users/yin/alteru-training")
+    out_dir = base if mode == "external" else (base / "internal")
     out_dir.mkdir(parents=True, exist_ok=True)
     T = len(SLIDES)
+
+    if mode == "internal":
+        notes_label_zh = "讲师备忘 · 按 S 关闭"
+        notes_label_en = "Speaker Notes · S to close"
+    else:
+        notes_label_zh = "备忘 · 按 S 关闭"
+        notes_label_en = "Notes · S to close"
 
     for idx, slide in enumerate(SLIDES):
         prev_href = filename(idx - 1) if idx > 0 else ""
@@ -1712,6 +1763,12 @@ def main():
         else:
             body_en = PENDING_BADGE_EN + slide["body"].strip()
 
+        # Prefetch the adjacent slides so navigation feels instant. Browsers
+        # treat rel=prefetch as low-priority, so it doesn't compete with
+        # current-page critical resources.
+        prefetch_next = f'<link rel="prefetch" href="{next_href}" as="document">' if next_href else ""
+        prefetch_prev = f'<link rel="prefetch" href="{prev_href}" as="document">' if prev_href else ""
+
         page = PAGE_TEMPLATE.format(
             N=idx + 1, T=T,
             short=slide["short"],
@@ -1721,6 +1778,8 @@ def main():
             body_en=body_en,
             notes=notes_zh,
             notes_en=notes_en,
+            notes_label_zh=notes_label_zh,
+            notes_label_en=notes_label_en,
             prev_href=prev_href,
             next_href=next_href,
             prev_disabled=prev_disabled,
@@ -1729,7 +1788,25 @@ def main():
             last_href=last_href,
             action_bar=make_action_bar(),
             drawer=make_drawer_html(idx),
+            prefetch_next=prefetch_next,
+            prefetch_prev=prefetch_prev,
         )
+
+        # Auto-add loading="lazy" + decoding="async" to <img> tags that don't
+        # already specify them. Cover (idx 0) keeps eager — hero needs to be
+        # paintable at first frame.
+        if idx > 0:
+            page = re.sub(
+                r'<img(?![^>]*\bloading=)([^>]*)>',
+                r'<img loading="lazy" decoding="async"\1>',
+                page,
+            )
+
+        if mode == "internal":
+            page = (page
+                    .replace('href="_shared.css"', 'href="../_shared.css"')
+                    .replace('src="assets/', 'src="../assets/')
+                    .replace('href="assets/', 'href="../assets/'))
 
         fname = filename(idx)
         (out_dir / fname).write_text(page, encoding="utf-8")
@@ -1742,6 +1819,12 @@ def main():
         TOTAL=T,
         parts_html=make_outline_parts_html(),
     )
+    if mode == "internal":
+        outline_html = (outline_html
+                        .replace('href="_shared.css"', 'href="../_shared.css"')
+                        .replace('src="assets/', 'src="../assets/')
+                        .replace('href="assets/', 'href="../assets/')
+                        .replace('href="index.html"', 'href="index.html"'))  # stay in /internal/
     (out_dir / "outline.html").write_text(outline_html, encoding="utf-8")
 
     # README
@@ -1764,4 +1847,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main(mode="external")
+    main(mode="internal")

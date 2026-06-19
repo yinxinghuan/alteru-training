@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/svg+xml" href="../assets/brand/alteru.svg" />
+  <title>36/41 · Part 6 · 跟 Agent · prompt 套路 · AlterU Training</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../_shared.css" />
+  <link rel="prefetch" href="36-agent-build-verify.html" as="document">
+  <link rel="prefetch" href="34-agent-explore-first.html" as="document">
+  <script>
+    /* Apply lang BEFORE first paint to avoid flicker.
+       Priority: URL ?lang=en|zh > localStorage > default zh.
+       URL param also persists into localStorage so subsequent navigation
+       inside the deck keeps the same lang. */
+    (function(){
+      try {
+        var urlLang = new URLSearchParams(location.search).get('lang');
+        var l;
+        if (urlLang === 'en' || urlLang === 'zh') {
+          l = urlLang;
+          localStorage.setItem('alteru-training-lang', l);
+        } else {
+          l = localStorage.getItem('alteru-training-lang') || 'zh';
+        }
+        document.documentElement.setAttribute('data-lang', l);
+      } catch(e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div class="slide-progress"><div class="fill" style="width: 87.80%"></div></div>
+
+  <div class="brand-strip">
+    <img loading="lazy" decoding="async" src="../assets/brand/alteru.svg" alt="AlterU"/>
+    <span class="brand-name">AlterU</span>
+    <span class="brand-sep"></span>
+    <span class="brand-context">
+      <span data-only="zh">Part 6 · 跟 Agent · prompt 套路</span>
+      <span data-only="en">Part 6 · Agents · Prompt Craft</span>
+    </span>
+  </div>
+
+<div class="action-bar">
+  <a class="outline-link" href="outline.html" title="Overview"><span data-only="zh">大纲</span><span data-only="en">Outline</span></a>
+  <button class="menu-btn" id="menu-btn" title="Menu (M)"><span data-only="zh">菜单</span><span data-only="en">Menu</span></button>
+  <button class="lang-btn" id="lang-btn" title="Language (L)"><span class="lang-zh">中</span><span style="opacity:.4;margin:0 4px;">/</span><span class="lang-en">EN</span></button>
+</div>
+
+  <div class="menu-backdrop" id="menu-backdrop"></div>
+  <aside class="menu-drawer" id="menu-drawer" aria-hidden="true">
+    <div class="menu-head">
+      <h3><span data-only="zh">目录</span><span data-only="en">Contents</span></h3>
+      <button class="menu-close" id="menu-close">
+        <span data-only="zh">关闭 esc</span><span data-only="en">Close esc</span>
+      </button>
+    </div>
+    <div data-only="zh">
+<div class="menu-section">
+<div class="menu-section-title">开场</div>
+<a class="menu-item" href="index.html"><span class="menu-num">00</span><span>Cover</span></a>
+<a class="menu-item" href="01-agenda.html"><span class="menu-num">01</span><span>Agenda</span></a>
+</div>
+<div class="menu-section">
+<div class="menu-section-title">Part 1 · AlterU 是什么</div>
+<a class="menu-item" href="02-positioning.html"><span class="menu-num">02</span><span>Part 1 · 定位</span></a>
+<a class="menu-item" href="03-four-layers.html"><span class="menu-num">03</span><span>Part 1 · 4 层</span></a>
+<a class="menu-item" href="04-form-layer.html"><span class="menu-num">04</span><span>Part 1 · 形式层</span></a>
+<a class="menu-item" href="05-identity-layer.html"><span class="menu-num">05</span><span>Part 1 · 身份层 🔑</span></a>
+<a class="menu-item" href="06-content-social.html"><span class="menu-num">06</span><span>Part 1 · 内容 + 社交层</span></a>
+</div>
+<div class="menu-section">
+<div class="menu-section-title">Part 2 · 身份层怎么落地</div>
+<a class="menu-item" href="07-identity-hooks.html"><span class="menu-num">07</span><span>Part 2 · 4 种身份钩子</span></a>
+<a class="menu-item" href="08-case-kiss-wall.html"><span class="menu-num">08</span><span>Part 2 · 案例 · Kiss Wall</span></a>
+<a class="menu-item" href="09-case-hour-capsule.html"><span class="menu-num">09</span><span>Part 2 · 案例 · Hour Capsule</span></a>
+<a class="menu-item" href="10-case-blockhop-arcana.html"><span class="menu-num">10</span><span>Part 2 · 案例 · Block Hop + Daily Arcana</span></a>
+<a class="menu-item" href="11-fake-identity.html"><span class="menu-num">11</span><span>Part 2 · 反例 · 假 identity</span></a>
+</div>
+<div class="menu-section">
+<div class="menu-section-title">Part 3 · 平台能力</div>
+<a class="menu-item" href="12-platform-overview.html"><span class="menu-num">12</span><span>Part 3 · 平台能力</span></a>
+<a class="menu-item" href="13-gen-image.html"><span class="menu-num">13</span><span>Part 3 · gen-image</span></a>
+<a class="menu-item" href="14-vision.html"><span class="menu-num">14</span><span>Part 3 · Vision</span></a>
+<a class="menu-item" href="15-llm.html"><span class="menu-num">15</span><span>Part 3 · LLM</span></a>
+<a class="menu-item" href="16-data-primitives.html"><span class="menu-num">16</span><span>Part 3 · 数据原语</span></a>
+<a class="menu-item" href="17-demo-mode.html"><span class="menu-num">17</span><span>Part 3 · Demo 模式</span></a>
+</div>
+<div class="menu-section">
+<div class="menu-section-title">Part 4 · 7 个范式</div>
+<a class="menu-item" href="18-paradigm-overview.html"><span class="menu-num">18</span><span>Part 4 · 7 个范式</span></a>
+<a class="menu-item" href="19-paradigm-physical.html"><span class="menu-num">19</span><span>Part 4 · ① Physical</span></a>
+<a class="menu-item" href="20-paradigm-crossy.html"><span class="menu-num">20</span><span>Part 4 · ② Crossy Road</span></a>
+<a class="menu-item" href="21-paradigm-tycoon.html"><span class="menu-num">21</span><span>Part 4 · ③ Tycoon</span></a>
+<a class="menu-item" href="22-paradigm-llm.html"><span class="menu-num">22</span><span>Part 4 · ④ LLM 主题轮换</span></a>
+<a class="menu-item" href="23-paradigm-vision.html"><span class="menu-num">23</span><span>Part 4 · ⑤ Vision</span></a>
+<a class="menu-item" href="24-paradigm-wait.html"><span class="menu-num">24</span><span>Part 4 · ⑥ Wait = Play</span></a>
+<a class="menu-item" href="25-paradigm-sensory.html"><span class="menu-num">25</span><span>Part 4 · ⑦ Sensory Toy</span></a>
+</div>
+<div class="menu-section">
+<div class="menu-section-title">Part 5 · 设计原则</div>
+<a class="menu-item" href="26-golden-2s.html"><span class="menu-num">26</span><span>Part 5 · 黄金 2 秒</span></a>
+<a class="menu-item" href="27-no-return.html"><span class="menu-num">27</span><span>Part 5 · 不假设回访</span></a>
+<a class="menu-item" href="28-english-empty.html"><span class="menu-num">28</span><span>Part 5 · 英文 + Empty state</span></a>
+<a class="menu-item" href="29-anti-examples.html"><span class="menu-num">29</span><span>Part 5 · 反例汇总</span></a>
+<a class="menu-item" href="30-v1-visceral.html"><span class="menu-num">30</span><span>Part 5 · V1 视觉强度</span></a>
+</div>
+<div class="menu-section">
+<div class="menu-section-title">Part 6 · 制作技巧</div>
+<a class="menu-item" href="31-style-library.html"><span class="menu-num">31</span><span>Part 6 · 视觉风格库</span></a>
+<a class="menu-item" href="32-voxel-caricature.html"><span class="menu-num">32</span><span>Part 6 · Voxel + Caricature 铁律</span></a>
+<a class="menu-item" href="33-gen-image-craft.html"><span class="menu-num">33</span><span>Part 6 · gen-image 实战技巧</span></a>
+<a class="menu-item" href="34-agent-explore-first.html"><span class="menu-num">34</span><span>Part 6 · 跟 Agent · 先看再做</span></a>
+<a class="menu-item current" href="35-agent-prompt-craft.html"><span class="menu-num">35</span><span>Part 6 · 跟 Agent · prompt 套路</span></a>
+<a class="menu-item" href="36-agent-build-verify.html"><span class="menu-num">36</span><span>Part 6 · 跟 Agent · build → verify</span></a>
+</div>
+<div class="menu-section">
+<div class="menu-section-title">Part 7 · 工作流</div>
+<a class="menu-item" href="37-workflow.html"><span class="menu-num">37</span><span>Part 7 · 工作流时间轴</span></a>
+<a class="menu-item" href="38-social-musts.html"><span class="menu-num">38</span><span>Part 7 · 社交化必修 4 招</span></a>
+<a class="menu-item" href="39-faq.html"><span class="menu-num">39</span><span>Part 7 · FAQ</span></a>
+</div>
+<div class="menu-section">
+<div class="menu-section-title">结尾</div>
+<a class="menu-item" href="40-resources.html"><span class="menu-num">40</span><span>Resources</span></a>
+</div>
+    </div>
+    <div data-only="en">
+<div class="menu-section">
+<div class="menu-section-title">Intro</div>
+<a class="menu-item" href="index.html"><span class="menu-num">00</span><span>Cover</span></a>
+<a class="menu-item" href="01-agenda.html"><span class="menu-num">01</span><span>Agenda</span></a>
+</div>
+<div class="menu-section">
+<div class="menu-section-title">Part 1 · What AlterU Is</div>
+<a class="menu-item" href="02-positioning.html"><span class="menu-num">02</span><span>Part 1 · Positioning</span></a>
+<a class="menu-item" href="03-four-layers.html"><span class="menu-num">03</span><span>Part 1 · 4 Layers</span></a>
+<a class="menu-item" href="04-form-layer.html"><span class="menu-num">04</span><span>Part 1 · Form Layer</span></a>
+<a class="menu-item" href="05-identity-layer.html"><span class="menu-num">05</span><span>Part 1 · Identity 🔑</span></a>
+<a class="menu-item" href="06-content-social.html"><span class="menu-num">06</span><span>Part 1 · Content + Social</span></a>
+</div>
+<div class="menu-section">
+<div class="menu-section-title">Part 2 · Identity Layer</div>
+<a class="menu-item" href="07-identity-hooks.html"><span class="menu-num">07</span><span>Part 2 · 4 Identity Hooks</span></a>
+<a class="menu-item" href="08-case-kiss-wall.html"><span class="menu-num">08</span><span>Part 2 · Case · Kiss Wall</span></a>
+<a class="menu-item" href="09-case-hour-capsule.html"><span class="menu-num">09</span><span>Part 2 · Case · Hour Capsule</span></a>
+<a class="menu-item" href="10-case-blockhop-arcana.html"><span class="menu-num">10</span><span>Part 2 · Case · Block Hop + Daily Arcana</span></a>
+<a class="menu-item" href="11-fake-identity.html"><span class="menu-num">11</span><span>Part 2 · Anti-pattern · Fake Identity</span></a>
+</div>
+<div class="menu-section">
+<div class="menu-section-title">Part 3 · Platform Capabilities</div>
+<a class="menu-item" href="12-platform-overview.html"><span class="menu-num">12</span><span>Part 3 · Platform Capabilities</span></a>
+<a class="menu-item" href="13-gen-image.html"><span class="menu-num">13</span><span>Part 3 · gen-image</span></a>
+<a class="menu-item" href="14-vision.html"><span class="menu-num">14</span><span>Part 3 · Vision</span></a>
+<a class="menu-item" href="15-llm.html"><span class="menu-num">15</span><span>Part 3 · LLM</span></a>
+<a class="menu-item" href="16-data-primitives.html"><span class="menu-num">16</span><span>Part 3 · Data Primitives</span></a>
+<a class="menu-item" href="17-demo-mode.html"><span class="menu-num">17</span><span>Part 3 · Demo Mode</span></a>
+</div>
+<div class="menu-section">
+<div class="menu-section-title">Part 4 · 7 Paradigms</div>
+<a class="menu-item" href="18-paradigm-overview.html"><span class="menu-num">18</span><span>Part 4 · 7 Paradigms</span></a>
+<a class="menu-item" href="19-paradigm-physical.html"><span class="menu-num">19</span><span>Part 4 · ① Physical</span></a>
+<a class="menu-item" href="20-paradigm-crossy.html"><span class="menu-num">20</span><span>Part 4 · ② Crossy Road</span></a>
+<a class="menu-item" href="21-paradigm-tycoon.html"><span class="menu-num">21</span><span>Part 4 · ③ Tycoon</span></a>
+<a class="menu-item" href="22-paradigm-llm.html"><span class="menu-num">22</span><span>Part 4 · ④ LLM Rotation</span></a>
+<a class="menu-item" href="23-paradigm-vision.html"><span class="menu-num">23</span><span>Part 4 · ⑤ Vision</span></a>
+<a class="menu-item" href="24-paradigm-wait.html"><span class="menu-num">24</span><span>Part 4 · ⑥ Wait = Play</span></a>
+<a class="menu-item" href="25-paradigm-sensory.html"><span class="menu-num">25</span><span>Part 4 · ⑦ Sensory Toy</span></a>
+</div>
+<div class="menu-section">
+<div class="menu-section-title">Part 5 · Design Principles</div>
+<a class="menu-item" href="26-golden-2s.html"><span class="menu-num">26</span><span>Part 5 · The Golden 2 Seconds</span></a>
+<a class="menu-item" href="27-no-return.html"><span class="menu-num">27</span><span>Part 5 · No Return Assumed</span></a>
+<a class="menu-item" href="28-english-empty.html"><span class="menu-num">28</span><span>Part 5 · English + Empty States</span></a>
+<a class="menu-item" href="29-anti-examples.html"><span class="menu-num">29</span><span>Part 5 · Anti-pattern Roll Call</span></a>
+<a class="menu-item" href="30-v1-visceral.html"><span class="menu-num">30</span><span>Part 5 · V1 Visceral Register</span></a>
+</div>
+<div class="menu-section">
+<div class="menu-section-title">Part 6 · Craft Tips</div>
+<a class="menu-item" href="31-style-library.html"><span class="menu-num">31</span><span>Part 6 · Style Library</span></a>
+<a class="menu-item" href="32-voxel-caricature.html"><span class="menu-num">32</span><span>Part 6 · Voxel + Caricature Rules</span></a>
+<a class="menu-item" href="33-gen-image-craft.html"><span class="menu-num">33</span><span>Part 6 · gen-image Field Notes</span></a>
+<a class="menu-item" href="34-agent-explore-first.html"><span class="menu-num">34</span><span>Part 6 · Agents · Explore First</span></a>
+<a class="menu-item current" href="35-agent-prompt-craft.html"><span class="menu-num">35</span><span>Part 6 · Agents · Prompt Craft</span></a>
+<a class="menu-item" href="36-agent-build-verify.html"><span class="menu-num">36</span><span>Part 6 · Agents · Build → Verify</span></a>
+</div>
+<div class="menu-section">
+<div class="menu-section-title">Part 7 · Workflow</div>
+<a class="menu-item" href="37-workflow.html"><span class="menu-num">37</span><span>Part 7 · Workflow Timeline</span></a>
+<a class="menu-item" href="38-social-musts.html"><span class="menu-num">38</span><span>Part 7 · Social Musts</span></a>
+<a class="menu-item" href="39-faq.html"><span class="menu-num">39</span><span>Part 7 · FAQ</span></a>
+</div>
+<div class="menu-section">
+<div class="menu-section-title">Resources</div>
+<a class="menu-item" href="40-resources.html"><span class="menu-num">40</span><span>Resources</span></a>
+</div>
+    </div>
+    <div class="menu-foot">
+      <span data-only="zh">快捷键：<kbd>M</kbd> 菜单 · <kbd>L</kbd> 中/EN · <kbd>S</kbd> 备忘 · <kbd>F</kbd> 全屏 · <kbd>← →</kbd> 翻页</span>
+      <span data-only="en">Keys: <kbd>M</kbd> menu · <kbd>L</kbd> language · <kbd>S</kbd> speaker notes · <kbd>F</kbd> fullscreen · <kbd>← →</kbd> navigate</span>
+    </div>
+  </aside>
+
+
+  <section class="slide matrix-2x2">
+    <div data-only="zh">
+<span class="eyebrow"><span class="dot"></span>Agent · 4 条 prompt 套路</span>
+<h2 class="title">让 agent<br/>说话<em>像那个游戏</em>。</h2>
+<div class="grid">
+  <div class="cell">
+    <span class="cell-num">1</span>
+    <span class="tag">嗓音</span>
+    <h3>system prompt 角色化</h3>
+    <p>不要让 LLM 默认 ChatGPT-friendly 平淡嗓音。</p>
+    <p style="margin-top:8px;" class="dim">✅ <strong class="pink">Trash or Treasure</strong> 温柔毒舌 / <strong class="pink">Hour Capsule</strong> 博物学家 / <strong class="pink">Pulp Hour</strong> 黑色一刻 / <strong class="pink">Daily Arcana</strong> 塔罗师 / <strong class="pink">The Locksmith</strong> 锁匠</p>
+  </div>
+  <div class="cell">
+    <span class="cell-num">2</span>
+    <span class="tag">锚点</span>
+    <h3>4 层 elevator + skill 名当 anchor</h3>
+    <p>把 idea 说成"身份钩 X + 范式 Y + skill [[Z]] pattern"。</p>
+    <p style="margin-top:8px;" class="dim">例：<code>"做一个 sensory-toy + 身份钩 ④（网络）+ [[score-beat-run-end-vs-sensory-toy]]"</code> 比"做一个泡泡纸玩具，可以看到好友戳的次数"准 10 倍。</p>
+  </div>
+  <div class="cell">
+    <span class="cell-num">3</span>
+    <span class="tag">参考</span>
+    <h3>给已上线游戏 URL + reference video</h3>
+    <p>"像 Crossy Road 但角色是 X" / "像 Suika 但合成 X" / "像 Murmur 但触发是 Y"。</p>
+    <p style="margin-top:8px;" class="dim">Build-a-Boyfriend = Suika fork · Block Hop = Crossy Road fork · Hour Capsule = Seal Press fork。<strong class="pink">让 agent 站在巨人肩膀上</strong>，不是从 0 写。</p>
+  </div>
+  <div class="cell">
+    <span class="cell-num">4</span>
+    <span class="tag">反馈</span>
+    <h3>反馈语言模板化</h3>
+    <p>同样的反馈短语对应不同 pattern：</p>
+    <p style="margin-top:8px;" class="dim">"<strong>太复杂</strong>" → 砍规则 / 砍 setup<br/>"<strong>social 太弱</strong>" → 加 verb + notify<br/>"<strong>看不下去</strong>" → 砍卡通脸 sticker<br/>"<strong>没耐心</strong>" → 砍引导 / 用 1 个手指 icon<br/>"<strong>太平淡</strong>" → 加 visceral hit</p>
+  </div>
+</div>
+    </div>
+    <div data-only="en">
+<span class="eyebrow"><span class="dot"></span>Agents · 4 prompt patterns</span>
+<h2 class="title">Make the agent<br/>sound <em>like that game</em>.</h2>
+<div class="grid">
+  <div class="cell">
+    <span class="cell-num">1</span>
+    <span class="tag">voice</span>
+    <h3>In-character system prompt</h3>
+    <p>Never let the LLM default to ChatGPT-friendly mush.</p>
+    <p style="margin-top:8px;" class="dim">✅ <strong class="pink">Trash or Treasure</strong> snarky-but-tender / <strong class="pink">Hour Capsule</strong> curator / <strong class="pink">Pulp Hour</strong> noir / <strong class="pink">Daily Arcana</strong> tarot reader / <strong class="pink">The Locksmith</strong></p>
+  </div>
+  <div class="cell">
+    <span class="cell-num">2</span>
+    <span class="tag">anchor</span>
+    <h3>4-layer elevator + skill names</h3>
+    <p>Restate the idea as "identity hook X + paradigm Y + skill [[Z]] pattern."</p>
+    <p style="margin-top:8px;" class="dim">e.g. <code>"sensory-toy + identity hook ④ (network) + [[score-beat-run-end-vs-sensory-toy]]"</code> is 10x more precise than "a bubble-wrap toy that shows your friends' tap counts."</p>
+  </div>
+  <div class="cell">
+    <span class="cell-num">3</span>
+    <span class="tag">reference</span>
+    <h3>Shipped URL + reference video</h3>
+    <p>"Like Crossy Road but characters are X" / "Like Suika but the merge is X" / "Like Murmur but the trigger is Y."</p>
+    <p style="margin-top:8px;" class="dim">Build-a-Boyfriend = Suika fork. Block Hop = Crossy Road fork. Hour Capsule = Seal Press fork. <strong class="pink">Stand on shoulders</strong> instead of writing from zero.</p>
+  </div>
+  <div class="cell">
+    <span class="cell-num">4</span>
+    <span class="tag">feedback</span>
+    <h3>Template your feedback language</h3>
+    <p>The same player short-phrases map to specific patterns:</p>
+    <p style="margin-top:8px;" class="dim">"<strong>too complex</strong>" → cut rules / cut setup<br/>"<strong>social is weak</strong>" → add a verb + notify<br/>"<strong>can't watch this</strong>" → cut cartoon sticker face<br/>"<strong>no patience</strong>" → cut tutorial / 1 finger icon<br/>"<strong>too flat</strong>" → add visceral hits</p>
+  </div>
+</div>
+    </div>
+  </section>
+
+  <div class="speaker-notes" id="speaker-notes">
+    <h4><span data-only="zh">讲师备忘 · 按 S 关闭</span><span data-only="en">Speaker Notes · S to close</span></h4>
+    <div data-only="zh">
+<p>讲法：每条都给一个真实例子。<strong>第 4 条最有用</strong>——这些短语本身已经成为我们沟通的 ontology，agent 听到立刻知道往哪改。</p>
+<p>建议同学把这 4 条 prompt 套路存进自己的 system prompt 模板，下次开 idea 时直接套。</p>
+    </div>
+    <div data-only="en">
+<p>Walk each one with a real example. <strong>Pattern 4 is the most actionable</strong> — these phrases have become our shared ontology; the agent hears them and immediately knows the direction.</p>
+<p>Suggest students save these four into their personal system-prompt template, ready for the next idea.</p>
+    </div>
+  </div>
+
+  <div class="slide-page-tag">36 / 41</div>
+
+  <div class="slide-nav">
+    <a class="prev " href="34-agent-explore-first.html">
+      <span data-only="zh">← 上页</span><span data-only="en">← Prev</span>
+    </a>
+    <a class="next " href="36-agent-build-verify.html">
+      <span data-only="zh">下页 →</span><span data-only="en">Next →</span>
+    </a>
+  </div>
+
+  <script>
+    (function(){
+      const PREV = "34-agent-explore-first.html";
+      const NEXT = "36-agent-build-verify.html";
+      const FIRST = "index.html";
+      const LAST = "40-resources.html";
+
+      function setLangBtn(lang) {
+        document.querySelectorAll('.lang-btn .lang-zh, .lang-btn .lang-en').forEach(el => el.classList.remove('lang-active'));
+        const target = document.querySelector('.lang-btn .lang-' + lang);
+        if (target) target.classList.add('lang-active');
+      }
+      function toggleLang() {
+        const cur = document.documentElement.getAttribute('data-lang') || 'zh';
+        const next = cur === 'zh' ? 'en' : 'zh';
+        document.documentElement.setAttribute('data-lang', next);
+        try { localStorage.setItem('alteru-training-lang', next); } catch(e) {}
+        setLangBtn(next);
+      }
+      setLangBtn(document.documentElement.getAttribute('data-lang') || 'zh');
+
+      const drawer = document.getElementById('menu-drawer');
+      const backdrop = document.getElementById('menu-backdrop');
+      function toggleMenu() {
+        const open = drawer.classList.toggle('open');
+        backdrop.classList.toggle('open', open);
+        drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+      }
+      function closeMenu() {
+        drawer.classList.remove('open');
+        backdrop.classList.remove('open');
+        drawer.setAttribute('aria-hidden', 'true');
+      }
+      document.getElementById('menu-btn').addEventListener('click', toggleMenu);
+      document.getElementById('menu-close').addEventListener('click', closeMenu);
+      backdrop.addEventListener('click', closeMenu);
+      document.getElementById('lang-btn').addEventListener('click', toggleLang);
+
+      document.addEventListener('keydown', (e) => {
+        if (e.metaKey || e.ctrlKey || e.altKey) return;
+        if (e.key === 'Escape') { closeMenu(); return; }
+        if (drawer.classList.contains('open') && (e.key === 'ArrowRight' || e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === ' ')) return;
+        if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown' || e.key === 'ArrowDown') {
+          if (NEXT) location.href = NEXT;
+        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp' || e.key === 'ArrowUp') {
+          if (PREV) location.href = PREV;
+        } else if (e.key === 's' || e.key === 'S') {
+          document.getElementById('speaker-notes').classList.toggle('visible');
+        } else if (e.key === 'f' || e.key === 'F') {
+          if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+          else document.exitFullscreen();
+        } else if (e.key === 'm' || e.key === 'M') {
+          toggleMenu();
+        } else if (e.key === 'l' || e.key === 'L') {
+          toggleLang();
+        } else if (e.key === 'o' || e.key === 'O') {
+          location.href = 'outline.html';
+        } else if (e.key === 'Home') {
+          location.href = FIRST;
+        } else if (e.key === 'End') {
+          location.href = LAST;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
