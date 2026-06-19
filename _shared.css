@@ -411,6 +411,13 @@ ul.bullets strong { color: var(--text-1); font-weight: 600; }
   z-index: 30;
   pointer-events: none;
 }
+.brand-strip a.brand-home {
+  pointer-events: auto; cursor: pointer;
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none; color: inherit;
+  transition: opacity 0.15s ease;
+}
+.brand-strip a.brand-home:hover { opacity: 0.7; }
 .brand-strip img { width: 26px; height: 26px; }
 .brand-strip .brand-name {
   font-family: 'Montserrat', sans-serif;

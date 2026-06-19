@@ -1427,8 +1427,10 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   <div class="slide-progress"><div class="fill" style="width: {progress:.2f}%"></div></div>
 
   <div class="brand-strip">
-    <img src="assets/brand/alteru.svg" alt="AlterU"/>
-    <span class="brand-name">AlterU</span>
+    <a class="brand-home" href="{home_href}" title="{home_title}">
+      <img src="assets/brand/alteru.svg" alt="AlterU"/>
+      <span class="brand-name">AlterU</span>
+    </a>
     <span class="brand-sep"></span>
     <span class="brand-context">
       <span data-only="zh">{short}</span>
@@ -1565,8 +1567,10 @@ OUTLINE_TEMPLATE = """<!DOCTYPE html>
 </head>
 <body>
   <div class="brand-strip">
-    <img src="assets/brand/alteru.svg" alt="AlterU"/>
-    <span class="brand-name">AlterU</span>
+    <a class="brand-home" href="{home_href}" title="{home_title}">
+      <img src="assets/brand/alteru.svg" alt="AlterU"/>
+      <span class="brand-name">AlterU</span>
+    </a>
     <span class="brand-sep"></span>
     <span class="brand-context">
       <span data-only="zh">培训大纲</span>
@@ -1747,6 +1751,14 @@ def main(mode="external", out_root=None):
         notes_label_zh = "备忘 · 按 S 关闭"
         notes_label_en = "Notes · S to close"
 
+    # Logo click target. External edition lives at alteru.app/learn/, so the
+    # brand mark returns to the landing home one level up. Internal/trainer
+    # edition has no landing page above it → send the mark back to the cover.
+    if mode == "external":
+        home_href, home_title = "../", "alteru.app"
+    else:
+        home_href, home_title = "index.html", "Back to cover"
+
     for idx, slide in enumerate(SLIDES):
         prev_href = filename(idx - 1) if idx > 0 else ""
         next_href = filename(idx + 1) if idx < T - 1 else ""
@@ -1793,6 +1805,8 @@ def main(mode="external", out_root=None):
             drawer=make_drawer_html(idx),
             prefetch_next=prefetch_next,
             prefetch_prev=prefetch_prev,
+            home_href=home_href,
+            home_title=home_title,
         )
 
         # Auto-add loading="lazy" + decoding="async" to <img> tags that don't
@@ -1815,6 +1829,8 @@ def main(mode="external", out_root=None):
     outline_html = OUTLINE_TEMPLATE.format(
         TOTAL=T,
         parts_html=make_outline_parts_html(),
+        home_href=home_href,
+        home_title=home_title,
     )
     (out_dir / "outline.html").write_text(outline_html, encoding="utf-8")
 
