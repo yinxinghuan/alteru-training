@@ -10,10 +10,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="_shared.css" />
   <script>
-    /* Apply saved lang BEFORE first paint to avoid flicker */
+    /* Apply lang BEFORE first paint to avoid flicker.
+       Priority: URL ?lang=en|zh > localStorage > default zh.
+       URL param also persists into localStorage so subsequent navigation
+       inside the deck keeps the same lang. */
     (function(){
       try {
-        var l = localStorage.getItem('alteru-training-lang') || 'zh';
+        var urlLang = new URLSearchParams(location.search).get('lang');
+        var l;
+        if (urlLang === 'en' || urlLang === 'zh') {
+          l = urlLang;
+          localStorage.setItem('alteru-training-lang', l);
+        } else {
+          l = localStorage.getItem('alteru-training-lang') || 'zh';
+        }
         document.documentElement.setAttribute('data-lang', l);
       } catch(e) {}
     })();
