@@ -1099,24 +1099,48 @@ Make the agent <strong class="pink">verify itself</strong>.
 """,
 },
 
-"ship-checklist": {
-    "short": "Part 7 · Ship Checklist",
+"faq": {
+    "short": "Part 7 · FAQ",
     "body": """
-<span class="eyebrow"><span class="dot"></span>Part 7 · 8 gates before shipping</span>
-<h2 class="title">Every gate<br/>is <em>non-skippable</em>.</h2>
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 24px;">
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px;"></div><div><b>1 · UUID uniqueness</b><p style="margin-top: 4px;">New games.json entry has a UUID, no collisions (fork-related trap)</p></div></div>
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px;"></div><div><b>2 · meta.json</b><p style="margin-top: 4px;">title (English!) + cover_url present, poster in public/</p></div></div>
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px;"></div><div><b>3 · build passes</b><p style="margin-top: 4px;">npm run build clean, no TS errors</p></div></div>
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px;"></div><div><b>4 · anti-pattern sweep</b><p style="margin-top: 4px;">No onPointerDown mixed w/ mouse+touch · daily-lock not OR'd with stats · no crossOrigin on R2 images</p></div></div>
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px;"></div><div><b>5 · demo-mode self-test</b><p style="margin-top: 4px;">Open the URL outside Aigram and confirm the phantom experience works</p></div></div>
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px; border-color: var(--brand-pink-strong);"></div><div><b>6 · <span class="pink">identity-layer check</span></b><p style="margin-top: 4px;">Turn off avatar / name — does the game still hold? Yes = identity was decoration only</p></div></div>
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px;"></div><div><b>7 · deploy verify</b><p style="margin-top: 4px;">push → GH Actions → curl bundle URL to confirm the new class is in</p></div></div>
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px;"></div><div><b>8 · self-play 5x on real device</b><p style="margin-top: 4px;">Swipe into your own game on your own phone, 5 times (cold start / weak network / landscape)</p></div></div>
+<span class="eyebrow"><span class="dot"></span>Part 7 · Before we wrap · the recurring questions</span>
+<h2 class="title">Six things<br/>everyone <em>asks</em>.</h2>
+<div class="grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 14px; align-content: start;">
+  <div class="cell" style="padding: 18px 18px 22px; border-color: var(--brand-pink); box-shadow: 0 0 0 1px var(--brand-pink-dim);">
+    <span class="tag">Q1</span>
+    <h3 style="font-size: 16px; margin-bottom: 8px;">How do I ship?</h3>
+    <p style="font-size: 13px; line-height: 1.55;">Open the preview <em>inside the platform</em> → check the result → tap the <strong class="pink">Publish</strong> button. Registration is automated. <strong>You're done at "happy"</strong> — no UUIDs, no meta.json, no deploy scripts.</p>
+  </div>
+  <div class="cell" style="padding: 18px 18px 22px;">
+    <span class="tag">Q2</span>
+    <h3 style="font-size: 16px; margin-bottom: 8px;">Do I have to use AI?</h3>
+    <p style="font-size: 13px; line-height: 1.55;">No. <strong class="pink">Sensory toys</strong> are pure hand-craft (Bubble Wrap / Marbles / Wind Chime). But the <strong>identity layer + social verb</strong> are nearly always required — otherwise it isn't really an AlterU game.</p>
+  </div>
+  <div class="cell" style="padding: 18px 18px 22px;">
+    <span class="tag">Q3</span>
+    <h3 style="font-size: 16px; margin-bottom: 8px;">What about the 5-8s gen-image wait?</h3>
+    <p style="font-size: 13px; line-height: 1.55;">Turn the wait <strong class="pink">into the play</strong> — never a spinner. Darkroom develop / sealing / form / archive flip. Kiss Wall is the canon (paradigm ⑥).</p>
+  </div>
+  <div class="cell" style="padding: 18px 18px 22px;">
+    <span class="tag">Q4</span>
+    <h3 style="font-size: 16px; margin-bottom: 8px;">Should I add a tutorial?</h3>
+    <p style="font-size: 13px; line-height: 1.55;">No. Tutorials assume patience → swipe. <strong class="pink">The first failure is the tutorial</strong>. Sky Leap cut its charge-ring animation down to one shared finger icon.</p>
+  </div>
+  <div class="cell" style="padding: 18px 18px 22px;">
+    <span class="tag">Q5</span>
+    <h3 style="font-size: 16px; margin-bottom: 8px;">Mapping player feedback?</h3>
+    <p style="font-size: 12.5px; line-height: 1.6;">"<strong>too complex</strong>" → cut rules<br/>"<strong>social weak</strong>" → add verb + notify<br/>"<strong>can't watch this</strong>" → drop sticker face<br/>"<strong>no patience</strong>" → drop setup / tutorial<br/>"<strong>too flat</strong>" → add visceral hits</p>
+  </div>
+  <div class="cell" style="padding: 18px 18px 22px;">
+    <span class="tag">Q6</span>
+    <h3 style="font-size: 16px; margin-bottom: 8px;">AlterU vs Aigram?</h3>
+    <p style="font-size: 13px; line-height: 1.55;">AlterU = <strong class="pink">standalone new brand</strong> (US market, App Store). Aigram = the underlying tech infra (iframe bridge + API). <strong>Externally always say AlterU</strong>; Aigram only appears in the endpoint table.</p>
+  </div>
 </div>
 """,
     "notes": """
-<p>The last gate is the easiest to skip — and the most critical. <strong>Don't call it "shipped" until real players have played.</strong> Try it live after this slide: have the room load their own game in feed and feel the difference between "single page" and "in the swipe."</p>
+<p>The wrap-up Q&A. Each question is something newcomers stumble on. If you have time, let one or two attendees take a crack at each Q before you give the canonical answer.</p>
+<p><strong>Q1 is the key updated message</strong> — older versions of this deck still walked people through UUID / meta.json / deploy scripts. The platform automated all of that. Designers and PMs <strong>are done at "happy"</strong>, then tap Publish. Q1 is pink-bordered for a reason.</p>
+<p><strong>Q5 is the most useful daily tool</strong> in the whole deck. Have students paste these mappings into their personal system-prompt template — next time an idea comes in, they can route by phrase.</p>
 """,
 },
 

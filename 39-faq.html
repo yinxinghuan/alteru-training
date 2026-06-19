@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/svg+xml" href="assets/brand/alteru.svg" />
-  <title>40/41 · Part 7 · 上线 checklist · AlterU Training</title>
+  <title>40/41 · Part 7 · FAQ · AlterU Training</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -27,8 +27,8 @@
     <span class="brand-name">AlterU</span>
     <span class="brand-sep"></span>
     <span class="brand-context">
-      <span data-only="zh">Part 7 · 上线 checklist</span>
-      <span data-only="en">Part 7 · Ship Checklist</span>
+      <span data-only="zh">Part 7 · FAQ</span>
+      <span data-only="en">Part 7 · FAQ</span>
     </span>
   </div>
 
@@ -109,7 +109,7 @@
 <div class="menu-section-title">Part 7 · 工作流</div>
 <a class="menu-item" href="37-workflow.html"><span class="menu-num">37</span><span>Part 7 · 工作流时间轴</span></a>
 <a class="menu-item" href="38-social-musts.html"><span class="menu-num">38</span><span>Part 7 · 社交化必修 4 招</span></a>
-<a class="menu-item current" href="39-ship-checklist.html"><span class="menu-num">39</span><span>Part 7 · 上线 checklist</span></a>
+<a class="menu-item current" href="39-faq.html"><span class="menu-num">39</span><span>Part 7 · FAQ</span></a>
 </div>
 <div class="menu-section">
 <div class="menu-section-title">结尾</div>
@@ -179,7 +179,7 @@
 <div class="menu-section-title">Part 7 · Workflow</div>
 <a class="menu-item" href="37-workflow.html"><span class="menu-num">37</span><span>Part 7 · Workflow Timeline</span></a>
 <a class="menu-item" href="38-social-musts.html"><span class="menu-num">38</span><span>Part 7 · Social Musts</span></a>
-<a class="menu-item current" href="39-ship-checklist.html"><span class="menu-num">39</span><span>Part 7 · Ship Checklist</span></a>
+<a class="menu-item current" href="39-faq.html"><span class="menu-num">39</span><span>Part 7 · FAQ</span></a>
 </div>
 <div class="menu-section">
 <div class="menu-section-title">Resources</div>
@@ -195,31 +195,75 @@
 
   <section class="slide matrix-2x2">
     <div data-only="zh">
-<span class="eyebrow"><span class="dot"></span>Part 7 · 上线前 8 道关</span>
-<h2 class="title">每一道<br/>都<em>不能跳</em>。</h2>
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 24px;">
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px;"></div><div><b>1 · UUID 唯一性</b><p style="margin-top: 4px;">games.json 新 entry 有 UUID 且不重复（fork 必踩坑）</p></div></div>
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px;"></div><div><b>2 · meta.json</b><p style="margin-top: 4px;">title（英文！）+ cover_url 齐全，海报放 public/</p></div></div>
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px;"></div><div><b>3 · build 通过</b><p style="margin-top: 4px;">npm run build 全过，无 TS error</p></div></div>
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px;"></div><div><b>4 · 反模式扫描</b><p style="margin-top: 4px;">onPointerDown 不混 mouse+touch · daily-lock 不 OR stats · crossOrigin 不加</p></div></div>
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px;"></div><div><b>5 · Demo 模式自测</b><p style="margin-top: 4px;">浏览器外打开 URL 看 phantom 体验是否正常</p></div></div>
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px; border-color: var(--brand-pink-strong);"></div><div><b>6 · <span class="pink">身份层验证</span></b><p style="margin-top: 4px;">关掉头像/名字，游戏还成立吗？成立 = 身份只是装饰</p></div></div>
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px;"></div><div><b>7 · 部署验证</b><p style="margin-top: 4px;">push → GH Actions → curl bundle URL 看新 class 在不在</p></div></div>
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px;"></div><div><b>8 · 真机自测 5 次</b><p style="margin-top: 4px;">手机划到 feed 里测 5 次（cold start / 弱网 / 横屏）</p></div></div>
+<span class="eyebrow"><span class="dot"></span>Part 7 · 散场前 · 常被问到的问题</span>
+<h2 class="title">最后这 <em>6 个</em>，<br/>大家都会问。</h2>
+<div class="grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 14px; align-content: start;">
+  <div class="cell" style="padding: 18px 18px 22px; border-color: var(--brand-pink); box-shadow: 0 0 0 1px var(--brand-pink-dim);">
+    <span class="tag">Q1</span>
+    <h3 style="font-size: 16px; margin-bottom: 8px;">我做完游戏怎么发布？</h3>
+    <p style="font-size: 13px; line-height: 1.55;">在平台内预览页打开看效果 → 满意了点<strong class="pink">"发布"按钮</strong>。入库自动完成，不用碰 UUID / meta.json / 部署脚本。<strong>你只负责到"满意"为止</strong>。</p>
+  </div>
+  <div class="cell" style="padding: 18px 18px 22px;">
+    <span class="tag">Q2</span>
+    <h3 style="font-size: 16px; margin-bottom: 8px;">我必须用 AI 吗？</h3>
+    <p style="font-size: 13px; line-height: 1.55;">不一定。<strong class="pink">Sensory toy</strong> 完全靠手做也很棒（Bubble Wrap / Marbles / Wind Chime）。但<strong>身份层 + 社交动词</strong>几乎不能少——否则不算 AlterU 游戏。</p>
+  </div>
+  <div class="cell" style="padding: 18px 18px 22px;">
+    <span class="tag">Q3</span>
+    <h3 style="font-size: 16px; margin-bottom: 8px;">5-8s 生图等待怎么办？</h3>
+    <p style="font-size: 13px; line-height: 1.55;">等待<strong class="pink">变成玩法</strong>，不要 spinner 糊过去。化学浴显影 / 拆封 / 显形 / 翻档案的视觉仪式。Kiss Wall canonical 范式 ⑥。</p>
+  </div>
+  <div class="cell" style="padding: 18px 18px 22px;">
+    <span class="tag">Q4</span>
+    <h3 style="font-size: 16px; margin-bottom: 8px;">新手教程要不要做？</h3>
+    <p style="font-size: 13px; line-height: 1.55;">不要。任何教程都假设玩家有耐心读 → 划走。<strong class="pink">第一次失败本身就是教程</strong>。Sky Leap 把充能环教学砍成 1 个共用手指 icon。</p>
+  </div>
+  <div class="cell" style="padding: 18px 18px 22px;">
+    <span class="tag">Q5</span>
+    <h3 style="font-size: 16px; margin-bottom: 8px;">用户反馈短语对应改什么？</h3>
+    <p style="font-size: 12.5px; line-height: 1.6;">"<strong>太复杂</strong>" → 砍规则<br/>"<strong>social 太弱</strong>" → 加 verb + notify<br/>"<strong>看不下去</strong>" → 砍卡通脸贴纸<br/>"<strong>没耐心</strong>" → 砍引导 setup<br/>"<strong>太平淡</strong>" → 加 visceral 感官冲击</p>
+  </div>
+  <div class="cell" style="padding: 18px 18px 22px;">
+    <span class="tag">Q6</span>
+    <h3 style="font-size: 16px; margin-bottom: 8px;">AlterU 和 Aigram 什么关系？</h3>
+    <p style="font-size: 13px; line-height: 1.55;">AlterU = <strong class="pink">独立新品牌</strong>（试美国市场，App Store 端）。Aigram = 底层技术 infra（iframe 桥 + API）。<strong>对外只说 AlterU</strong>，Aigram 只在 endpoint 表里出现。</p>
+  </div>
 </div>
     </div>
     <div data-only="en">
-<span class="eyebrow"><span class="dot"></span>Part 7 · 8 gates before shipping</span>
-<h2 class="title">Every gate<br/>is <em>non-skippable</em>.</h2>
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 24px;">
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px;"></div><div><b>1 · UUID uniqueness</b><p style="margin-top: 4px;">New games.json entry has a UUID, no collisions (fork-related trap)</p></div></div>
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px;"></div><div><b>2 · meta.json</b><p style="margin-top: 4px;">title (English!) + cover_url present, poster in public/</p></div></div>
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px;"></div><div><b>3 · build passes</b><p style="margin-top: 4px;">npm run build clean, no TS errors</p></div></div>
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px;"></div><div><b>4 · anti-pattern sweep</b><p style="margin-top: 4px;">No onPointerDown mixed w/ mouse+touch · daily-lock not OR'd with stats · no crossOrigin on R2 images</p></div></div>
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px;"></div><div><b>5 · demo-mode self-test</b><p style="margin-top: 4px;">Open the URL outside Aigram and confirm the phantom experience works</p></div></div>
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px; border-color: var(--brand-pink-strong);"></div><div><b>6 · <span class="pink">identity-layer check</span></b><p style="margin-top: 4px;">Turn off avatar / name — does the game still hold? Yes = identity was decoration only</p></div></div>
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px;"></div><div><b>7 · deploy verify</b><p style="margin-top: 4px;">push → GH Actions → curl bundle URL to confirm the new class is in</p></div></div>
-  <div class="check" style="padding: 14px 18px; margin: 0;"><div class="box" style="width: 22px; height: 22px;"></div><div><b>8 · self-play 5x on real device</b><p style="margin-top: 4px;">Swipe into your own game on your own phone, 5 times (cold start / weak network / landscape)</p></div></div>
+<span class="eyebrow"><span class="dot"></span>Part 7 · Before we wrap · the recurring questions</span>
+<h2 class="title">Six things<br/>everyone <em>asks</em>.</h2>
+<div class="grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 14px; align-content: start;">
+  <div class="cell" style="padding: 18px 18px 22px; border-color: var(--brand-pink); box-shadow: 0 0 0 1px var(--brand-pink-dim);">
+    <span class="tag">Q1</span>
+    <h3 style="font-size: 16px; margin-bottom: 8px;">How do I ship?</h3>
+    <p style="font-size: 13px; line-height: 1.55;">Open the preview <em>inside the platform</em> → check the result → tap the <strong class="pink">Publish</strong> button. Registration is automated. <strong>You're done at "happy"</strong> — no UUIDs, no meta.json, no deploy scripts.</p>
+  </div>
+  <div class="cell" style="padding: 18px 18px 22px;">
+    <span class="tag">Q2</span>
+    <h3 style="font-size: 16px; margin-bottom: 8px;">Do I have to use AI?</h3>
+    <p style="font-size: 13px; line-height: 1.55;">No. <strong class="pink">Sensory toys</strong> are pure hand-craft (Bubble Wrap / Marbles / Wind Chime). But the <strong>identity layer + social verb</strong> are nearly always required — otherwise it isn't really an AlterU game.</p>
+  </div>
+  <div class="cell" style="padding: 18px 18px 22px;">
+    <span class="tag">Q3</span>
+    <h3 style="font-size: 16px; margin-bottom: 8px;">What about the 5-8s gen-image wait?</h3>
+    <p style="font-size: 13px; line-height: 1.55;">Turn the wait <strong class="pink">into the play</strong> — never a spinner. Darkroom develop / sealing / form / archive flip. Kiss Wall is the canon (paradigm ⑥).</p>
+  </div>
+  <div class="cell" style="padding: 18px 18px 22px;">
+    <span class="tag">Q4</span>
+    <h3 style="font-size: 16px; margin-bottom: 8px;">Should I add a tutorial?</h3>
+    <p style="font-size: 13px; line-height: 1.55;">No. Tutorials assume patience → swipe. <strong class="pink">The first failure is the tutorial</strong>. Sky Leap cut its charge-ring animation down to one shared finger icon.</p>
+  </div>
+  <div class="cell" style="padding: 18px 18px 22px;">
+    <span class="tag">Q5</span>
+    <h3 style="font-size: 16px; margin-bottom: 8px;">Mapping player feedback?</h3>
+    <p style="font-size: 12.5px; line-height: 1.6;">"<strong>too complex</strong>" → cut rules<br/>"<strong>social weak</strong>" → add verb + notify<br/>"<strong>can't watch this</strong>" → drop sticker face<br/>"<strong>no patience</strong>" → drop setup / tutorial<br/>"<strong>too flat</strong>" → add visceral hits</p>
+  </div>
+  <div class="cell" style="padding: 18px 18px 22px;">
+    <span class="tag">Q6</span>
+    <h3 style="font-size: 16px; margin-bottom: 8px;">AlterU vs Aigram?</h3>
+    <p style="font-size: 13px; line-height: 1.55;">AlterU = <strong class="pink">standalone new brand</strong> (US market, App Store). Aigram = the underlying tech infra (iframe bridge + API). <strong>Externally always say AlterU</strong>; Aigram only appears in the endpoint table.</p>
+  </div>
 </div>
     </div>
   </section>
@@ -227,11 +271,14 @@
   <div class="speaker-notes" id="speaker-notes">
     <h4><span data-only="zh">讲师备忘 · 按 S 关闭</span><span data-only="en">Speaker Notes · S to close</span></h4>
     <div data-only="zh">
-<p>最后一条最容易被忽略——用户实玩前不要算"上线成功"。
-讲完后让同学拿手机现场试一个游戏，体会"feed 里看到 vs 单页打开"的区别。</p>
+<p>这一节给学员"散场前确认"的机会。每个问题都是新人最常踩的疑虑。如果时间够，可以让每个 Q 让一两个学员说自己的理解，再给标准答案。</p>
+<p><strong>Q1 是平台简化后的关键消息</strong>——很多老 deck 还在讲 UUID / meta.json / 部署脚本，实际上平台已经把这些自动化了。设计师/产品<strong>只负责到"满意"为止</strong>，点发布即入库。所以用粉色描边突出这一格。</p>
+<p><strong>Q5 反馈语言模板</strong>是这套 deck 最实用的"日常工具"。建议同学保存进自己的 system prompt 模板，下次开 idea 时直接套。</p>
     </div>
     <div data-only="en">
-<p>The last gate is the easiest to skip — and the most critical. <strong>Don't call it "shipped" until real players have played.</strong> Try it live after this slide: have the room load their own game in feed and feel the difference between "single page" and "in the swipe."</p>
+<p>The wrap-up Q&A. Each question is something newcomers stumble on. If you have time, let one or two attendees take a crack at each Q before you give the canonical answer.</p>
+<p><strong>Q1 is the key updated message</strong> — older versions of this deck still walked people through UUID / meta.json / deploy scripts. The platform automated all of that. Designers and PMs <strong>are done at "happy"</strong>, then tap Publish. Q1 is pink-bordered for a reason.</p>
+<p><strong>Q5 is the most useful daily tool</strong> in the whole deck. Have students paste these mappings into their personal system-prompt template — next time an idea comes in, they can route by phrase.</p>
     </div>
   </div>
 

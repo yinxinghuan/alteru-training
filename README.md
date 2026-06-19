@@ -51,5 +51,5 @@
 - 36 · `36-agent-build-verify.html` — Part 6 · 跟 Agent · build → verify
 - 37 · `37-workflow.html` — Part 7 · 工作流时间轴
 - 38 · `38-social-musts.html` — Part 7 · 社交化必修 4 招
-- 39 · `39-ship-checklist.html` — Part 7 · 上线 checklist
+- 39 · `39-faq.html` — Part 7 · FAQ
 - 40 · `40-resources.html` — Resources
