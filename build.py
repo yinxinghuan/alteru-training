@@ -37,32 +37,32 @@ def add(slug, short, layout, body, notes="",
 # 00 — Cover
 # ═════════════════════════════════════════════════════════════════════
 add("cover", "Cover", "cover", """
-<span class="eyebrow"><span class="dot"></span>Internal Training · 2026 · 设计 + 产品向</span>
+<span class="eyebrow"><span class="dot"></span>The AlterU Playbook · 2026 · For makers</span>
 <h1 class="title">在 AlterU 上<br/>做一个 <em>游戏</em>。</h1>
 <p class="sub">
 半天,从"AlterU 到底是什么"到"明天就能动手做一个 demo"。
-不教代码——教<strong>你脑子里要装什么模型</strong>,做出来的东西才不会被划走。
+不讲代码——讲<strong>脑子里要装的模型</strong>,做出来的东西才不会被划走。
 </p>
-<p class="micro pink">↑↓ / ← → 翻页 · F 全屏 · S 讲师备忘 · M 菜单 · L 中/EN</p>
+<p class="micro pink">↑↓ / ← → 翻页 · F 全屏 · S 备忘 · M 菜单 · L 中/EN</p>
 """, """
-<p>开场 30 秒就把今天的目标说清楚:今天不学代码,学的是<strong>产品脑子里的模型</strong>。
-做完培训,希望大家能独立 elevator pitch 一款 AlterU 游戏,并知道哪些设计直觉是错的。</p>
-<p>提醒:这套 deck 半天讲完最舒服。每个 Part 末尾留 2-3 分钟问答。手机要带,到案例那部分直接打开真游戏演示。</p>
+<p>30 秒钉死目标:这是<strong>产品脑子里的模型</strong>,不是代码。
+读完应该能 elevator pitch 一款 AlterU 游戏,并知道哪些设计直觉是错的。</p>
+<p>这套 deck 半天读完最舒服。每个 Part 末尾留 2-3 分钟思考。配套游戏建议在手机上打开真机感受。</p>
 """,
 short_en="Cover",
 body_en="""
-<span class="eyebrow"><span class="dot"></span>Internal Training · 2026 · Designers + PMs</span>
+<span class="eyebrow"><span class="dot"></span>The AlterU Playbook · 2026 · For makers</span>
 <h1 class="title">Building a game<br/>on <em>AlterU</em>.</h1>
 <p class="sub">
 Half a day, from "what is AlterU really" to "I could ship a demo tomorrow."
-We're not teaching code — we're loading <strong>the mental model</strong>
+Not a code tutorial — a load of <strong>the mental model</strong>
 that keeps your game from getting swiped past.
 </p>
-<p class="micro pink">↑↓ / ← → navigate · F fullscreen · S speaker notes · M menu · L 中/EN</p>
+<p class="micro pink">↑↓ / ← → navigate · F fullscreen · S notes · M menu · L 中/EN</p>
 """,
 notes_en="""
-<p>Spend the first 30 seconds nailing the goal: today is not about code. It's about the <strong>product model in your head</strong>. By the end, everyone should be able to pitch an AlterU game in an elevator and know which design instincts are wrong here.</p>
-<p>Reminder: this deck is paced for ~3.5 hours. Leave 2-3 minutes of Q&A at the end of each Part. Bring your phone — when we hit the case-study slides, open the real games and let people swipe through them.</p>
+<p>Nail the goal in 30 seconds: this is <strong>the product model in your head</strong>, not code. By the end, you should be able to pitch an AlterU game in an elevator and know which design instincts are wrong here.</p>
+<p>This deck reads cleanly in ~3.5 hours. Leave 2-3 minutes after each Part to sit with it. Open the reference games on your phone when you hit the case-study slides — feel the swipe.</p>
 """)
 
 
@@ -1225,14 +1225,15 @@ add("faq", "Part 7 · FAQ", "matrix-2x2", """
   </div>
   <div class="cell" style="padding: 18px 18px 22px;">
     <span class="tag">Q6</span>
-    <h3 style="font-size: 16px; margin-bottom: 8px;">AlterU 和 Aigram 什么关系？</h3>
-    <p style="font-size: 13px; line-height: 1.55;">AlterU = <strong class="pink">独立新品牌</strong>（试美国市场，App Store 端）。Aigram = 底层技术 infra（iframe 桥 + API）。<strong>对外只说 AlterU</strong>，Aigram 只在 endpoint 表里出现。</p>
+    <h3 style="font-size: 16px; margin-bottom: 8px;">不会编程能做吗？</h3>
+    <p style="font-size: 13px; line-height: 1.55;">可以。AlterU 给 maker 两种<strong class="pink">零代码模式</strong>：<br/>① <strong>One sentence</strong> — 一句话描述,AI 补完美术 / 代码 / 声音 / 台词。<br/>② <strong>Remix</strong> — 从 feed 挑一个游戏,改规则 / 换世界,发布你的版本。</p>
   </div>
 </div>
 """, """
 <p>这一节给学员"散场前确认"的机会。每个问题都是新人最常踩的疑虑。如果时间够，可以让每个 Q 让一两个学员说自己的理解，再给标准答案。</p>
 <p><strong>Q1 是平台简化后的关键消息</strong>——很多老 deck 还在讲 UUID / meta.json / 部署脚本，实际上平台已经把这些自动化了。设计师/产品<strong>只负责到"满意"为止</strong>，点发布即入库。所以用粉色描边突出这一格。</p>
 <p><strong>Q5 反馈语言模板</strong>是这套 deck 最实用的"日常工具"。建议同学保存进自己的 system prompt 模板，下次开 idea 时直接套。</p>
+<p><strong>Q6 对应 landing 的 Makers 3-card</strong>（One sentence / Remix / Soon）。这是 maker 最大顾虑的问题——给他们"零门槛"心理安全感。如果讲师被问 "AlterU 和 Aigram 什么关系"：AlterU = 独立新品牌（试美国市场，App Store 端）；Aigram = 底层技术 infra（iframe 桥 + API）。对外只说 AlterU，Aigram 只在 endpoint 表里出现。这个不放进幻灯片，对外 maker 不需要知道。</p>
 """)
 
 
@@ -1446,7 +1447,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   </section>
 
   <div class="speaker-notes" id="speaker-notes">
-    <h4><span data-only="zh">讲师备忘 · 按 S 关闭</span><span data-only="en">Speaker Notes · S to close</span></h4>
+    <h4><span data-only="zh">备忘 · 按 S 关闭</span><span data-only="en">Notes · S to close</span></h4>
     <div data-only="zh">
 {notes}
     </div>

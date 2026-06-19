@@ -1132,8 +1132,8 @@ Make the agent <strong class="pink">verify itself</strong>.
   </div>
   <div class="cell" style="padding: 18px 18px 22px;">
     <span class="tag">Q6</span>
-    <h3 style="font-size: 16px; margin-bottom: 8px;">AlterU vs Aigram?</h3>
-    <p style="font-size: 13px; line-height: 1.55;">AlterU = <strong class="pink">standalone new brand</strong> (US market, App Store). Aigram = the underlying tech infra (iframe bridge + API). <strong>Externally always say AlterU</strong>; Aigram only appears in the endpoint table.</p>
+    <h3 style="font-size: 16px; margin-bottom: 8px;">Can I build without coding?</h3>
+    <p style="font-size: 13px; line-height: 1.55;">Yes. AlterU gives makers two <strong class="pink">zero-code modes</strong>:<br/>① <strong>One sentence</strong> — describe the game in one line, AI fills in art / code / sound / voice.<br/>② <strong>Remix</strong> — pick a game from the feed, twist the rules, swap the world, ship your version.</p>
   </div>
 </div>
 """,
@@ -1141,6 +1141,7 @@ Make the agent <strong class="pink">verify itself</strong>.
 <p>The wrap-up Q&A. Each question is something newcomers stumble on. If you have time, let one or two attendees take a crack at each Q before you give the canonical answer.</p>
 <p><strong>Q1 is the key updated message</strong> — older versions of this deck still walked people through UUID / meta.json / deploy scripts. The platform automated all of that. Designers and PMs <strong>are done at "happy"</strong>, then tap Publish. Q1 is pink-bordered for a reason.</p>
 <p><strong>Q5 is the most useful daily tool</strong> in the whole deck. Have students paste these mappings into their personal system-prompt template — next time an idea comes in, they can route by phrase.</p>
+<p><strong>Q6 lines up with the landing Makers 3-card</strong> (One sentence / Remix / Soon). This is the question that gives makers the "no barrier" psychological green light. If anyone asks "what's the relationship between AlterU and Aigram": AlterU = standalone new brand (US market, App Store). Aigram = underlying tech infra (iframe bridge + API). Externally always say AlterU; Aigram only shows up in the endpoint table. Don't put this on the slide — outside makers don't need to know.</p>
 """,
 },
 
