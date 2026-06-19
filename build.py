@@ -1720,11 +1720,12 @@ def make_outline_parts_html():
     return "\n".join(blocks)
 
 
-def main(mode="external"):
-    """mode = 'external' (default, polished for makers) or 'internal' (trainer
-    edition with explicit 'speaker notes' label). The two modes share the same
-    SLIDES content; only the notes-label chrome differs. Internal mode is
-    emitted into ./internal/ so both versions can be served side-by-side."""
+def main(mode="external", out_root=None):
+    """mode = 'external' (public maker edition) or 'internal' (trainer edition).
+    out_root = absolute path to write into. Defaults:
+       external → /Users/yin/code/alteru-landing/learn  (serves alteru.app/learn/)
+       internal → /Users/yin/alteru-training           (serves yinxinghuan.github.io/alteru-training/)
+    Both editions share the same SLIDES content; only the notes-label chrome differs."""
     # Patch SLIDES with English translations from translations.py
     try:
         import translations
@@ -1732,8 +1733,10 @@ def main(mode="external"):
     except Exception as e:
         print(f"[warn] translations.apply failed: {e}")
 
-    base = Path("/Users/yin/alteru-training")
-    out_dir = base if mode == "external" else (base / "internal")
+    if out_root is None:
+        out_root = ("/Users/yin/code/alteru-landing/learn" if mode == "external"
+                    else "/Users/yin/alteru-training")
+    out_dir = Path(out_root)
     out_dir.mkdir(parents=True, exist_ok=True)
     T = len(SLIDES)
 
@@ -1802,12 +1805,6 @@ def main(mode="external"):
                 page,
             )
 
-        if mode == "internal":
-            page = (page
-                    .replace('href="_shared.css"', 'href="../_shared.css"')
-                    .replace('src="assets/', 'src="../assets/')
-                    .replace('href="assets/', 'href="../assets/'))
-
         fname = filename(idx)
         (out_dir / fname).write_text(page, encoding="utf-8")
         numbered = f"{idx:02d}-{slide['slug']}.html"
@@ -1819,13 +1816,20 @@ def main(mode="external"):
         TOTAL=T,
         parts_html=make_outline_parts_html(),
     )
-    if mode == "internal":
-        outline_html = (outline_html
-                        .replace('href="_shared.css"', 'href="../_shared.css"')
-                        .replace('src="assets/', 'src="../assets/')
-                        .replace('href="assets/', 'href="../assets/')
-                        .replace('href="index.html"', 'href="index.html"'))  # stay in /internal/
     (out_dir / "outline.html").write_text(outline_html, encoding="utf-8")
+
+    # Sync supporting assets (CSS + images) when writing to a non-source repo.
+    src_root = Path("/Users/yin/alteru-training")
+    if out_dir.resolve() != src_root.resolve():
+        # Copy _shared.css
+        shutil.copy2(src_root / "_shared.css", out_dir / "_shared.css")
+        # Copy assets/ tree (sync, deleting orphans)
+        dst_assets = out_dir / "assets"
+        if dst_assets.exists():
+            shutil.rmtree(dst_assets)
+        shutil.copytree(src_root / "assets", dst_assets)
+        # .nojekyll so Jekyll doesn't hide _shared.css on GitHub Pages
+        (out_dir / ".nojekyll").touch()
 
     # README
     nav_md = ["# AlterU Training Slides\n",
@@ -1847,5 +1851,10 @@ def main(mode="external"):
 
 
 if __name__ == "__main__":
-    main(mode="external")
-    main(mode="internal")
+    # Internal/trainer edition → alteru-training repo root.
+    # Lives at yinxinghuan.github.io/alteru-training/
+    main(mode="internal", out_root="/Users/yin/alteru-training")
+
+    # External/public maker edition → alteru-landing/learn/.
+    # Lives at alteru.app/learn/ (same GH Pages site as the landing page).
+    main(mode="external", out_root="/Users/yin/code/alteru-landing/learn")
