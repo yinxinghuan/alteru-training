@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/svg+xml" href="assets/brand/alteru.svg" />
+  <title>35/35 · Resources · AlterU Training</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="_shared.css" />
+</head>
+<body>
+  <div class="slide-progress"><div class="fill" style="width: 100.00%"></div></div>
+
+  <div class="brand-strip">
+    <img src="assets/brand/alteru.svg" alt="AlterU"/>
+    <span class="brand-name">AlterU</span>
+    <span class="brand-sep"></span>
+    <span class="brand-context">Resources</span>
+  </div>
+
+  <section class="slide split">
+<div class="col-text">
+  <span class="eyebrow"><span class="dot"></span>End · Q&A + 资源</span>
+  <h1 class="title">3 句话<br/><em>带走</em>。</h1>
+  <ul class="bullets" style="font-size: 18px;">
+    <li><strong>AlterU = identity-driven feed</strong> · 不是又一个 mini-game 集合。每个新 idea 先过 4 层判断。</li>
+    <li><strong>AI 不是 spinner，是玩法</strong> · gen-image 5-8s 等待要变成显影 / 显形 / 拆封的仪式。</li>
+    <li><strong>day-one 烤进社交化</strong> · Score-beat / Feed-needs-a-verb / Cross-user wall / Notify 不能上线后补。</li>
+  </ul>
+  <p class="sub" style="margin-top: 32px;"><strong>课后练习</strong>：挑一个你感兴趣的 idea，按 Slide 17 的 4 层模型 elevator 试一遍——身份钩在哪？内容怎么 AI-native？社交动词？范式？</p>
+  <p class="micro" style="margin-top: 24px;">Resources · alteru.app · RUNTIME.md · 30+ 标杆游戏源码 · Q&A 现在开始</p>
+</div>
+<div class="col-visual">
+  <img src="assets/worlds/hero-vista.png" alt="Hero vista"/>
+</div>
+  </section>
+
+  <div class="speaker-notes" id="speaker-notes">
+    <h4>讲师备忘 · 按 S 关闭</h4>
+<p>散场前 5 分钟，让同学把这 3 句默念一遍。然后留 30 分钟问答 + 现场 elevator 练习（让 2-3 个同学说自己的 idea 走 4 层判断）。</p>
+<p>课后建议同学挑 2 个标杆游戏完整玩 30 分钟（推荐：Kiss Wall + Hour Capsule，覆盖最多深度点）。</p>
+  </div>
+
+  <div class="slide-page-tag">35 / 35</div>
+
+  <div class="slide-nav">
+    <a class="prev " href="33-ship-checklist.html">← Prev</a>
+    <a class="next disabled" href="">Next →</a>
+  </div>
+
+  <script>
+    (function(){
+      const PREV = "33-ship-checklist.html";
+      const NEXT = "";
+      const FIRST = "index.html";
+      const LAST = "34-resources.html";
+
+      document.addEventListener('keydown', (e) => {
+        if (e.metaKey || e.ctrlKey || e.altKey) return;
+        if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown' || e.key === 'ArrowDown') {
+          if (NEXT) location.href = NEXT;
+        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp' || e.key === 'ArrowUp') {
+          if (PREV) location.href = PREV;
+        } else if (e.key === 's' || e.key === 'S') {
+          document.getElementById('speaker-notes').classList.toggle('visible');
+        } else if (e.key === 'f' || e.key === 'F') {
+          if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+          else document.exitFullscreen();
+        } else if (e.key === 'Home') {
+          location.href = FIRST;
+        } else if (e.key === 'End') {
+          location.href = LAST;
+        } else if (e.key >= '0' && e.key <= '9') {
+          /* type a number then enter — simple jump (not implemented) */
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

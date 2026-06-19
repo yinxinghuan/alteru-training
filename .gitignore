@@ -1,0 +1,5 @@
+.DS_Store
+_qa/
+_qa-gen.log
+*.pyc
+__pycache__/
