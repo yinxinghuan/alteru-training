@@ -238,7 +238,7 @@ TR = {
   </p>
 </div>
 <div class="col-visual">
-  <img src="assets/extra/hold-it-together.png" alt="Hold It Together v2"/>
+  <img src="assets/gen/fake-identity.jpg" alt="A 'fake identity' smiley-face sticker peeling off an immersive 3D game scene — the world clearly continues past the sticker as if it doesn't belong" style="max-height: 75vh; max-width: 100%; aspect-ratio: 1/1; width: auto; height: auto; object-fit: cover; border-radius: 18px;"/>
 </div>
 """,
     "notes": """
