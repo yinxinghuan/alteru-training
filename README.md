@@ -1,5 +1,5 @@
 # AlterU Training Slides
-**41 张 slide · 半天 3.5 小时**
+**44 张 slide · 半天 3.5 小时**
 
 ## 入口
 - `index.html` — 演讲入口（cover）
@@ -52,4 +52,7 @@
 - 37 · `37-workflow.html` — Part 7 · 工作流时间轴
 - 38 · `38-social-musts.html` — Part 7 · 社交化必修 4 招
 - 39 · `39-faq.html` — Part 7 · FAQ
-- 40 · `40-resources.html` — Resources
+- 40 · `40-template-concept.html` — Part 8 · 一句话做游戏
+- 41 · `41-template-engines.html` — Part 8 · 三类引擎
+- 42 · `42-template-howto.html` — Part 8 · 如何生成
+- 43 · `43-resources.html` — Resources

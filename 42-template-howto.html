@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/svg+xml" href="assets/brand/alteru-favicon.svg" />
-  <title>14/44 · Part 3 · gen-image · AlterU Training</title>
+  <title>43/44 · Part 8 · 如何生成 · AlterU Training</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="_shared.css" />
-  <link rel="prefetch" href="14-vision.html" as="document">
-  <link rel="prefetch" href="12-platform-overview.html" as="document">
+  <link rel="prefetch" href="43-resources.html" as="document">
+  <link rel="prefetch" href="41-template-engines.html" as="document">
   <script>
     /* Apply lang BEFORE first paint to avoid flicker.
        Priority: URL ?lang=en|zh > localStorage > default zh.
@@ -32,7 +32,7 @@
   </script>
 </head>
 <body>
-  <div class="slide-progress"><div class="fill" style="width: 31.82%"></div></div>
+  <div class="slide-progress"><div class="fill" style="width: 97.73%"></div></div>
 
   <div class="brand-strip">
     <a class="brand-home" href="index.html" title="Back to cover">
@@ -41,8 +41,8 @@
     </a>
     <span class="brand-sep"></span>
     <span class="brand-context">
-      <span data-only="zh">Part 3 · gen-image</span>
-      <span data-only="en">Part 3 · gen-image</span>
+      <span data-only="zh">Part 8 · 如何生成</span>
+      <span data-only="en">Part 8 · How to Generate</span>
     </span>
   </div>
 
@@ -84,7 +84,7 @@
 <div class="menu-section">
 <div class="menu-section-title">Part 3 · 平台能力</div>
 <a class="menu-item" href="12-platform-overview.html"><span class="menu-num">12</span><span>Part 3 · 平台能力</span></a>
-<a class="menu-item current" href="13-gen-image.html"><span class="menu-num">13</span><span>Part 3 · gen-image</span></a>
+<a class="menu-item" href="13-gen-image.html"><span class="menu-num">13</span><span>Part 3 · gen-image</span></a>
 <a class="menu-item" href="14-vision.html"><span class="menu-num">14</span><span>Part 3 · Vision</span></a>
 <a class="menu-item" href="15-llm.html"><span class="menu-num">15</span><span>Part 3 · LLM</span></a>
 <a class="menu-item" href="16-data-primitives.html"><span class="menu-num">16</span><span>Part 3 · 数据原语</span></a>
@@ -128,7 +128,7 @@
 <div class="menu-section-title">Part 8 · Game Template Line</div>
 <a class="menu-item" href="40-template-concept.html"><span class="menu-num">40</span><span>Part 8 · 一句话做游戏</span></a>
 <a class="menu-item" href="41-template-engines.html"><span class="menu-num">41</span><span>Part 8 · 三类引擎</span></a>
-<a class="menu-item" href="42-template-howto.html"><span class="menu-num">42</span><span>Part 8 · 如何生成</span></a>
+<a class="menu-item current" href="42-template-howto.html"><span class="menu-num">42</span><span>Part 8 · 如何生成</span></a>
 </div>
 <div class="menu-section">
 <div class="menu-section-title">结尾</div>
@@ -160,7 +160,7 @@
 <div class="menu-section">
 <div class="menu-section-title">Part 3 · Platform Capabilities</div>
 <a class="menu-item" href="12-platform-overview.html"><span class="menu-num">12</span><span>Part 3 · Platform Capabilities</span></a>
-<a class="menu-item current" href="13-gen-image.html"><span class="menu-num">13</span><span>Part 3 · gen-image</span></a>
+<a class="menu-item" href="13-gen-image.html"><span class="menu-num">13</span><span>Part 3 · gen-image</span></a>
 <a class="menu-item" href="14-vision.html"><span class="menu-num">14</span><span>Part 3 · Vision</span></a>
 <a class="menu-item" href="15-llm.html"><span class="menu-num">15</span><span>Part 3 · LLM</span></a>
 <a class="menu-item" href="16-data-primitives.html"><span class="menu-num">16</span><span>Part 3 · Data Primitives</span></a>
@@ -204,7 +204,7 @@
 <div class="menu-section-title">Part 8 · Game Template Line</div>
 <a class="menu-item" href="40-template-concept.html"><span class="menu-num">40</span><span>Part 8 · One Sentence = Game</span></a>
 <a class="menu-item" href="41-template-engines.html"><span class="menu-num">41</span><span>Part 8 · Three Engine Types</span></a>
-<a class="menu-item" href="42-template-howto.html"><span class="menu-num">42</span><span>Part 8 · How to Generate</span></a>
+<a class="menu-item current" href="42-template-howto.html"><span class="menu-num">42</span><span>Part 8 · How to Generate</span></a>
 </div>
 <div class="menu-section">
 <div class="menu-section-title">Resources</div>
@@ -219,39 +219,65 @@
   </aside>
 
 
-  <section class="slide split">
+  <section class="slide split flip">
     <div data-only="zh">
-<div class="col-text">
-  <span class="eyebrow"><span class="dot"></span>能力 · gen-image</span>
-  <h2 class="title">文生图 / 图生图<br/>≈ <em>5-8s</em>。</h2>
-  <ul class="bullets">
-    <li><strong>txt2img</strong>：给文字 prompt → 一张 1:1 图</li>
-    <li><strong>img2img</strong>：给参考图 + 文字 → 风格化变体（这是身份钩 ① 的引擎）</li>
-    <li><strong>烧字不稳</strong>：SD 渲染文字精度差 · 别在 prompt 里依赖文字精确出现</li>
-    <li><span class="danger">⚠️ 测 plate prompt <strong>必须带 ref_url</strong></span> · 只测 txt2img 看似好，加 ref_url 后玩家原照被拼进画面（Fit Check 教训）</li>
-    <li><strong>烧字进画面</strong>是 AlterU 标志做法 · Hour Capsule 烧 <code>@user #00042</code>、Pulp Hour 烧封面文案</li>
-  </ul>
-  <p class="micro pink" style="margin-top: 24px;">5-8s 等待是 <strong>玩法机会</strong>，不是 loading 凑合 — 见 Part 4 范式 6</p>
-</div>
 <div class="col-visual">
-  <img loading="lazy" decoding="async" src="assets/posters/hour-capsule.png" alt="Hour Capsule (gen-image showcase)"/>
+  <div class="callout" style="padding:1.5em">
+    <code style="font-size:0.9em;line-height:1.7">
+$ <strong>npx tsx scripts/gen-cartridge.ts</strong> \<br>
+&nbsp;&nbsp;<strong>--sentence</strong> "a cat surviving robot vacuums" \<br>
+&nbsp;&nbsp;<strong>--sprites</strong><br><br>
+→ LLM 出 CartridgeSpec JSON<br>
+→ txt2img × 6 出敌人 sprite<br>
+→ 上传 R2 永久存储<br>
+→ 写入 cartridge/gen-cat-vacuum.ts<br>
+→ swap index.ts → <strong>npm run build</strong><br>
+→ 🎮 FUR FLOOD 可玩
+    </code>
+  </div>
+  <p style="text-align:center;color:var(--ink-mid);margin-top:1em">从一句话到可玩游戏，<strong>全自动 ~60 秒</strong></p>
+</div>
+<div class="col-text">
+  <span class="eyebrow"><span class="dot"></span>Part 8 · 如何使用</span>
+  <h2>一条命令，<br>一个游戏</h2>
+  <p>Generator 封装了整个流程：</p>
+  <ol>
+    <li><strong>LLM 拼 prompt</strong>——7 段 system prompt 教 LLM 产出合法 CartridgeSpec（schema/枚举/palette 指南/完整范例）</li>
+    <li><strong>JSON 提取+校验</strong>——4 层回退策略 + <code>validateSpec()</code>，不合法自动重试带错误纠正</li>
+    <li><strong>（可选）gen-image sprite</strong>——6 种敌人各调 txt2img 出图→R2 上传→引擎 billboard 渲染</li>
+    <li><strong>swap + build</strong>——改 cartrdge/index.ts 一行 → 新游戏</li>
+  </ol>
+  <p>当前可选：<code>--sprites</code>（gen-image 出敌人 sprite）、<code>--dry-run</code>（预览）、<code>--retries N</code></p>
 </div>
     </div>
     <div data-only="en">
-<div class="col-text">
-  <span class="eyebrow"><span class="dot"></span>Capability · gen-image</span>
-  <h2 class="title">Text or image in,<br/>picture out in <em>5-8s</em>.</h2>
-  <ul class="bullets">
-    <li><strong>txt2img</strong>: prompt → one 1:1 image</li>
-    <li><strong>img2img</strong>: ref image + prompt → restyled variant (the engine for hook ①)</li>
-    <li><strong>Burn-in is unreliable</strong>: SD can't render text crisply — never depend on the prompt to spell anything correctly</li>
-    <li><span class="danger">⚠️ Test every plate <strong>with ref_url</strong></span> · txt2img-only tests can pass while img2img stitches the player's photo straight into the frame (Fit Check lesson)</li>
-    <li><strong>Baking text into the picture</strong> is an AlterU signature — Hour Capsule <code>@user #00042</code>, Pulp Hour cover lines, Build-a-Boyfriend tier tags</li>
-  </ul>
-  <p class="micro pink" style="margin-top: 24px;">The 5-8s wait is a <strong>play opportunity</strong>, not a loading state — see paradigm 6.</p>
-</div>
 <div class="col-visual">
-  <img loading="lazy" decoding="async" src="assets/posters/hour-capsule.png" alt="Hour Capsule (gen-image showcase)"/>
+  <div class="callout" style="padding:1.5em">
+    <code style="font-size:0.9em;line-height:1.7">
+$ <strong>npx tsx scripts/gen-cartridge.ts</strong> \<br>
+&nbsp;&nbsp;<strong>--sentence</strong> "a cat surviving robot vacuums" \<br>
+&nbsp;&nbsp;<strong>--sprites</strong><br><br>
+→ LLM outputs CartridgeSpec JSON<br>
+→ txt2img × 6 for enemy sprites<br>
+→ Upload to R2 for permanent storage<br>
+→ Write cartridge/gen-cat-vacuum.ts<br>
+→ Swap index.ts → <strong>npm run build</strong><br>
+→ 🎮 FUR FLOOD is playable
+    </code>
+  </div>
+  <p style="text-align:center;color:var(--ink-mid);margin-top:1em">One sentence → playable game, <strong>fully automatic ~60 seconds</strong></p>
+</div>
+<div class="col-text">
+  <span class="eyebrow"><span class="dot"></span>Part 8 · How to Use</span>
+  <h2>One command,<br>one game</h2>
+  <p>The generator packages the entire pipeline:</p>
+  <ol>
+    <li><strong>LLM prompt assembly</strong> — 7-section system prompt teaches the LLM to output valid CartridgeSpec (schema/enums/palette guide/worked example)</li>
+    <li><strong>JSON extraction + validation</strong> — 4 fallback strategies + <code>validateSpec()</code>, auto-retry with error feedback</li>
+    <li><strong>(Optional) gen-image sprites</strong> — txt2img for 6 enemy types → R2 upload → engine billboard rendering</li>
+    <li><strong>Swap + build</strong> — change one line in cartridge/index.ts → new game</li>
+  </ol>
+  <p>Flags: <code>--sprites</code> (gen-image enemy art), <code>--dry-run</code> (preview), <code>--retries N</code></p>
 </div>
     </div>
   </section>
@@ -259,30 +285,29 @@
   <div class="speaker-notes" id="speaker-notes">
     <h4><span data-only="zh">讲师备忘 · 按 S 关闭</span><span data-only="en">Speaker Notes · S to close</span></h4>
     <div data-only="zh">
-<p>反复强调：<strong>5-8 秒是"用户体验"的关键时间窗</strong>，不是工程参数。当作 loading 处理 → 用户划走；当作玩法 → 用户多停 5 秒。Kiss Wall / Hour Capsule 都把这段时间做成了"显影"仪式。</p>
-<p>另一个深度点：<strong>烧字进画面 = identity 钩 ②（作品钩）的最简实现</strong>。任何"我的作品"都可以靠烧字升级到"有我标识的作品"。</p>
+<p>演示实际 CLI 用法。强调全自动——不用碰代码。提一下 --sprites 标志的代价（~60s vs ~10s），让学员理解 trade-off。</p>
+<p>如果讲师有时间，可以现场演示一次 gen-cartridge --sentence "something silly" --dry-run 看 LLM 现场产出 JSON。</p>
     </div>
     <div data-only="en">
-<p>Drill the point: <strong>5-8 seconds is a UX window, not an engineering parameter</strong>. Treated as loading → user swipes. Treated as play → user lingers another 5s. Kiss Wall and Hour Capsule both turn it into a develop ritual.</p>
-<p>Deeper note: <strong>baked text = the simplest implementation of identity hook ② (artifact)</strong>. Any "thing you made" can be upgraded to "a thing with your stamp on it" by burning in a username + index.</p>
+Demo the actual CLI. Emphasize it's fully automatic — no code needed. Mention --sprites trade-off (~60s vs ~10s). If time permits, live-demo gen-cartridge --sentence "something silly" --dry-run to show LLM producing JSON in real time.
     </div>
   </div>
 
-  <div class="slide-page-tag">14 / 44</div>
+  <div class="slide-page-tag">43 / 44</div>
 
   <div class="slide-nav">
-    <a class="prev " href="12-platform-overview.html">
+    <a class="prev " href="41-template-engines.html">
       <span data-only="zh">← 上页</span><span data-only="en">← Prev</span>
     </a>
-    <a class="next " href="14-vision.html">
+    <a class="next " href="43-resources.html">
       <span data-only="zh">下页 →</span><span data-only="en">Next →</span>
     </a>
   </div>
 
   <script>
     (function(){
-      const PREV = "12-platform-overview.html";
-      const NEXT = "14-vision.html";
+      const PREV = "41-template-engines.html";
+      const NEXT = "43-resources.html";
       const FIRST = "index.html";
       const LAST = "43-resources.html";
 

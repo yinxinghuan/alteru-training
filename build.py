@@ -1238,6 +1238,162 @@ add("faq", "Part 7 · FAQ", "matrix-2x2", """
 
 
 # ═════════════════════════════════════════════════════════════════════
+# Part 8 — Game Template Line（Engine / Cartridge）
+# ═════════════════════════════════════════════════════════════════════
+
+add("template-concept", "Part 8 · 一句话做游戏", "split", """
+<div class="col-text">
+  <span class="eyebrow"><span class="dot"></span>Part 8 · Game Template Line</span>
+  <h2>一句话/一张照片<br>出一个有质感的游戏</h2>
+  <p><strong>痛点：</strong>平台普通用户做不出能玩的游戏。不是缺想法，是缺质感——juice、首屏即玩、UI、排行榜、社交通知……这些层门槛太高。</p>
+  <p><strong>解法：锁死质感 = 做不烂。</strong></p>
+  <div class="callout">
+    <code style="font-size:1.1em">一句话/一张照片 → Cartridge（卡带 JSON）→ 注入锁死 Engine → 可玩游戏</code>
+  </div>
+  <p><strong>Engine（引擎）</strong>——我们造，用户碰不到。<br>永远自带：juice / instant-play / 排行榜 / 留言 / 通知。</p>
+  <p><strong>Cartridge（卡带）</strong>——用户的一句话生成。<br>只含主题：敌人叫什么、长什么样、什么颜色、什么文案。<br><span class="callout">任何会改变"游戏多难"的字段都不准进卡带 → 做不烂。</span></p>
+</div>
+<div class="col-visual">
+  <img src="assets/posters/block-party.png" alt="Block Party" style="max-height:50vh" />
+  <p style="text-align:center;color:var(--ink-mid);margin-top:0.8em">Engine #1：Block Party<br>→ 猫 vs 扫地机器人（换一份卡带 JSON）</p>
+</div>
+""", """
+<p>先给学员看痛点数据。平台 100+ 游戏但多数是 Tier1 纯 HTML——根本没质感。然后引出核心洞察：质感不在玩法复杂度，而在 juice/UI/社交那几层，而这几层我们已经一条条沉淀成了 skill。</p>
+<p>Engine/Cartridge 类比红白机：机器永远不变，插不同卡带玩不同游戏。关键设计：卡带不含任何游戏难度字段——HP/速度/碰撞全锁在引擎里。</p>
+""",
+short_en="Part 8 · One Sentence = Game",
+body_en="""<div class="col-text">
+  <span class="eyebrow"><span class="dot"></span>Part 8 · Game Template Line</span>
+  <h2>One sentence. One photo.<br>A quality game comes out.</h2>
+  <p><strong>The pain point:</strong> Regular users on the platform can't make playable games. Not a lack of ideas — a lack of quality. Juice, instant-play, UI, leaderboards, social notifications... the barrier is too high.</p>
+  <p><strong>The fix: lock quality so they can't break it.</strong></p>
+  <div class="callout">
+    <code style="font-size:1.1em">One sentence → Cartridge (JSON) → locked Engine → playable game</code>
+  </div>
+  <p><strong>Engine</strong> — We build it. Users can't touch it.<br>Always includes: juice / instant-play / leaderboard / guestbook / notify.</p>
+  <p><strong>Cartridge</strong> — Generated from the user's one sentence.<br>Theme only: enemy names, visuals, colors, copy.<br><span class="callout">Nothing that changes difficulty can enter the cartridge → they can't break it.</span></p>
+</div>
+<div class="col-visual">
+  <img src="assets/posters/block-party.png" alt="Block Party" style="max-height:50vh" />
+  <p style="text-align:center;color:var(--ink-mid);margin-top:0.8em">Engine #1: Block Party<br>→ Cat vs Robot Vacuums (swap one cartridge JSON)</p>
+</div>""",
+notes_en="""Start with the pain point. 100+ games on the platform, most Tier1 bare HTML — no quality. The insight: quality isn't gameplay complexity, it's juice/UI/social layers. We've already codified those into skills. Engine/Cartridge = NES analogy: machine never changes, different cartridge = different game. Critical design: cartridge can't contain difficulty fields.""")
+
+add("template-engines", "Part 8 · 三类引擎", "matrix-2x2", """
+<span class="eyebrow"><span class="dot"></span>Part 8 · 三类引擎模板</span>
+<h2>三种引擎，覆盖三种玩法类型</h2>
+<div class="tile">
+  <h3>🎮 Engine #1 · 俯视街机</h3>
+  <p><strong>Block Party</strong> — 自动开火生存。最可 reskin，一句话+一张脸都能驱动。Cartridge 是纯 JSON。</p>
+  <p><small>已完成：cartridge + generator + sprite 管线 + skill</small></p>
+</div>
+<div class="tile">
+  <h3>⏱ Engine #2 · 3D Timing</h3>
+  <p><strong>Corporate Climb / Sky Leap</strong> — 蓄力跳跃 / 点击爬塔。质感天花板最高。Cartridge 管视觉氛围。</p>
+  <p><small>已完成：shared engine + Corp Climb cartridge（office / firefighter）</small></p>
+</div>
+<div class="tile">
+  <h3>🪞 Engine #4 · 身份变形</h3>
+  <p><strong>Past Life / Future Life</strong> — 照片→AI 画像+故事。最契合 AlterU "your AI self becomes the protagonist"。</p>
+  <p><small>已完成：past-life / future-life 双卡带</small></p>
+</div>
+<div class="tile callout">
+  <h3>🔮 将来</h3>
+  <p>引擎库持续扩充。每加一种引擎 = 一种"玩法类型"可批量产。generator 从一句话自动选最合适的引擎。</p>
+</div>
+""", """
+<p>三类引擎是用户拍板的（1=俯视街机、2=3D timing、4=身份变形，3=Suika 暂缓）。讲每类的区别：输入方式不同（照片→主角 vs 一句话→世界）、输出不同（action game vs toy）、已有什么。</p>
+""",
+short_en="Part 8 · Three Engine Types",
+body_en="""<span class="eyebrow"><span class="dot"></span>Part 8 · Three Engine Types</span>
+<h2>Three engines, three play styles</h2>
+<div class="tile">
+  <h3>🎮 Engine #1 · Top-Down Arcade</h3>
+  <p><strong>Block Party</strong> — Auto-fire survival. Most reskinnable. Cartridge is pure JSON.</p>
+  <p><small>Done: cartridge + generator + sprite pipeline + skill</small></p>
+</div>
+<div class="tile">
+  <h3>⏱ Engine #2 · 3D Timing</h3>
+  <p><strong>Corporate Climb / Sky Leap</strong> — Charge-jump / tap-climb. Highest visual ceiling. Cartridge controls atmosphere.</p>
+  <p><small>Done: shared engine + Corp Climb dual-cartridge (office / firefighter)</small></p>
+</div>
+<div class="tile">
+  <h3>🪞 Engine #4 · Identity Transform</h3>
+  <p><strong>Past Life / Future Life</strong> — Photo → AI portrait + story. Most on-brand for AlterU.</p>
+  <p><small>Done: past-life / future-life dual cartridge</small></p>
+</div>
+<div class="tile callout">
+  <h3>🔮 Coming Soon</h3>
+  <p>Engine library grows. Each new engine = a new play-style that can be mass-produced. The generator picks the right engine automatically.</p>
+</div>""",
+notes_en="""Three engine types the user chose (1=arcade, 2=3D timing, 4=identity transform, 3=Suika deferred). Explain the difference: input (photo→hero vs sentence→world), output (action game vs toy), what's done.""")
+
+add("template-howto", "Part 8 · 如何生成", "split flip", """
+<div class="col-visual">
+  <div class="callout" style="padding:1.5em">
+    <code style="font-size:0.9em;line-height:1.7">
+$ <strong>npx tsx scripts/gen-cartridge.ts</strong> \\<br>
+&nbsp;&nbsp;<strong>--sentence</strong> "a cat surviving robot vacuums" \\<br>
+&nbsp;&nbsp;<strong>--sprites</strong><br><br>
+→ LLM 出 CartridgeSpec JSON<br>
+→ txt2img × 6 出敌人 sprite<br>
+→ 上传 R2 永久存储<br>
+→ 写入 cartridge/gen-cat-vacuum.ts<br>
+→ swap index.ts → <strong>npm run build</strong><br>
+→ 🎮 FUR FLOOD 可玩
+    </code>
+  </div>
+  <p style="text-align:center;color:var(--ink-mid);margin-top:1em">从一句话到可玩游戏，<strong>全自动 ~60 秒</strong></p>
+</div>
+<div class="col-text">
+  <span class="eyebrow"><span class="dot"></span>Part 8 · 如何使用</span>
+  <h2>一条命令，<br>一个游戏</h2>
+  <p>Generator 封装了整个流程：</p>
+  <ol>
+    <li><strong>LLM 拼 prompt</strong>——7 段 system prompt 教 LLM 产出合法 CartridgeSpec（schema/枚举/palette 指南/完整范例）</li>
+    <li><strong>JSON 提取+校验</strong>——4 层回退策略 + <code>validateSpec()</code>，不合法自动重试带错误纠正</li>
+    <li><strong>（可选）gen-image sprite</strong>——6 种敌人各调 txt2img 出图→R2 上传→引擎 billboard 渲染</li>
+    <li><strong>swap + build</strong>——改 cartrdge/index.ts 一行 → 新游戏</li>
+  </ol>
+  <p>当前可选：<code>--sprites</code>（gen-image 出敌人 sprite）、<code>--dry-run</code>（预览）、<code>--retries N</code></p>
+</div>
+""", """
+<p>演示实际 CLI 用法。强调全自动——不用碰代码。提一下 --sprites 标志的代价（~60s vs ~10s），让学员理解 trade-off。</p>
+<p>如果讲师有时间，可以现场演示一次 gen-cartridge --sentence "something silly" --dry-run 看 LLM 现场产出 JSON。</p>
+""",
+short_en="Part 8 · How to Generate",
+body_en="""<div class="col-visual">
+  <div class="callout" style="padding:1.5em">
+    <code style="font-size:0.9em;line-height:1.7">
+$ <strong>npx tsx scripts/gen-cartridge.ts</strong> \\<br>
+&nbsp;&nbsp;<strong>--sentence</strong> "a cat surviving robot vacuums" \\<br>
+&nbsp;&nbsp;<strong>--sprites</strong><br><br>
+→ LLM outputs CartridgeSpec JSON<br>
+→ txt2img × 6 for enemy sprites<br>
+→ Upload to R2 for permanent storage<br>
+→ Write cartridge/gen-cat-vacuum.ts<br>
+→ Swap index.ts → <strong>npm run build</strong><br>
+→ 🎮 FUR FLOOD is playable
+    </code>
+  </div>
+  <p style="text-align:center;color:var(--ink-mid);margin-top:1em">One sentence → playable game, <strong>fully automatic ~60 seconds</strong></p>
+</div>
+<div class="col-text">
+  <span class="eyebrow"><span class="dot"></span>Part 8 · How to Use</span>
+  <h2>One command,<br>one game</h2>
+  <p>The generator packages the entire pipeline:</p>
+  <ol>
+    <li><strong>LLM prompt assembly</strong> — 7-section system prompt teaches the LLM to output valid CartridgeSpec (schema/enums/palette guide/worked example)</li>
+    <li><strong>JSON extraction + validation</strong> — 4 fallback strategies + <code>validateSpec()</code>, auto-retry with error feedback</li>
+    <li><strong>(Optional) gen-image sprites</strong> — txt2img for 6 enemy types → R2 upload → engine billboard rendering</li>
+    <li><strong>Swap + build</strong> — change one line in cartridge/index.ts → new game</li>
+  </ol>
+  <p>Flags: <code>--sprites</code> (gen-image enemy art), <code>--dry-run</code> (preview), <code>--retries N</code></p>
+</div>""",
+notes_en="""Demo the actual CLI. Emphasize it's fully automatic — no code needed. Mention --sprites trade-off (~60s vs ~10s). If time permits, live-demo gen-cartridge --sentence "something silly" --dry-run to show LLM producing JSON in real time.""")
+
+
+# ═════════════════════════════════════════════════════════════════════
 # 34 — Thank you / 资源
 # ═════════════════════════════════════════════════════════════════════
 add("resources", "Resources", "split", """
@@ -1287,6 +1443,7 @@ PART_LABEL_ZH = {
     "p5": "Part 5 · 设计原则",
     "p6": "Part 6 · 制作技巧",
     "p7": "Part 7 · 工作流",
+    "p8": "Part 8 · Game Template Line",
     "end": "结尾",
 }
 PART_LABEL_EN = {
@@ -1298,6 +1455,7 @@ PART_LABEL_EN = {
     "p5": "Part 5 · Design Principles",
     "p6": "Part 6 · Craft Tips",
     "p7": "Part 7 · Workflow",
+    "p8": "Part 8 · Game Template Line",
     "end": "Resources",
 }
 
@@ -1314,7 +1472,7 @@ def get_part_key(short):
 
 def make_menu_html(current_idx, lang):
     """Render the contents drawer markup, with the current slide highlighted."""
-    parts_order = ["intro", "p1", "p2", "p3", "p4", "p5", "p6", "p7", "end"]
+    parts_order = ["intro", "p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "end"]
     by_part = {k: [] for k in parts_order}
     for idx, slide in enumerate(SLIDES):
         key = get_part_key(slide["short"])
