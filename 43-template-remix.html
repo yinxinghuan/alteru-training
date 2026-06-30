@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/svg+xml" href="assets/brand/alteru-favicon.svg" />
-  <title>41/50 · Part 8 · 一句话做游戏 · AlterU Training</title>
+  <title>44/50 · Part 8 · Remix 路径 · AlterU Training</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="_shared.css" />
-  <link rel="prefetch" href="41-template-engines.html" as="document">
-  <link rel="prefetch" href="39-faq.html" as="document">
+  <link rel="prefetch" href="44-template-block-party.html" as="document">
+  <link rel="prefetch" href="42-template-contract.html" as="document">
   <script>
     /* Apply lang BEFORE first paint to avoid flicker.
        Priority: URL ?lang=en|zh > localStorage > default zh.
@@ -32,7 +32,7 @@
   </script>
 </head>
 <body>
-  <div class="slide-progress"><div class="fill" style="width: 82.00%"></div></div>
+  <div class="slide-progress"><div class="fill" style="width: 88.00%"></div></div>
 
   <div class="brand-strip">
     <a class="brand-home" href="index.html" title="Back to cover">
@@ -41,8 +41,8 @@
     </a>
     <span class="brand-sep"></span>
     <span class="brand-context">
-      <span data-only="zh">Part 8 · 一句话做游戏</span>
-      <span data-only="en">Part 8 · One Sentence = Game</span>
+      <span data-only="zh">Part 8 · Remix 路径</span>
+      <span data-only="en">Part 8 · Remix Path</span>
     </span>
   </div>
 
@@ -126,10 +126,10 @@
 </div>
 <div class="menu-section">
 <div class="menu-section-title">Part 8 · Game Template Line</div>
-<a class="menu-item current" href="40-template-concept.html"><span class="menu-num">40</span><span>Part 8 · 一句话做游戏</span></a>
+<a class="menu-item" href="40-template-concept.html"><span class="menu-num">40</span><span>Part 8 · 一句话做游戏</span></a>
 <a class="menu-item" href="41-template-engines.html"><span class="menu-num">41</span><span>Part 8 · 三类引擎</span></a>
 <a class="menu-item" href="42-template-contract.html"><span class="menu-num">42</span><span>Part 8 · 契约边界</span></a>
-<a class="menu-item" href="43-template-remix.html"><span class="menu-num">43</span><span>Part 8 · Remix 路径</span></a>
+<a class="menu-item current" href="43-template-remix.html"><span class="menu-num">43</span><span>Part 8 · Remix 路径</span></a>
 <a class="menu-item" href="44-template-block-party.html"><span class="menu-num">44</span><span>Part 8 · Engine #1 细节</span></a>
 <a class="menu-item" href="45-template-3d-engine.html"><span class="menu-num">45</span><span>Part 8 · Engine #2 细节</span></a>
 <a class="menu-item" href="46-template-identity-engine.html"><span class="menu-num">46</span><span>Part 8 · Engine #4 细节</span></a>
@@ -208,10 +208,10 @@
 </div>
 <div class="menu-section">
 <div class="menu-section-title">Part 8 · Game Template Line</div>
-<a class="menu-item current" href="40-template-concept.html"><span class="menu-num">40</span><span>Part 8 · One Sentence = Game</span></a>
+<a class="menu-item" href="40-template-concept.html"><span class="menu-num">40</span><span>Part 8 · One Sentence = Game</span></a>
 <a class="menu-item" href="41-template-engines.html"><span class="menu-num">41</span><span>Part 8 · Three Engine Types</span></a>
 <a class="menu-item" href="42-template-contract.html"><span class="menu-num">42</span><span>Part 8 · Contract Boundary</span></a>
-<a class="menu-item" href="43-template-remix.html"><span class="menu-num">43</span><span>Part 8 · Remix Path</span></a>
+<a class="menu-item current" href="43-template-remix.html"><span class="menu-num">43</span><span>Part 8 · Remix Path</span></a>
 <a class="menu-item" href="44-template-block-party.html"><span class="menu-num">44</span><span>Part 8 · Engine #1 Details</span></a>
 <a class="menu-item" href="45-template-3d-engine.html"><span class="menu-num">45</span><span>Part 8 · Engine #2 Details</span></a>
 <a class="menu-item" href="46-template-identity-engine.html"><span class="menu-num">46</span><span>Part 8 · Engine #4 Details</span></a>
@@ -234,66 +234,64 @@
   <section class="slide split">
     <div data-only="zh">
 <div class="col-text">
-  <span class="eyebrow"><span class="dot"></span>Part 8 · Game Template Line</span>
-  <h2>一句话/一张照片<br>出一个有质感的游戏</h2>
-  <p><strong>痛点：</strong>平台普通用户做不出能玩的游戏。不是缺想法，是缺质感——juice、首屏即玩、UI、排行榜、社交通知……这些层门槛太高。</p>
-  <p><strong>解法：锁死质感 = 做不烂。</strong></p>
+  <span class="eyebrow"><span class="dot"></span>Part 8 · Remix 为什么变容易</span>
+  <h2>Remix 从“改代码”<br/>降级成“改卡带”。</h2>
+  <p>以前 Remix 一个游戏，agent 需要读工程、理解玩法、改 UI、改素材、跑 build，任何一步都可能把手感弄坏。</p>
+  <p>现在 Remix 可以走受约束的数据路径：</p>
   <div class="callout">
-    <code style="font-size:1.1em">一句话/一张照片 → Cartridge（卡带 JSON）→ 注入锁死 Engine → 可玩游戏</code>
+    <code>原 cartridge → 用户一句话修改 → LLM 产新 spec → validate → build → publish</code>
   </div>
-  <p><strong>Engine（引擎）</strong>——我们造，用户碰不到。<br>永远自带：juice / instant-play / 排行榜 / 留言 / 通知。</p>
-  <p><strong>Cartridge（卡带）</strong>——用户的一句话生成。<br>只含主题：敌人叫什么、长什么样、什么颜色、什么文案。<br><span class="callout">任何会改变"游戏多难"的字段都不准进卡带 → 做不烂。</span></p>
+  <p><strong>A 路：</strong>快速模板。理想只有一个确认屏：主题对不对？角色像不像？然后发布。</p>
+  <p><strong>B 路：</strong>深度制作。用户想要更多控制时，进入对话式编辑 cartridge；需要新机制时才升级成真正的 agent 开发。</p>
 </div>
 <div class="col-visual">
-  <img loading="lazy" decoding="async" src="assets/extra/block-party.png" alt="Block Party" style="max-height:50vh" />
-  <p style="text-align:center;color:var(--ink-mid);margin-top:0.8em">Engine #1：Block Party<br>→ 猫 vs 扫地机器人（换一份卡带 JSON）</p>
+  <div class="cell" style="height: 68vh; display: flex; flex-direction: column; justify-content: center;">
+    <h3 class="pink">铁律</h3>
+    <p style="font-size: 22px; line-height: 1.45;">不要为了“更自由”，把 A 路做成复杂编辑器。</p>
+    <p>快速模板的价值，就是让用户碰不到会破坏质感的层。</p>
+  </div>
 </div>
     </div>
     <div data-only="en">
 <div class="col-text">
-  <span class="eyebrow"><span class="dot"></span>Part 8 · Game Template Line</span>
-  <h2>One sentence. One photo.<br>A quality game comes out.</h2>
-  <p><strong>The pain point:</strong> Regular users on the platform can't make playable games. Not a lack of ideas — a lack of quality. Juice, instant-play, UI, leaderboards, social notifications... the barrier is too high.</p>
-  <p><strong>The fix: lock quality so they can't break it.</strong></p>
-  <div class="callout">
-    <code style="font-size:1.1em">One sentence → Cartridge (JSON) → locked Engine → playable game</code>
-  </div>
-  <p><strong>Engine</strong> — We build it. Users can't touch it.<br>Always includes: juice / instant-play / leaderboard / guestbook / notify.</p>
-  <p><strong>Cartridge</strong> — Generated from the user's one sentence.<br>Theme only: enemy names, visuals, colors, copy.<br><span class="callout">Nothing that changes difficulty can enter the cartridge → they can't break it.</span></p>
+  <span class="eyebrow"><span class="dot"></span>Part 8 · Why Remix Gets Easier</span>
+  <h2>Remix stops being code edits.<br/>It becomes cartridge edits.</h2>
+  <p>Previously, an agent had to read the repo, understand mechanics, change UI, change assets, run builds — any step could break play feel.</p>
+  <p>Now Remix can follow a constrained data path:</p>
+  <div class="callout"><code>source cartridge → user request → new spec → validate → build → publish</code></div>
+  <p><strong>Path A:</strong> fast template. Ideally one confirmation screen: is the theme right, does the hero feel right, then publish.</p>
+  <p><strong>Path B:</strong> deep making. If users want more control, edit cartridge conversationally. New mechanics become real agent development.</p>
 </div>
-<div class="col-visual">
-  <img loading="lazy" decoding="async" src="assets/extra/block-party.png" alt="Block Party" style="max-height:50vh" />
-  <p style="text-align:center;color:var(--ink-mid);margin-top:0.8em">Engine #1: Block Party<br>→ Cat vs Robot Vacuums (swap one cartridge JSON)</p>
-</div>
+<div class="col-visual"><div class="cell" style="height: 68vh; display: flex; flex-direction: column; justify-content: center;"><h3 class="pink">Rule</h3><p style="font-size: 22px; line-height: 1.45;">Do not turn Path A into a complex editor in the name of freedom.</p><p>The value of fast templates is that users cannot touch the quality-breaking layers.</p></div></div>
     </div>
   </section>
 
   <div class="speaker-notes" id="speaker-notes">
     <h4><span data-only="zh">讲师备忘 · 按 S 关闭</span><span data-only="en">Speaker Notes · S to close</span></h4>
     <div data-only="zh">
-<p>先给学员看痛点数据。平台 100+ 游戏但多数是 Tier1 纯 HTML——根本没质感。然后引出核心洞察：质感不在玩法复杂度，而在 juice/UI/社交那几层，而这几层我们已经一条条沉淀成了 skill。</p>
-<p>Engine/Cartridge 类比红白机：机器永远不变，插不同卡带玩不同游戏。关键设计：卡带不含任何游戏难度字段——HP/速度/碰撞全锁在引擎里。</p>
+<p>这一页要把 Remix 的战略价值讲清楚。Engine/Cartridge 不是只为了生产新游戏，更是未来 Remix 的底层协议。</p>
+<p>强调 A/B 分路。A 路要极少选项；B 路可以深，但不能污染 A 路。</p>
     </div>
     <div data-only="en">
-Start with the pain point. 100+ games on the platform, most Tier1 bare HTML — no quality. The insight: quality isn't gameplay complexity, it's juice/UI/social layers. We've already codified those into skills. Engine/Cartridge = NES analogy: machine never changes, different cartridge = different game. Critical design: cartridge can't contain difficulty fields.
+Make the strategic value clear: Engine/Cartridge is not just a production trick, it is the future Remix protocol. Stress Path A/B separation.
     </div>
   </div>
 
-  <div class="slide-page-tag">41 / 50</div>
+  <div class="slide-page-tag">44 / 50</div>
 
   <div class="slide-nav">
-    <a class="prev " href="39-faq.html">
+    <a class="prev " href="42-template-contract.html">
       <span data-only="zh">← 上页</span><span data-only="en">← Prev</span>
     </a>
-    <a class="next " href="41-template-engines.html">
+    <a class="next " href="44-template-block-party.html">
       <span data-only="zh">下页 →</span><span data-only="en">Next →</span>
     </a>
   </div>
 
   <script>
     (function(){
-      const PREV = "39-faq.html";
-      const NEXT = "41-template-engines.html";
+      const PREV = "42-template-contract.html";
+      const NEXT = "44-template-block-party.html";
       const FIRST = "index.html";
       const LAST = "49-resources.html";
 

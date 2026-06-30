@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/svg+xml" href="assets/brand/alteru-favicon.svg" />
-  <title>41/50 · Part 8 · 一句话做游戏 · AlterU Training</title>
+  <title>45/50 · Part 8 · Engine #1 细节 · AlterU Training</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="_shared.css" />
-  <link rel="prefetch" href="41-template-engines.html" as="document">
-  <link rel="prefetch" href="39-faq.html" as="document">
+  <link rel="prefetch" href="45-template-3d-engine.html" as="document">
+  <link rel="prefetch" href="43-template-remix.html" as="document">
   <script>
     /* Apply lang BEFORE first paint to avoid flicker.
        Priority: URL ?lang=en|zh > localStorage > default zh.
@@ -32,7 +32,7 @@
   </script>
 </head>
 <body>
-  <div class="slide-progress"><div class="fill" style="width: 82.00%"></div></div>
+  <div class="slide-progress"><div class="fill" style="width: 90.00%"></div></div>
 
   <div class="brand-strip">
     <a class="brand-home" href="index.html" title="Back to cover">
@@ -41,8 +41,8 @@
     </a>
     <span class="brand-sep"></span>
     <span class="brand-context">
-      <span data-only="zh">Part 8 · 一句话做游戏</span>
-      <span data-only="en">Part 8 · One Sentence = Game</span>
+      <span data-only="zh">Part 8 · Engine #1 细节</span>
+      <span data-only="en">Part 8 · Engine #1 Details</span>
     </span>
   </div>
 
@@ -126,11 +126,11 @@
 </div>
 <div class="menu-section">
 <div class="menu-section-title">Part 8 · Game Template Line</div>
-<a class="menu-item current" href="40-template-concept.html"><span class="menu-num">40</span><span>Part 8 · 一句话做游戏</span></a>
+<a class="menu-item" href="40-template-concept.html"><span class="menu-num">40</span><span>Part 8 · 一句话做游戏</span></a>
 <a class="menu-item" href="41-template-engines.html"><span class="menu-num">41</span><span>Part 8 · 三类引擎</span></a>
 <a class="menu-item" href="42-template-contract.html"><span class="menu-num">42</span><span>Part 8 · 契约边界</span></a>
 <a class="menu-item" href="43-template-remix.html"><span class="menu-num">43</span><span>Part 8 · Remix 路径</span></a>
-<a class="menu-item" href="44-template-block-party.html"><span class="menu-num">44</span><span>Part 8 · Engine #1 细节</span></a>
+<a class="menu-item current" href="44-template-block-party.html"><span class="menu-num">44</span><span>Part 8 · Engine #1 细节</span></a>
 <a class="menu-item" href="45-template-3d-engine.html"><span class="menu-num">45</span><span>Part 8 · Engine #2 细节</span></a>
 <a class="menu-item" href="46-template-identity-engine.html"><span class="menu-num">46</span><span>Part 8 · Engine #4 细节</span></a>
 <a class="menu-item" href="47-template-operating-model.html"><span class="menu-num">47</span><span>Part 8 · 新增引擎流程</span></a>
@@ -208,11 +208,11 @@
 </div>
 <div class="menu-section">
 <div class="menu-section-title">Part 8 · Game Template Line</div>
-<a class="menu-item current" href="40-template-concept.html"><span class="menu-num">40</span><span>Part 8 · One Sentence = Game</span></a>
+<a class="menu-item" href="40-template-concept.html"><span class="menu-num">40</span><span>Part 8 · One Sentence = Game</span></a>
 <a class="menu-item" href="41-template-engines.html"><span class="menu-num">41</span><span>Part 8 · Three Engine Types</span></a>
 <a class="menu-item" href="42-template-contract.html"><span class="menu-num">42</span><span>Part 8 · Contract Boundary</span></a>
 <a class="menu-item" href="43-template-remix.html"><span class="menu-num">43</span><span>Part 8 · Remix Path</span></a>
-<a class="menu-item" href="44-template-block-party.html"><span class="menu-num">44</span><span>Part 8 · Engine #1 Details</span></a>
+<a class="menu-item current" href="44-template-block-party.html"><span class="menu-num">44</span><span>Part 8 · Engine #1 Details</span></a>
 <a class="menu-item" href="45-template-3d-engine.html"><span class="menu-num">45</span><span>Part 8 · Engine #2 Details</span></a>
 <a class="menu-item" href="46-template-identity-engine.html"><span class="menu-num">46</span><span>Part 8 · Engine #4 Details</span></a>
 <a class="menu-item" href="47-template-operating-model.html"><span class="menu-num">47</span><span>Part 8 · Adding Engines</span></a>
@@ -231,39 +231,25 @@
   </aside>
 
 
-  <section class="slide split">
+  <section class="slide matrix-2x2">
     <div data-only="zh">
-<div class="col-text">
-  <span class="eyebrow"><span class="dot"></span>Part 8 · Game Template Line</span>
-  <h2>一句话/一张照片<br>出一个有质感的游戏</h2>
-  <p><strong>痛点：</strong>平台普通用户做不出能玩的游戏。不是缺想法，是缺质感——juice、首屏即玩、UI、排行榜、社交通知……这些层门槛太高。</p>
-  <p><strong>解法：锁死质感 = 做不烂。</strong></p>
-  <div class="callout">
-    <code style="font-size:1.1em">一句话/一张照片 → Cartridge（卡带 JSON）→ 注入锁死 Engine → 可玩游戏</code>
-  </div>
-  <p><strong>Engine（引擎）</strong>——我们造，用户碰不到。<br>永远自带：juice / instant-play / 排行榜 / 留言 / 通知。</p>
-  <p><strong>Cartridge（卡带）</strong>——用户的一句话生成。<br>只含主题：敌人叫什么、长什么样、什么颜色、什么文案。<br><span class="callout">任何会改变"游戏多难"的字段都不准进卡带 → 做不烂。</span></p>
-</div>
-<div class="col-visual">
-  <img loading="lazy" decoding="async" src="assets/extra/block-party.png" alt="Block Party" style="max-height:50vh" />
-  <p style="text-align:center;color:var(--ink-mid);margin-top:0.8em">Engine #1：Block Party<br>→ 猫 vs 扫地机器人（换一份卡带 JSON）</p>
+<span class="eyebrow"><span class="dot"></span>Part 8 · Engine #1 · Block Party</span>
+<h2>俯视生存引擎：<br/>最适合一句话生成。</h2>
+<div class="grid">
+  <div class="cell"><span class="cell-num">1</span><h3>Role → Skin</h3><p>引擎只认识 lurker / runner / brute / stalker / exploder / ghost / boss。卡带给每个 role 换名字、颜色、sprite。</p></div>
+  <div class="cell"><span class="cell-num">2</span><h3>Spec → Resolve</h3><p><code>CartridgeSpec</code> 是纯 JSON；<code>specToCartridge()</code> 把 string key 绑定到 Three.js builder。</p></div>
+  <div class="cell"><span class="cell-num">3</span><h3>Generator</h3><p>一句话 → game-chat → JSON extraction → <code>validateSpec()</code> → 失败重试 → 写入 <code>gen-*.ts</code>。</p></div>
+  <div class="cell"><span class="cell-num">4</span><h3>Sprite 升级</h3><p><code>--sprites</code> 对 6 个敌人串行 txt2img，上传 R2，敌人 billboard 面朝相机。没图时回退 3D 模型。</p></div>
 </div>
     </div>
     <div data-only="en">
-<div class="col-text">
-  <span class="eyebrow"><span class="dot"></span>Part 8 · Game Template Line</span>
-  <h2>One sentence. One photo.<br>A quality game comes out.</h2>
-  <p><strong>The pain point:</strong> Regular users on the platform can't make playable games. Not a lack of ideas — a lack of quality. Juice, instant-play, UI, leaderboards, social notifications... the barrier is too high.</p>
-  <p><strong>The fix: lock quality so they can't break it.</strong></p>
-  <div class="callout">
-    <code style="font-size:1.1em">One sentence → Cartridge (JSON) → locked Engine → playable game</code>
-  </div>
-  <p><strong>Engine</strong> — We build it. Users can't touch it.<br>Always includes: juice / instant-play / leaderboard / guestbook / notify.</p>
-  <p><strong>Cartridge</strong> — Generated from the user's one sentence.<br>Theme only: enemy names, visuals, colors, copy.<br><span class="callout">Nothing that changes difficulty can enter the cartridge → they can't break it.</span></p>
-</div>
-<div class="col-visual">
-  <img loading="lazy" decoding="async" src="assets/extra/block-party.png" alt="Block Party" style="max-height:50vh" />
-  <p style="text-align:center;color:var(--ink-mid);margin-top:0.8em">Engine #1: Block Party<br>→ Cat vs Robot Vacuums (swap one cartridge JSON)</p>
+<span class="eyebrow"><span class="dot"></span>Part 8 · Engine #1 · Block Party</span>
+<h2>Top-down survival:<br/>best for one-sentence generation.</h2>
+<div class="grid">
+  <div class="cell"><span class="cell-num">1</span><h3>Role → Skin</h3><p>The engine only knows lurker / runner / brute / stalker / exploder / ghost / boss. Cartridge changes names, colors, sprites.</p></div>
+  <div class="cell"><span class="cell-num">2</span><h3>Spec → Resolve</h3><p><code>CartridgeSpec</code> is pure JSON; <code>specToCartridge()</code> binds string keys to Three.js builders.</p></div>
+  <div class="cell"><span class="cell-num">3</span><h3>Generator</h3><p>Sentence → game-chat → JSON extraction → <code>validateSpec()</code> → retry on errors → write <code>gen-*.ts</code>.</p></div>
+  <div class="cell"><span class="cell-num">4</span><h3>Sprite Upgrade</h3><p><code>--sprites</code> txt2img for 6 enemies, upload to R2, billboard faces camera. No sprite means 3D fallback.</p></div>
 </div>
     </div>
   </section>
@@ -271,29 +257,28 @@
   <div class="speaker-notes" id="speaker-notes">
     <h4><span data-only="zh">讲师备忘 · 按 S 关闭</span><span data-only="en">Speaker Notes · S to close</span></h4>
     <div data-only="zh">
-<p>先给学员看痛点数据。平台 100+ 游戏但多数是 Tier1 纯 HTML——根本没质感。然后引出核心洞察：质感不在玩法复杂度，而在 juice/UI/社交那几层，而这几层我们已经一条条沉淀成了 skill。</p>
-<p>Engine/Cartridge 类比红白机：机器永远不变，插不同卡带玩不同游戏。关键设计：卡带不含任何游戏难度字段——HP/速度/碰撞全锁在引擎里。</p>
+<p>Block Party 是 canonical 引擎，因为它最能证明"锁机制、换表达"。讲 role/skin 时可以用猫 vs 扫地机器人例子：玩法完全没变，但世界已经变了。</p>
     </div>
     <div data-only="en">
-Start with the pain point. 100+ games on the platform, most Tier1 bare HTML — no quality. The insight: quality isn't gameplay complexity, it's juice/UI/social layers. We've already codified those into skills. Engine/Cartridge = NES analogy: machine never changes, different cartridge = different game. Critical design: cartridge can't contain difficulty fields.
+Block Party is the canonical engine because it proves lock mechanics, swap expression. Use cat vs robot vacuums as the example.
     </div>
   </div>
 
-  <div class="slide-page-tag">41 / 50</div>
+  <div class="slide-page-tag">45 / 50</div>
 
   <div class="slide-nav">
-    <a class="prev " href="39-faq.html">
+    <a class="prev " href="43-template-remix.html">
       <span data-only="zh">← 上页</span><span data-only="en">← Prev</span>
     </a>
-    <a class="next " href="41-template-engines.html">
+    <a class="next " href="45-template-3d-engine.html">
       <span data-only="zh">下页 →</span><span data-only="en">Next →</span>
     </a>
   </div>
 
   <script>
     (function(){
-      const PREV = "39-faq.html";
-      const NEXT = "41-template-engines.html";
+      const PREV = "43-template-remix.html";
+      const NEXT = "45-template-3d-engine.html";
       const FIRST = "index.html";
       const LAST = "49-resources.html";
 

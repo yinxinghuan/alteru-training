@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/svg+xml" href="assets/brand/alteru-favicon.svg" />
-  <title>42/44 · Part 8 · 三类引擎 · AlterU Training</title>
+  <title>42/50 · Part 8 · 三类引擎 · AlterU Training</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="_shared.css" />
-  <link rel="prefetch" href="42-template-howto.html" as="document">
+  <link rel="prefetch" href="42-template-contract.html" as="document">
   <link rel="prefetch" href="40-template-concept.html" as="document">
   <script>
     /* Apply lang BEFORE first paint to avoid flicker.
@@ -32,7 +32,7 @@
   </script>
 </head>
 <body>
-  <div class="slide-progress"><div class="fill" style="width: 95.45%"></div></div>
+  <div class="slide-progress"><div class="fill" style="width: 84.00%"></div></div>
 
   <div class="brand-strip">
     <a class="brand-home" href="index.html" title="Back to cover">
@@ -128,12 +128,18 @@
 <div class="menu-section-title">Part 8 · Game Template Line</div>
 <a class="menu-item" href="40-template-concept.html"><span class="menu-num">40</span><span>Part 8 · 一句话做游戏</span></a>
 <a class="menu-item current" href="41-template-engines.html"><span class="menu-num">41</span><span>Part 8 · 三类引擎</span></a>
-<a class="menu-item" href="42-template-howto.html"><span class="menu-num">42</span><span>Part 8 · 如何生成</span></a>
+<a class="menu-item" href="42-template-contract.html"><span class="menu-num">42</span><span>Part 8 · 契约边界</span></a>
+<a class="menu-item" href="43-template-remix.html"><span class="menu-num">43</span><span>Part 8 · Remix 路径</span></a>
+<a class="menu-item" href="44-template-block-party.html"><span class="menu-num">44</span><span>Part 8 · Engine #1 细节</span></a>
+<a class="menu-item" href="45-template-3d-engine.html"><span class="menu-num">45</span><span>Part 8 · Engine #2 细节</span></a>
+<a class="menu-item" href="46-template-identity-engine.html"><span class="menu-num">46</span><span>Part 8 · Engine #4 细节</span></a>
+<a class="menu-item" href="47-template-operating-model.html"><span class="menu-num">47</span><span>Part 8 · 新增引擎流程</span></a>
+<a class="menu-item" href="48-template-howto.html"><span class="menu-num">48</span><span>Part 8 · 如何生成</span></a>
 </div>
 <div class="menu-section">
 <div class="menu-section-title">结尾</div>
 <a class="menu-item" href="index.html"><span class="menu-num">00</span><span>开始</span></a>
-<a class="menu-item" href="43-resources.html"><span class="menu-num">43</span><span>Resources</span></a>
+<a class="menu-item" href="49-resources.html"><span class="menu-num">49</span><span>Resources</span></a>
 </div>
     </div>
     <div data-only="en">
@@ -204,12 +210,18 @@
 <div class="menu-section-title">Part 8 · Game Template Line</div>
 <a class="menu-item" href="40-template-concept.html"><span class="menu-num">40</span><span>Part 8 · One Sentence = Game</span></a>
 <a class="menu-item current" href="41-template-engines.html"><span class="menu-num">41</span><span>Part 8 · Three Engine Types</span></a>
-<a class="menu-item" href="42-template-howto.html"><span class="menu-num">42</span><span>Part 8 · How to Generate</span></a>
+<a class="menu-item" href="42-template-contract.html"><span class="menu-num">42</span><span>Part 8 · Contract Boundary</span></a>
+<a class="menu-item" href="43-template-remix.html"><span class="menu-num">43</span><span>Part 8 · Remix Path</span></a>
+<a class="menu-item" href="44-template-block-party.html"><span class="menu-num">44</span><span>Part 8 · Engine #1 Details</span></a>
+<a class="menu-item" href="45-template-3d-engine.html"><span class="menu-num">45</span><span>Part 8 · Engine #2 Details</span></a>
+<a class="menu-item" href="46-template-identity-engine.html"><span class="menu-num">46</span><span>Part 8 · Engine #4 Details</span></a>
+<a class="menu-item" href="47-template-operating-model.html"><span class="menu-num">47</span><span>Part 8 · Adding Engines</span></a>
+<a class="menu-item" href="48-template-howto.html"><span class="menu-num">48</span><span>Part 8 · How to Generate</span></a>
 </div>
 <div class="menu-section">
 <div class="menu-section-title">Resources</div>
 <a class="menu-item" href="index.html"><span class="menu-num">00</span><span>Start here</span></a>
-<a class="menu-item" href="43-resources.html"><span class="menu-num">43</span><span>Resources</span></a>
+<a class="menu-item" href="49-resources.html"><span class="menu-num">49</span><span>Resources</span></a>
 </div>
     </div>
     <div class="menu-foot">
@@ -223,47 +235,51 @@
     <div data-only="zh">
 <span class="eyebrow"><span class="dot"></span>Part 8 · 三类引擎模板</span>
 <h2>三种引擎，覆盖三种玩法类型</h2>
-<div class="tile">
+<div class="grid">
+<div class="cell">
   <h3>🎮 Engine #1 · 俯视街机</h3>
   <p><strong>Block Party</strong> — 自动开火生存。最可 reskin，一句话+一张脸都能驱动。Cartridge 是纯 JSON。</p>
   <p><small>已完成：cartridge + generator + sprite 管线 + skill</small></p>
 </div>
-<div class="tile">
+<div class="cell">
   <h3>⏱ Engine #2 · 3D Timing</h3>
   <p><strong>Corporate Climb / Sky Leap</strong> — 蓄力跳跃 / 点击爬塔。质感天花板最高。Cartridge 管视觉氛围。</p>
   <p><small>已完成：shared engine + Corp Climb cartridge（office / firefighter）</small></p>
 </div>
-<div class="tile">
+<div class="cell">
   <h3>🪞 Engine #4 · 身份变形</h3>
   <p><strong>Past Life / Future Life</strong> — 照片→AI 画像+故事。最契合 AlterU "your AI self becomes the protagonist"。</p>
   <p><small>已完成：past-life / future-life 双卡带</small></p>
 </div>
-<div class="tile callout">
+<div class="cell" style="border-color: var(--brand-pink);">
   <h3>🔮 将来</h3>
   <p>引擎库持续扩充。每加一种引擎 = 一种"玩法类型"可批量产。generator 从一句话自动选最合适的引擎。</p>
+</div>
 </div>
     </div>
     <div data-only="en">
 <span class="eyebrow"><span class="dot"></span>Part 8 · Three Engine Types</span>
 <h2>Three engines, three play styles</h2>
-<div class="tile">
+<div class="grid">
+<div class="cell">
   <h3>🎮 Engine #1 · Top-Down Arcade</h3>
   <p><strong>Block Party</strong> — Auto-fire survival. Most reskinnable. Cartridge is pure JSON.</p>
   <p><small>Done: cartridge + generator + sprite pipeline + skill</small></p>
 </div>
-<div class="tile">
+<div class="cell">
   <h3>⏱ Engine #2 · 3D Timing</h3>
   <p><strong>Corporate Climb / Sky Leap</strong> — Charge-jump / tap-climb. Highest visual ceiling. Cartridge controls atmosphere.</p>
   <p><small>Done: shared engine + Corp Climb dual-cartridge (office / firefighter)</small></p>
 </div>
-<div class="tile">
+<div class="cell">
   <h3>🪞 Engine #4 · Identity Transform</h3>
   <p><strong>Past Life / Future Life</strong> — Photo → AI portrait + story. Most on-brand for AlterU.</p>
   <p><small>Done: past-life / future-life dual cartridge</small></p>
 </div>
-<div class="tile callout">
+<div class="cell" style="border-color: var(--brand-pink);">
   <h3>🔮 Coming Soon</h3>
   <p>Engine library grows. Each new engine = a new play-style that can be mass-produced. The generator picks the right engine automatically.</p>
+</div>
 </div>
     </div>
   </section>
@@ -278,13 +294,13 @@ Three engine types the user chose (1=arcade, 2=3D timing, 4=identity transform, 
     </div>
   </div>
 
-  <div class="slide-page-tag">42 / 44</div>
+  <div class="slide-page-tag">42 / 50</div>
 
   <div class="slide-nav">
     <a class="prev " href="40-template-concept.html">
       <span data-only="zh">← 上页</span><span data-only="en">← Prev</span>
     </a>
-    <a class="next " href="42-template-howto.html">
+    <a class="next " href="42-template-contract.html">
       <span data-only="zh">下页 →</span><span data-only="en">Next →</span>
     </a>
   </div>
@@ -292,9 +308,9 @@ Three engine types the user chose (1=arcade, 2=3D timing, 4=identity transform, 
   <script>
     (function(){
       const PREV = "40-template-concept.html";
-      const NEXT = "42-template-howto.html";
+      const NEXT = "42-template-contract.html";
       const FIRST = "index.html";
-      const LAST = "43-resources.html";
+      const LAST = "49-resources.html";
 
       // Single guard so wheel / touch / key nav can't fire twice mid-unload.
       let navigated = false;

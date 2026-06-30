@@ -1,5 +1,5 @@
 # AlterU Training Slides
-**44 张 slide · 半天 3.5 小时**
+**50 张 slide · 半天 3.5 小时**
 
 ## 入口
 - `index.html` — 演讲入口（cover）
@@ -54,5 +54,11 @@
 - 39 · `39-faq.html` — Part 7 · FAQ
 - 40 · `40-template-concept.html` — Part 8 · 一句话做游戏
 - 41 · `41-template-engines.html` — Part 8 · 三类引擎
-- 42 · `42-template-howto.html` — Part 8 · 如何生成
-- 43 · `43-resources.html` — Resources
+- 42 · `42-template-contract.html` — Part 8 · 契约边界
+- 43 · `43-template-remix.html` — Part 8 · Remix 路径
+- 44 · `44-template-block-party.html` — Part 8 · Engine #1 细节
+- 45 · `45-template-3d-engine.html` — Part 8 · Engine #2 细节
+- 46 · `46-template-identity-engine.html` — Part 8 · Engine #4 细节
+- 47 · `47-template-operating-model.html` — Part 8 · 新增引擎流程
+- 48 · `48-template-howto.html` — Part 8 · 如何生成
+- 49 · `49-resources.html` — Resources
