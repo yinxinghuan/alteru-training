@@ -98,7 +98,7 @@ What should stay locked:
 Known future seams:
 
 - `BossKind` still mixes behavior and visual identity. Split into `BossBehaviour` and `BossSkin` before boss visuals become user-generated.
-- Splash wordmark is still theme-coupled.
+- Splash wordmark is now cartridge-driven from `CARTRIDGE.copy.en.title` (`block-party` commit `e30b4f4`). The remaining wordmark work is visual polish for unusually long generated titles, not a hardcoded "BLOCK / PARTY" seam.
 - Sprite prompt can be tuned, but keep a 3D fallback path.
 
 ### Engine #2: 3D Timing / Climb
@@ -135,10 +135,33 @@ import { officeCartridge } from './office.js';
 export const CARTRIDGE = officeCartridge;
 ```
 
+Sky Leap cartridge files:
+
+```text
+cartridge/types.js
+cartridge/index.js
+cartridge/sky-ruins.js
+```
+
+Sky Leap now has a first cartridge seam (`sky-leap` commit `abbd596`). It extracts expression data from `game.js` / `index.html` into `CARTRIDGE`:
+
+- wordmark / guide / leaderboard / death-card copy
+- sky gradient and glow
+- hemisphere / key / rim lights
+- normal fog and haze fog
+- bloom
+- motes and rain / snow particles
+- charge ring, pulse ring, trajectory arc, perfect burst, puff colours
+- audio master gain and ambient oscillator frequencies
+
 Verify:
 
 ```bash
 cd /Users/yin/code/games/corporate-climb
+npm run build
+npm run dev
+
+cd /Users/yin/code/games/sky-leap
 npm run build
 npm run dev
 ```
@@ -151,6 +174,8 @@ What cartridge owns here:
 - bloom
 - desk / world colors
 - motes
+- weather particles
+- UI effect colors
 - audio mood
 - copy and quips
 
@@ -158,12 +183,15 @@ What stays engine-owned:
 
 - timing windows
 - jump / climb physics
+- charge distance
+- platform spacing and platform size
+- landing judge thresholds
 - combo logic
 - scoring
 - camera behavior
 - fail / replay state machine
 
-Sky Leap currently consumes the shared engine but does not yet have its own cartridge system. If continuing Engine #2, add the Sky Leap cartridge after Corporate Climb is stable.
+Sky Leap currently has only the original `sky-ruins` cartridge. Before calling Sky Leap a complete template engine, add a second visibly different cartridge and prove the swap path with `npm run build`.
 
 ### Engine #4: Identity Transform
 
@@ -227,11 +255,12 @@ Current scope:
 - Strong for Block Party.
 - Documents A path: one sentence -> generated cartridge.
 - Documents B path: hand-written cartridge.
-- Does not yet cover Sky Leap or Past Life generation in detail.
+- Now documents Engine #2 cartridge boundaries for Corporate Climb and Sky Leap.
+- `user-game-creation` now includes Step 3.5: route a normal user's choice to Block Party / 3D timing / Past Life instead of only describing a UX flow.
 
 Future improvement:
 
-Extend `user-game-creation` so the user-facing wizard can call the cartridge pipeline instead of only describing the intended UX.
+Turn the new routing doc into executable app code: the user-facing wizard should call the cartridge pipeline and publish flow directly.
 
 ## Training Deck
 
@@ -267,12 +296,27 @@ Important:
 
 ## Recommended Next Work
 
-1. Finish the public Part 8 chapter and verify generated slide count / menu grouping.
-2. Expand `game-cartridge` skill beyond Block Party, or create engine-specific subsections inside it.
-3. Add a Sky Leap cartridge system.
-4. Add generator support for the 3D timing engine only after the cartridge contract is proven with a second theme.
-5. Split Block Party boss behavior from boss skin before generating boss visuals.
-6. Extend `user-game-creation` so Path A can actually route to these engines.
+1. Add a second Sky Leap cartridge with a visibly different theme, then verify swap + build.
+2. Add generator support for the 3D timing engine only after the Sky Leap second cartridge proves the contract.
+3. Split Block Party boss behavior from boss skin before generating boss visuals.
+4. Improve sprite prompts for Block Party generated enemies while keeping the 3D fallback path.
+5. Turn `user-game-creation` routing into executable app code, including publish.
+6. Keep Part 8 public tutorial in sync when code-layer capabilities materially change.
+
+## Latest Code Commits
+
+```text
+sky-leap      abbd596 Add Sky Leap cartridge layer
+block-party   e30b4f4 Drive splash wordmark from cartridge
+```
+
+Validation:
+
+```text
+sky-leap npm run build passed
+sky-leap local Playwright/Chromium smoke screenshot passed
+block-party npm run build passed
+```
 
 ## Acceptance Checklist
 
