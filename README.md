@@ -1,5 +1,5 @@
 # AlterU Training Slides
-**50 张 slide · 半天 3.5 小时**
+**52 张 slide · 半天 3.5 小时**
 
 ## 入口
 - `index.html` — 演讲入口（cover）
@@ -53,12 +53,14 @@
 - 38 · `38-social-musts.html` — Part 7 · 社交化必修 4 招
 - 39 · `39-faq.html` — Part 7 · FAQ
 - 40 · `40-template-concept.html` — Part 8 · 一句话做游戏
-- 41 · `41-template-engines.html` — Part 8 · 三类引擎
-- 42 · `42-template-contract.html` — Part 8 · 契约边界
-- 43 · `43-template-remix.html` — Part 8 · Remix 路径
-- 44 · `44-template-block-party.html` — Part 8 · Engine #1 细节
-- 45 · `45-template-3d-engine.html` — Part 8 · Engine #2 细节
-- 46 · `46-template-identity-engine.html` — Part 8 · Engine #4 细节
-- 47 · `47-template-operating-model.html` — Part 8 · 模板制作练习
-- 48 · `48-template-howto.html` — Part 8 · 如何生成
-- 49 · `49-resources.html` — Resources
+- 41 · `41-template-visual-compare.html` — Part 8 · 原模板到新主题
+- 42 · `42-template-engines.html` — Part 8 · 三类引擎
+- 43 · `43-template-contract.html` — Part 8 · 契约边界
+- 44 · `44-template-remix.html` — Part 8 · Remix 路径
+- 45 · `45-template-remix-example.html` — Part 8 · Remix 示例
+- 46 · `46-template-block-party.html` — Part 8 · Engine #1 细节
+- 47 · `47-template-3d-engine.html` — Part 8 · Engine #2 细节
+- 48 · `48-template-identity-engine.html` — Part 8 · Engine #4 细节
+- 49 · `49-template-operating-model.html` — Part 8 · 模板制作练习
+- 50 · `50-template-howto.html` — Part 8 · 如何生成
+- 51 · `51-resources.html` — Resources

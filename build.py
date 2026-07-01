@@ -1286,6 +1286,46 @@ body_en="""<div class="col-text">
 </div>""",
 notes_en="""Teaching focus: establish the console + cartridge analogy. The console owns play feel; the cartridge owns world and expression. Classroom prompt: if cats become dinosaurs, what should change and what should stay the same?""")
 
+add("template-visual-compare", "Part 8 · 原模板到新主题", "split", """
+<div class="col-text">
+  <span class="eyebrow"><span class="dot"></span>Part 8 · 看图理解</span>
+  <h2 class="title">先看原模板，<br/><em>再看新主题。</em></h2>
+  <p class="sub">学习模板线时，不要只读概念。先把“原来的游戏长什么样”放在眼前，再看一句话把它推向哪里。</p>
+  <div class="template-note"><strong>观察顺序：</strong>画面视角有没有变？玩家在做的动作有没有变？敌人和场景换成了什么？</div>
+  <p>如果动作没有变，只是世界变了，这就是一个合格的模板换主题。</p>
+</div>
+<div class="col-visual">
+  <div class="template-compare">
+    <div class="template-compare-panel">
+      <img src="assets/extra/block-party.png" alt="Original Block Party template" />
+      <div class="meta"><span class="tag">原模板</span><h3>Block Party</h3><p>俯视街机生存：移动、自动攻击、敌人围上来。</p></div>
+    </div>
+    <div class="template-compare-panel hot">
+      <img src="assets/gen/game-template-cartridge-swap.png" alt="Cat vs robot vacuum remix direction" />
+      <div class="meta"><span class="tag">新主题</span><h3>猫 vs 扫地机器人</h3><p>同样的生存动作，换成客厅、猫和家电敌人。</p></div>
+    </div>
+  </div>
+</div>
+""", """
+<p>教学重点：把“原模板”和“新主题”并排看。学习者要先看到变化发生在哪里，而不是只听抽象解释。</p>
+<p>课堂提问：这两张图里，哪些东西保持了？哪些东西替换了？</p>
+""",
+short_en="Part 8 · Template to Theme",
+body_en="""<div class="col-text">
+  <span class="eyebrow"><span class="dot"></span>Part 8 · Visual First</span>
+  <h2 class="title">Look at the template first.<br/><em>Then look at the new theme.</em></h2>
+  <p class="sub">Do not learn the template line from concepts alone. Put the original game in front of you, then see where one sentence pushes it.</p>
+  <div class="template-note"><strong>Observation order:</strong> did the camera angle change? did the player's action change? what happened to enemies and setting?</div>
+  <p>If the action stays the same and the world changes, the template swap is working.</p>
+</div>
+<div class="col-visual">
+  <div class="template-compare">
+    <div class="template-compare-panel"><img src="assets/extra/block-party.png" alt="Original Block Party template" /><div class="meta"><span class="tag">Original template</span><h3>Block Party</h3><p>Top-down arcade survival: move, auto-attack, enemies close in.</p></div></div>
+    <div class="template-compare-panel hot"><img src="assets/gen/game-template-cartridge-swap.png" alt="Cat vs robot vacuum remix direction" /><div class="meta"><span class="tag">New theme</span><h3>Cat vs Robot Vacuums</h3><p>Same survival action, now with living room, cat, and appliance enemies.</p></div></div>
+  </div>
+</div>""",
+notes_en="""Teaching focus: show original template and new theme side by side. Ask what stayed the same and what changed.""")
+
 add("template-engines", "Part 8 · 三类引擎", "matrix-2x2", """
 <span class="eyebrow"><span class="dot"></span>Part 8 · 三类引擎模板</span>
 <h2 class="title">不是一个模板吃天下。<br/><em>先选玩法盒子。</em></h2>
@@ -1429,27 +1469,83 @@ body_en="""<div class="col-text">
 <div class="col-visual"><div class="template-card hot" style="min-height: 58vh; display: flex; flex-direction: column; justify-content: center;"><span class="tag">Class exercise</span><h3 style="font-size: clamp(28px, 3vw, 44px);">Write one Remix sentence.</h3><p style="font-size: 18px;">Start from cat vs robot vacuums, then write 3 new themes. Each theme gets one sentence.</p><div class="template-note" style="margin-top: 24px;">Format: Change this game into “_____.” The hero is “_____,” the enemies are “_____,” and the scene is “_____.”</div></div></div>""",
 notes_en="""Teaching focus: help learners write a clear one-sentence theme, not discuss the internal generation path.""")
 
-add("template-block-party", "Part 8 · Engine #1 细节", "matrix-2x2", """
+add("template-remix-example", "Part 8 · Remix 示例", "split flip", """
+<div class="col-visual">
+  <div class="template-compare" style="grid-template-columns: 1fr;">
+    <div class="template-compare-panel">
+      <img src="assets/extra/block-party.png" alt="Block Party original game screen" style="height: 28vh;" />
+      <div class="meta"><span class="tag">先看原模板</span><h3>玩家在做什么？</h3><p>在俯视场景里移动，躲敌人，自动攻击，努力活更久。</p></div>
+    </div>
+    <div class="template-compare-panel hot">
+      <img src="assets/gen/game-template-cartridge-swap.png" alt="Cat vs robot vacuum theme direction" style="height: 28vh;" />
+      <div class="meta"><span class="tag">再看新主题</span><h3>世界换成什么？</h3><p>街区变客厅，僵尸变扫地机器人，玩家仍然在生存。</p></div>
+    </div>
+  </div>
+</div>
+<div class="col-text">
+  <span class="eyebrow"><span class="dot"></span>Part 8 · Remix 示例</span>
+  <h2 class="title">写 Remix 指令时，<br/><em>先指向原图。</em></h2>
+  <p class="sub">不要只说“做一个猫游戏”。更清楚的说法是：把这个模板里的世界换成猫和扫地机器人。</p>
+  <div class="template-flow" style="grid-template-columns: 1fr;">
+    <div class="template-step"><span class="label">可用句式</span><h3>把这个游戏改成“_____”。</h3><p>主角是“_____”，敌人是“_____”，场景是“_____”。玩法保持原模板。</p></div>
+  </div>
+</div>
+""", """
+<p>教学重点：Remix 指令要锚定原模板。让学员先看原图，再写一句话说明世界如何替换。</p>
+""",
+short_en="Part 8 · Remix Example",
+body_en="""<div class="col-visual">
+  <div class="template-compare" style="grid-template-columns: 1fr;">
+    <div class="template-compare-panel"><img src="assets/extra/block-party.png" alt="Block Party original game screen" style="height: 28vh;" /><div class="meta"><span class="tag">First, read the template</span><h3>What is the player doing?</h3><p>Moving in a top-down scene, dodging enemies, auto-attacking, trying to survive longer.</p></div></div>
+    <div class="template-compare-panel hot"><img src="assets/gen/game-template-cartridge-swap.png" alt="Cat vs robot vacuum theme direction" style="height: 28vh;" /><div class="meta"><span class="tag">Then, read the new theme</span><h3>What world changed?</h3><p>Street becomes living room, zombies become robot vacuums, survival stays the same.</p></div></div>
+  </div>
+</div>
+<div class="col-text">
+  <span class="eyebrow"><span class="dot"></span>Part 8 · Remix Example</span>
+  <h2 class="title">When writing a Remix prompt,<br/><em>point to the original image first.</em></h2>
+  <p class="sub">Do not only say “make a cat game.” Say how this template's world should change.</p>
+  <div class="template-flow" style="grid-template-columns: 1fr;">
+    <div class="template-step"><span class="label">Prompt pattern</span><h3>Change this game into “_____.”</h3><p>The hero is “_____,” the enemies are “_____,” the scene is “_____.” Keep the play style from the original template.</p></div>
+  </div>
+</div>""",
+notes_en="""Teaching focus: anchor the Remix sentence to the original template. Learners should look at the original image before writing the new world.""")
+
+add("template-block-party", "Part 8 · Engine #1 细节", "split", """
+<div class="col-text">
 <span class="eyebrow"><span class="dot"></span>Part 8 · Engine #1 · Block Party</span>
 <h2 class="title">看一个真实例子：<br/><em>僵尸换成扫地机器人。</em></h2>
-<div class="grid">
-  <div class="template-card hot"><span class="cell-num">1</span><h3>原游戏不动</h3><p>玩家移动、自动攻击、敌人包围、升级、得分，这些都还是 Block Party 的老手感。</p></div>
-  <div class="template-card"><span class="cell-num">2</span><h3>敌人换身份</h3><p>“快的敌人”还是快，只是名字从 runner 变成 Roomba Rush，外观变成银白家电。</p></div>
-  <div class="template-card"><span class="cell-num">3</span><h3>画面换气氛</h3><p>色盘从夜晚街区变成奶油色客厅；按钮、标题、提示也跟着猫主题走。</p></div>
-  <div class="template-card"><span class="cell-num">4</span><h3>进阶：换专属图片</h3><p>如果只换颜色还不够，可以为每种敌人生成一张新图片，让主题更清楚。</p></div>
+<ul class="bullets">
+  <li><strong>原游戏不动：</strong>玩家移动、自动攻击、敌人包围、升级、得分。</li>
+  <li><strong>敌人换身份：</strong>快敌人仍然快，只是变成扫地机器人或小家电。</li>
+  <li><strong>场景换气氛：</strong>夜晚街区换成暖色客厅。</li>
+  <li><strong>图片帮助理解：</strong>看原模板图，才能知道新主题应该保留什么。</li>
+</ul>
+</div>
+<div class="col-visual">
+  <div class="template-example">
+    <img src="assets/extra/block-party.png" alt="Original Block Party template" />
+    <div class="caption">
+      <span>原模板</span>
+      <b>保留动作</b>
+      <span>移动 / 躲避 / 自动攻击 / 生存</span>
+    </div>
+  </div>
 </div>
 """, """
 <p>教学重点：角色身份可以变，但角色职责要保持。让学员找出“慢敌人、快敌人、厚敌人”在新主题里分别是谁。</p>
 """,
 short_en="Part 8 · Engine #1 Details",
-body_en="""<span class="eyebrow"><span class="dot"></span>Part 8 · Engine #1 · Block Party</span>
+body_en="""<div class="col-text">
+<span class="eyebrow"><span class="dot"></span>Part 8 · Engine #1 · Block Party</span>
 <h2 class="title">A real example:<br/><em>zombies become robot vacuums.</em></h2>
-<div class="grid">
-  <div class="template-card hot"><span class="cell-num">1</span><h3>The old game stays</h3><p>Movement, auto-attack, enemy pressure, upgrades, score: all the proven Block Party feel remains.</p></div>
-  <div class="template-card"><span class="cell-num">2</span><h3>Enemies get new identities</h3><p>The fast enemy is still fast; it just becomes Roomba Rush with a silver appliance look.</p></div>
-  <div class="template-card"><span class="cell-num">3</span><h3>The mood changes</h3><p>The palette moves from night street to cream living room. Titles, buttons, and prompts follow the cat theme.</p></div>
-  <div class="template-card"><span class="cell-num">4</span><h3>Advanced: custom images</h3><p>If color swaps are not enough, generate one new image per enemy type so the theme reads clearly.</p></div>
-</div>""",
+<ul class="bullets">
+  <li><strong>Original game stays:</strong> movement, auto-attack, enemy pressure, upgrades, score.</li>
+  <li><strong>Enemies get new identities:</strong> the fast enemy is still fast, but becomes a robot vacuum or appliance.</li>
+  <li><strong>Scene changes mood:</strong> night street becomes warm living room.</li>
+  <li><strong>Images help understanding:</strong> read the original template image to see what should stay.</li>
+</ul>
+</div>
+<div class="col-visual"><div class="template-example"><img src="assets/extra/block-party.png" alt="Original Block Party template" /><div class="caption"><span>Original template</span><b>Keep action</b><span>Move / dodge / auto-attack / survive</span></div></div></div>""",
 notes_en="""Teaching focus: identity can change, but job stays the same. Ask learners to map slow enemy, fast enemy, and heavy enemy into the new theme.""")
 
 add("template-3d-engine", "Part 8 · Engine #2 细节", "split flip", """
