@@ -234,22 +234,22 @@
   <section class="slide matrix-2x2">
     <div data-only="zh">
 <span class="eyebrow"><span class="dot"></span>Part 8 · Engine #1 · Block Party</span>
-<h2>俯视生存引擎：<br/>最适合一句话生成。</h2>
+<h2 class="title">看一个真实例子：<br/><em>僵尸换成扫地机器人。</em></h2>
 <div class="grid">
-  <div class="cell"><span class="cell-num">1</span><h3>Role → Skin</h3><p>引擎只认识 lurker / runner / brute / stalker / exploder / ghost / boss。卡带给每个 role 换名字、颜色、sprite。</p></div>
-  <div class="cell"><span class="cell-num">2</span><h3>Spec → Resolve</h3><p><code>CartridgeSpec</code> 是纯 JSON；<code>specToCartridge()</code> 把 string key 绑定到 Three.js builder。</p></div>
-  <div class="cell"><span class="cell-num">3</span><h3>Generator</h3><p>一句话 → game-chat → JSON extraction → <code>validateSpec()</code> → 失败重试 → 写入 <code>gen-*.ts</code>。</p></div>
-  <div class="cell"><span class="cell-num">4</span><h3>Sprite 升级</h3><p><code>--sprites</code> 对 6 个敌人串行 txt2img，上传 R2，敌人 billboard 面朝相机。没图时回退 3D 模型。</p></div>
+  <div class="template-card hot"><span class="cell-num">1</span><h3>原游戏不动</h3><p>玩家移动、自动攻击、敌人包围、升级、得分，这些都还是 Block Party 的老手感。</p></div>
+  <div class="template-card"><span class="cell-num">2</span><h3>敌人换身份</h3><p>“快的敌人”还是快，只是名字从 runner 变成 Roomba Rush，外观变成银白家电。</p></div>
+  <div class="template-card"><span class="cell-num">3</span><h3>画面换气氛</h3><p>色盘从夜晚街区变成奶油色客厅；按钮、标题、提示也跟着猫主题走。</p></div>
+  <div class="template-card"><span class="cell-num">4</span><h3>需要更像时再出图</h3><p><code>--sprites</code> 可以给每种敌人生成专属图片；没有图片时先用 3D 模型换色。</p></div>
 </div>
     </div>
     <div data-only="en">
 <span class="eyebrow"><span class="dot"></span>Part 8 · Engine #1 · Block Party</span>
-<h2>Top-down survival:<br/>best for one-sentence generation.</h2>
+<h2 class="title">A real example:<br/><em>zombies become robot vacuums.</em></h2>
 <div class="grid">
-  <div class="cell"><span class="cell-num">1</span><h3>Role → Skin</h3><p>The engine only knows lurker / runner / brute / stalker / exploder / ghost / boss. Cartridge changes names, colors, sprites.</p></div>
-  <div class="cell"><span class="cell-num">2</span><h3>Spec → Resolve</h3><p><code>CartridgeSpec</code> is pure JSON; <code>specToCartridge()</code> binds string keys to Three.js builders.</p></div>
-  <div class="cell"><span class="cell-num">3</span><h3>Generator</h3><p>Sentence → game-chat → JSON extraction → <code>validateSpec()</code> → retry on errors → write <code>gen-*.ts</code>.</p></div>
-  <div class="cell"><span class="cell-num">4</span><h3>Sprite Upgrade</h3><p><code>--sprites</code> txt2img for 6 enemies, upload to R2, billboard faces camera. No sprite means 3D fallback.</p></div>
+  <div class="template-card hot"><span class="cell-num">1</span><h3>The old game stays</h3><p>Movement, auto-attack, enemy pressure, upgrades, score: all the proven Block Party feel remains.</p></div>
+  <div class="template-card"><span class="cell-num">2</span><h3>Enemies get new identities</h3><p>The fast enemy is still fast; it just becomes Roomba Rush with a silver appliance look.</p></div>
+  <div class="template-card"><span class="cell-num">3</span><h3>The mood changes</h3><p>The palette moves from night street to cream living room. Titles, buttons, and prompts follow the cat theme.</p></div>
+  <div class="template-card"><span class="cell-num">4</span><h3>Add art when needed</h3><p><code>--sprites</code> can generate custom enemy art. Without sprites, recolored 3D models are the fallback.</p></div>
 </div>
     </div>
   </section>
@@ -257,10 +257,10 @@
   <div class="speaker-notes" id="speaker-notes">
     <h4><span data-only="zh">讲师备忘 · 按 S 关闭</span><span data-only="en">Speaker Notes · S to close</span></h4>
     <div data-only="zh">
-<p>Block Party 是 canonical 引擎，因为它最能证明"锁机制、换表达"。讲 role/skin 时可以用猫 vs 扫地机器人例子：玩法完全没变，但世界已经变了。</p>
+<p>这页用猫 vs 扫地机器人讲清楚“角色身份变了，但角色职责没变”。不要先讲 lurker/runner/brute 这些工程名；把它翻译成“慢敌人、快敌人、厚敌人”。</p>
     </div>
     <div data-only="en">
-Block Party is the canonical engine because it proves lock mechanics, swap expression. Use cat vs robot vacuums as the example.
+Use cat vs robot vacuums to explain that enemy identity changes while enemy job stays the same. Translate engineering roles into slow enemy, fast enemy, heavy enemy.
     </div>
   </div>
 

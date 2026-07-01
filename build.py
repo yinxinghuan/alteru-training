@@ -1244,192 +1244,214 @@ add("faq", "Part 7 · FAQ", "matrix-2x2", """
 add("template-concept", "Part 8 · 一句话做游戏", "split", """
 <div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · Game Template Line</span>
-  <h2>一句话/一张照片<br>出一个有质感的游戏</h2>
-  <p><strong>痛点：</strong>平台普通用户做不出能玩的游戏。不是缺想法，是缺质感——juice、首屏即玩、UI、排行榜、社交通知……这些层门槛太高。</p>
-  <p><strong>解法：锁死质感 = 做不烂。</strong></p>
-  <div class="callout">
-    <code style="font-size:1.1em">一句话/一张照片 → Cartridge（卡带 JSON）→ 注入锁死 Engine → 可玩游戏</code>
+  <h2 class="title">一句话不是“写代码”，<br><em>是换一盒卡带。</em></h2>
+  <p class="sub">普通用户最难的不是想点子，而是把点子变成一个“不难玩、不难看、不难分享”的小游戏。我们的做法是：把好玩的手感先做好、锁住，再只让用户换主题。</p>
+  <div class="template-flow">
+    <div class="template-step"><span class="label">Input</span><h3>一句话</h3><p>“一只猫在客厅里躲扫地机器人。”</p></div>
+    <div class="template-arrow">→</div>
+    <div class="template-step"><span class="label">Cartridge</span><h3>换主题</h3><p>敌人名字、颜色、文案、图片、音乐气氛。</p></div>
+    <div class="template-arrow">→</div>
+    <div class="template-step"><span class="label">Engine</span><h3>锁手感</h3><p>移动、碰撞、难度、得分、排行榜、通知。</p></div>
   </div>
-  <p><strong>Engine（引擎）</strong>——我们造，用户碰不到。<br>永远自带：juice / instant-play / 排行榜 / 留言 / 通知。</p>
-  <p><strong>Cartridge（卡带）</strong>——用户的一句话生成。<br>只含主题：敌人叫什么、长什么样、什么颜色、什么文案。<br><span class="callout">任何会改变"游戏多难"的字段都不准进卡带 → 做不烂。</span></p>
 </div>
 <div class="col-visual">
-  <img src="assets/extra/block-party.png" alt="Block Party" style="max-height:50vh" />
-  <p style="text-align:center;color:var(--ink-mid);margin-top:0.8em">Engine #1：Block Party<br>→ 猫 vs 扫地机器人（换一份卡带 JSON）</p>
+  <div class="template-example">
+    <img src="assets/gen/game-template-cartridge-swap.png" alt="Same game engine with two different cartridge worlds" />
+    <div class="caption">
+      <span>同一个游戏手感</span>
+      <b>换主题</b>
+      <span>从僵尸街区变成猫 vs 扫地机器人</span>
+    </div>
+  </div>
 </div>
 """, """
-<p>先给学员看痛点数据。平台 100+ 游戏但多数是 Tier1 纯 HTML——根本没质感。然后引出核心洞察：质感不在玩法复杂度，而在 juice/UI/社交那几层，而这几层我们已经一条条沉淀成了 skill。</p>
-<p>Engine/Cartridge 类比红白机：机器永远不变，插不同卡带玩不同游戏。关键设计：卡带不含任何游戏难度字段——HP/速度/碰撞全锁在引擎里。</p>
+<p>这一页先把抽象概念讲成人话。不要从 JSON、schema、resolve 讲起；先让学员理解“红白机 + 卡带”：机器负责手感，卡带负责世界。</p>
+<p>最关键的一句话：普通用户可以换世界，但不能把游戏调坏。</p>
 """,
 short_en="Part 8 · One Sentence = Game",
 body_en="""<div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · Game Template Line</span>
-  <h2>One sentence. One photo.<br>A quality game comes out.</h2>
-  <p><strong>The pain point:</strong> Regular users on the platform can't make playable games. Not a lack of ideas — a lack of quality. Juice, instant-play, UI, leaderboards, social notifications... the barrier is too high.</p>
-  <p><strong>The fix: lock quality so they can't break it.</strong></p>
-  <div class="callout">
-    <code style="font-size:1.1em">One sentence → Cartridge (JSON) → locked Engine → playable game</code>
+  <h2 class="title">One sentence is not “write code.”<br><em>It is swapping a cartridge.</em></h2>
+  <p class="sub">Users are not short on ideas. The hard part is turning an idea into a game that feels good, looks good, and is easy to share. So we build and lock the play feel first, then let users change the theme.</p>
+  <div class="template-flow">
+    <div class="template-step"><span class="label">Input</span><h3>One sentence</h3><p>“A cat survives robot vacuums in a living room.”</p></div>
+    <div class="template-arrow">→</div>
+    <div class="template-step"><span class="label">Cartridge</span><h3>Theme swap</h3><p>Enemy names, colors, copy, images, audio mood.</p></div>
+    <div class="template-arrow">→</div>
+    <div class="template-step"><span class="label">Engine</span><h3>Locked feel</h3><p>Movement, collision, difficulty, scoring, leaderboard, notifications.</p></div>
   </div>
-  <p><strong>Engine</strong> — We build it. Users can't touch it.<br>Always includes: juice / instant-play / leaderboard / guestbook / notify.</p>
-  <p><strong>Cartridge</strong> — Generated from the user's one sentence.<br>Theme only: enemy names, visuals, colors, copy.<br><span class="callout">Nothing that changes difficulty can enter the cartridge → they can't break it.</span></p>
 </div>
 <div class="col-visual">
-  <img src="assets/extra/block-party.png" alt="Block Party" style="max-height:50vh" />
-  <p style="text-align:center;color:var(--ink-mid);margin-top:0.8em">Engine #1: Block Party<br>→ Cat vs Robot Vacuums (swap one cartridge JSON)</p>
+  <div class="template-example"><img src="assets/gen/game-template-cartridge-swap.png" alt="Same game engine with two different cartridge worlds" /><div class="caption"><span>Same play feel</span><b>Theme swap</b><span>From zombie block party to cat vs robot vacuums</span></div></div>
 </div>""",
-notes_en="""Start with the pain point. 100+ games on the platform, most Tier1 bare HTML — no quality. The insight: quality isn't gameplay complexity, it's juice/UI/social layers. We've already codified those into skills. Engine/Cartridge = NES analogy: machine never changes, different cartridge = different game. Critical design: cartridge can't contain difficulty fields.""")
+notes_en="""Make the abstract idea concrete. Do not start with JSON/schema/resolve. Start with the console + cartridge analogy: the machine owns feel, the cartridge owns the world. Key sentence: users can change the world, but cannot tune the game into a broken state.""")
 
 add("template-engines", "Part 8 · 三类引擎", "matrix-2x2", """
 <span class="eyebrow"><span class="dot"></span>Part 8 · 三类引擎模板</span>
-<h2>三种引擎，覆盖三种玩法类型</h2>
+<h2 class="title">不是一个模板吃天下。<br/><em>先选玩法盒子。</em></h2>
 <div class="grid">
-<div class="cell">
-  <h3>🎮 Engine #1 · 俯视街机</h3>
-  <p><strong>Block Party</strong> — 自动开火生存。最可 reskin，一句话+一张脸都能驱动。Cartridge 是纯 JSON。</p>
-  <p><small>已完成：cartridge + generator + sprite 管线 + skill</small></p>
+<div class="template-card hot">
+  <span class="tag">最适合一句话</span>
+  <h3>俯视生存</h3>
+  <p>像 Block Party：玩家移动，系统自动攻击，敌人围上来。用户一句话最容易改成新世界。</p>
+  <ul class="plain-list"><li>例子：猫躲扫地机器人</li><li>可换：敌人、颜色、文案、sprite</li></ul>
 </div>
-<div class="cell">
-  <h3>⏱ Engine #2 · 3D Timing</h3>
-  <p><strong>Corporate Climb / Sky Leap</strong> — 蓄力跳跃 / 点击爬塔。质感天花板最高。Cartridge 管视觉氛围。</p>
-  <p><small>已完成：shared engine + Corp Climb cartridge（office / firefighter）</small></p>
+<div class="template-card">
+  <span class="tag">最有视觉质感</span>
+  <h3>3D 时机挑战</h3>
+  <p>像 Sky Leap / Corporate Climb：按住、松手、跳跃、爬升。卡带主要换场景气氛。</p>
+  <ul class="plain-list"><li>例子：办公室逃离 → 消防救援</li><li>可换：天空、灯光、角色语气</li></ul>
 </div>
-<div class="cell">
-  <h3>🪞 Engine #4 · 身份变形</h3>
-  <p><strong>Past Life / Future Life</strong> — 照片→AI 画像+故事。最契合 AlterU "your AI self becomes the protagonist"。</p>
-  <p><small>已完成：past-life / future-life 双卡带</small></p>
+<div class="template-card">
+  <span class="tag">最像 AlterU</span>
+  <h3>照片身份变形</h3>
+  <p>像 Past Life / Future Life：用户上传照片，AI 把“我”变成另一个身份。</p>
+  <ul class="plain-list"><li>例子：前世画像 / 未来身份</li><li>可换：prompt、叙事口吻、展示语言</li></ul>
 </div>
-<div class="cell" style="border-color: var(--brand-pink);">
-  <h3>🔮 将来</h3>
-  <p>引擎库持续扩充。每加一种引擎 = 一种"玩法类型"可批量产。generator 从一句话自动选最合适的引擎。</p>
+<div class="template-card hot">
+  <span class="tag">怎么理解</span>
+  <h3>引擎 = 玩法盒子</h3>
+  <p>用户不是从零做游戏，而是在选择一个已经好玩的盒子，再把自己的主题装进去。</p>
+  <ul class="plain-list"><li>以后 generator 会自动帮用户选盒子</li></ul>
 </div>
 </div>
 """, """
-<p>三类引擎是用户拍板的（1=俯视街机、2=3D timing、4=身份变形，3=Suika 暂缓）。讲每类的区别：输入方式不同（照片→主角 vs 一句话→世界）、输出不同（action game vs toy）、已有什么。</p>
+<p>把“引擎”翻译成“玩法盒子”。这页不要讲太多实现，只要让学员理解：不是所有想法都塞进同一个模板，而是先判断它像哪一种体验。</p>
 """,
 short_en="Part 8 · Three Engine Types",
 body_en="""<span class="eyebrow"><span class="dot"></span>Part 8 · Three Engine Types</span>
-<h2>Three engines, three play styles</h2>
+<h2 class="title">One template cannot fit everything.<br/><em>Pick the play box first.</em></h2>
 <div class="grid">
-<div class="cell">
-  <h3>🎮 Engine #1 · Top-Down Arcade</h3>
-  <p><strong>Block Party</strong> — Auto-fire survival. Most reskinnable. Cartridge is pure JSON.</p>
-  <p><small>Done: cartridge + generator + sprite pipeline + skill</small></p>
+<div class="template-card hot">
+  <span class="tag">Best for one sentence</span>
+  <h3>Top-down survival</h3>
+  <p>Like Block Party: the player moves, the system auto-attacks, enemies close in. Easiest to turn into new worlds.</p>
+  <ul class="plain-list"><li>Example: cat vs robot vacuums</li><li>Swap: enemies, colors, copy, sprites</li></ul>
 </div>
-<div class="cell">
-  <h3>⏱ Engine #2 · 3D Timing</h3>
-  <p><strong>Corporate Climb / Sky Leap</strong> — Charge-jump / tap-climb. Highest visual ceiling. Cartridge controls atmosphere.</p>
-  <p><small>Done: shared engine + Corp Climb dual-cartridge (office / firefighter)</small></p>
+<div class="template-card">
+  <span class="tag">Most visual polish</span>
+  <h3>3D timing challenge</h3>
+  <p>Like Sky Leap / Corporate Climb: hold, release, jump, climb. The cartridge mainly changes atmosphere.</p>
+  <ul class="plain-list"><li>Example: office escape → firefighter rescue</li><li>Swap: sky, lights, character voice</li></ul>
 </div>
-<div class="cell">
-  <h3>🪞 Engine #4 · Identity Transform</h3>
-  <p><strong>Past Life / Future Life</strong> — Photo → AI portrait + story. Most on-brand for AlterU.</p>
-  <p><small>Done: past-life / future-life dual cartridge</small></p>
+<div class="template-card">
+  <span class="tag">Most AlterU</span>
+  <h3>Photo identity transform</h3>
+  <p>Like Past Life / Future Life: the user uploads a photo, and AI turns “me” into another identity.</p>
+  <ul class="plain-list"><li>Example: past-life portrait / future identity</li><li>Swap: prompt, narrative voice, display copy</li></ul>
 </div>
-<div class="cell" style="border-color: var(--brand-pink);">
-  <h3>🔮 Coming Soon</h3>
-  <p>Engine library grows. Each new engine = a new play-style that can be mass-produced. The generator picks the right engine automatically.</p>
+<div class="template-card hot">
+  <span class="tag">Mental model</span>
+  <h3>Engine = play box</h3>
+  <p>Users are not making a game from nothing. They pick a proven box, then put their own world inside.</p>
+  <ul class="plain-list"><li>Later, the generator chooses the box automatically.</li></ul>
 </div>
 </div>""",
-notes_en="""Three engine types the user chose (1=arcade, 2=3D timing, 4=identity transform, 3=Suika deferred). Explain the difference: input (photo→hero vs sentence→world), output (action game vs toy), what's done.""")
+notes_en="""Translate engine into play box. Do not over-explain implementation. The learner only needs to understand that different ideas fit different proven experience shapes.""")
 
 add("template-contract", "Part 8 · 契约边界", "matrix-2x2", """
 <span class="eyebrow"><span class="dot"></span>Part 8 · Engine / Cartridge 契约</span>
-<h2>最重要的不是 JSON，<br/>是边界。</h2>
+<h2 class="title">用户可以换世界，<br/><em>不能调坏手感。</em></h2>
 <div class="grid">
-  <div class="cell" style="border-color: var(--brand-pink);">
+  <div class="template-card hot">
     <span class="cell-num">1</span>
-    <h3>Engine owns Mechanics</h3>
-    <p>碰撞、速度、血量、生成曲线、计分、输入手感、相机、排行榜、通知。<strong>用户碰不到。</strong></p>
+    <h3>锁住的部分</h3>
+    <p>移动、碰撞、速度、血量、生成节奏、分数、排行榜、通知。这些决定“好不好玩”，所以用户不能碰。</p>
   </div>
-  <div class="cell" style="border-color: var(--brand-pink);">
+  <div class="template-card hot">
     <span class="cell-num">2</span>
-    <h3>Cartridge owns Expression</h3>
-    <p>主题、palette、角色皮、敌人名字、文案、sprite、audio mood、prompt framing。<strong>用户可以改。</strong></p>
+    <h3>可换的部分</h3>
+    <p>世界观、角色名字、颜色、图片、文案、声音气氛。这些决定“像不像我的点子”，所以用户可以改。</p>
   </div>
-  <div class="cell">
+  <div class="template-card">
     <span class="cell-num">3</span>
     <h3>唯一判断题</h3>
-    <p><strong class="pink">这个字段改了，会不会让游戏更难或更容易？</strong><br/>会 → Engine。不会 → Cartridge。</p>
+    <p><strong class="pink">改这个东西，会不会让游戏变难或变简单？</strong><br/>会，就锁进引擎；不会，就放进卡带。</p>
   </div>
-  <div class="cell">
+  <div class="template-card">
     <span class="cell-num">4</span>
-    <h3>Remix 的安全性</h3>
-    <p>Remix 不是给用户一堆 knobs。Remix 是让用户改世界观、身份和表层表达，但保留已调好的 play feel。</p>
+    <h3>为什么 Remix 安全</h3>
+    <p>Remix 不是给用户一堆旋钮，而是让他换故事、换角色、换视觉，同时保留我们已经调好的手感。</p>
   </div>
 </div>
 """, """
-<p>这一页是 Part 8 的核心。不要把 cartridge 讲成"配置文件"这么低层；它本质是产品边界：什么让普通用户自由发挥，什么必须由我们锁住。</p>
-<p>如果有人问能不能开放速度/伤害/生成率，回答：可以进入深度制作路，但不要进入快速模板路。A 路要保护用户不把游戏做烂。</p>
+<p>这是 Part 8 最重要的一页。请反复使用“会不会改变难度”这个判断题。它比 Engine/Cartridge 的术语更容易记。</p>
+<p>如果有人问能不能开放速度/伤害/生成率，回答：可以进入深度制作路，但不要进入快速模板路。快速模板要保护用户不把游戏做烂。</p>
 """,
 short_en="Part 8 · Contract Boundary",
 body_en="""<span class="eyebrow"><span class="dot"></span>Part 8 · Engine / Cartridge Contract</span>
-<h2>The point is not JSON.<br/>The point is the boundary.</h2>
+<h2 class="title">Users can change the world.<br/><em>They cannot break the feel.</em></h2>
 <div class="grid">
-  <div class="cell" style="border-color: var(--brand-pink);"><span class="cell-num">1</span><h3>Engine owns Mechanics</h3><p>Collision, speed, HP, spawn curves, scoring, input feel, camera, leaderboard, notifications. <strong>Users cannot touch these.</strong></p></div>
-  <div class="cell" style="border-color: var(--brand-pink);"><span class="cell-num">2</span><h3>Cartridge owns Expression</h3><p>Theme, palette, skins, enemy names, copy, sprites, audio mood, prompt framing. <strong>Users can change these.</strong></p></div>
-  <div class="cell"><span class="cell-num">3</span><h3>The one test</h3><p><strong class="pink">If this field changes, can the game become easier or harder?</strong><br/>Yes → Engine. No → Cartridge.</p></div>
-  <div class="cell"><span class="cell-num">4</span><h3>Safe Remix</h3><p>Remix is not a bag of knobs. Remix lets users change world, identity, and expression while keeping proven play feel.</p></div>
+  <div class="template-card hot"><span class="cell-num">1</span><h3>The locked part</h3><p>Movement, collision, speed, HP, spawn rhythm, score, leaderboard, notifications. These decide whether the game feels good, so users cannot touch them.</p></div>
+  <div class="template-card hot"><span class="cell-num">2</span><h3>The swappable part</h3><p>World, character names, colors, images, copy, audio mood. These decide whether the game feels like the user's idea, so users can change them.</p></div>
+  <div class="template-card"><span class="cell-num">3</span><h3>The one test</h3><p><strong class="pink">If this changes, can the game become harder or easier?</strong><br/>Yes: lock it in the engine. No: put it in the cartridge.</p></div>
+  <div class="template-card"><span class="cell-num">4</span><h3>Why Remix is safe</h3><p>Remix is not a bag of knobs. It changes story, characters, and visuals while keeping the tuned play feel.</p></div>
 </div>""",
-notes_en="""This is the core of Part 8. Do not present cartridge as merely a config file. It is a product boundary: what users can freely change, and what we must lock down.""")
+notes_en="""This is the core slide. Repeat the difficulty test. It is easier to remember than the Engine/Cartridge terminology.""")
 
 add("template-remix", "Part 8 · Remix 路径", "split", """
 <div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · Remix 为什么变容易</span>
-  <h2>Remix 从“改代码”<br/>降级成“改卡带”。</h2>
-  <p>以前 Remix 一个游戏，agent 需要读工程、理解玩法、改 UI、改素材、跑 build，任何一步都可能把手感弄坏。</p>
-  <p>现在 Remix 可以走受约束的数据路径：</p>
-  <div class="callout">
-    <code>原 cartridge → 用户一句话修改 → LLM 产新 spec → validate → build → publish</code>
+  <h2 class="title">Remix 不再是“拆游戏”，<br/><em>而是换世界。</em></h2>
+  <p class="sub">以前要 remix，一个 agent 需要读工程、改 UI、改素材、跑 build，任何一步都可能破坏手感。模板线把这件事变成一条更安全的路。</p>
+  <div class="template-flow" style="grid-template-columns: 1fr auto 1fr auto 1fr;">
+    <div class="template-step"><span class="label">Start</span><h3>选一个游戏</h3><p>比如 Block Party。</p></div>
+    <div class="template-arrow">→</div>
+    <div class="template-step"><span class="label">Say</span><h3>说想换什么</h3><p>“改成猫躲扫地机器人。”</p></div>
+    <div class="template-arrow">→</div>
+    <div class="template-step"><span class="label">Publish</span><h3>确认后发布</h3><p>手感不变，世界变了。</p></div>
   </div>
-  <p><strong>A 路：</strong>快速模板。理想只有一个确认屏：主题对不对？角色像不像？然后发布。</p>
-  <p><strong>B 路：</strong>深度制作。用户想要更多控制时，进入对话式编辑 cartridge；需要新机制时才升级成真正的 agent 开发。</p>
 </div>
 <div class="col-visual">
-  <div class="cell" style="height: 68vh; display: flex; flex-direction: column; justify-content: center;">
-    <h3 class="pink">铁律</h3>
-    <p style="font-size: 22px; line-height: 1.45;">不要为了“更自由”，把 A 路做成复杂编辑器。</p>
-    <p>快速模板的价值，就是让用户碰不到会破坏质感的层。</p>
+  <div class="template-card hot" style="min-height: 58vh; display: flex; flex-direction: column; justify-content: center;">
+    <span class="tag">产品原则</span>
+    <h3 style="font-size: clamp(28px, 3vw, 44px);">快速路要少选项。</h3>
+    <p style="font-size: 18px;">不要为了“更自由”，把一句话生成做成复杂编辑器。用户想深调时，再进入深度制作路。</p>
+    <div class="template-note" style="margin-top: 24px;">A 路负责快、稳、不会做烂。B 路才负责复杂控制。</div>
   </div>
 </div>
 """, """
-<p>这一页要把 Remix 的战略价值讲清楚。Engine/Cartridge 不是只为了生产新游戏，更是未来 Remix 的底层协议。</p>
-<p>强调 A/B 分路。A 路要极少选项；B 路可以深，但不能污染 A 路。</p>
+<p>这一页讲 Remix 的用户体验，不要讲协议。核心是：用户感觉自己在“换世界”，不是在“改代码”。</p>
+<p>强调 A/B 分路：快速路必须少选项，深度制作路可以慢慢聊。</p>
 """,
 short_en="Part 8 · Remix Path",
 body_en="""<div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · Why Remix Gets Easier</span>
-  <h2>Remix stops being code edits.<br/>It becomes cartridge edits.</h2>
-  <p>Previously, an agent had to read the repo, understand mechanics, change UI, change assets, run builds — any step could break play feel.</p>
-  <p>Now Remix can follow a constrained data path:</p>
-  <div class="callout"><code>source cartridge → user request → new spec → validate → build → publish</code></div>
-  <p><strong>Path A:</strong> fast template. Ideally one confirmation screen: is the theme right, does the hero feel right, then publish.</p>
-  <p><strong>Path B:</strong> deep making. If users want more control, edit cartridge conversationally. New mechanics become real agent development.</p>
+  <h2 class="title">Remix stops being “take the game apart.”<br/><em>It becomes changing the world.</em></h2>
+  <p class="sub">Previously, an agent had to read the repo, change UI, change assets, and run builds. Any step could break play feel. The template line makes the path safer.</p>
+  <div class="template-flow" style="grid-template-columns: 1fr auto 1fr auto 1fr;">
+    <div class="template-step"><span class="label">Start</span><h3>Pick a game</h3><p>For example, Block Party.</p></div>
+    <div class="template-arrow">→</div>
+    <div class="template-step"><span class="label">Say</span><h3>Describe the change</h3><p>“Make it a cat dodging robot vacuums.”</p></div>
+    <div class="template-arrow">→</div>
+    <div class="template-step"><span class="label">Publish</span><h3>Confirm and ship</h3><p>Same feel, new world.</p></div>
+  </div>
 </div>
-<div class="col-visual"><div class="cell" style="height: 68vh; display: flex; flex-direction: column; justify-content: center;"><h3 class="pink">Rule</h3><p style="font-size: 22px; line-height: 1.45;">Do not turn Path A into a complex editor in the name of freedom.</p><p>The value of fast templates is that users cannot touch the quality-breaking layers.</p></div></div>""",
-notes_en="""Make the strategic value clear: Engine/Cartridge is not just a production trick, it is the future Remix protocol. Stress Path A/B separation.""")
+<div class="col-visual"><div class="template-card hot" style="min-height: 58vh; display: flex; flex-direction: column; justify-content: center;"><span class="tag">Product rule</span><h3 style="font-size: clamp(28px, 3vw, 44px);">Fast path means fewer choices.</h3><p style="font-size: 18px;">Do not turn one-sentence generation into a complex editor in the name of freedom. If users want deep control, move them into deep making.</p><div class="template-note" style="margin-top: 24px;">Path A is fast, stable, hard to break. Path B is where complex control belongs.</div></div></div>""",
+notes_en="""Explain the user experience of Remix, not the protocol. Users should feel they are changing the world, not editing code. Stress the Path A/B split.""")
 
 add("template-block-party", "Part 8 · Engine #1 细节", "matrix-2x2", """
 <span class="eyebrow"><span class="dot"></span>Part 8 · Engine #1 · Block Party</span>
-<h2>俯视生存引擎：<br/>最适合一句话生成。</h2>
+<h2 class="title">看一个真实例子：<br/><em>僵尸换成扫地机器人。</em></h2>
 <div class="grid">
-  <div class="cell"><span class="cell-num">1</span><h3>Role → Skin</h3><p>引擎只认识 lurker / runner / brute / stalker / exploder / ghost / boss。卡带给每个 role 换名字、颜色、sprite。</p></div>
-  <div class="cell"><span class="cell-num">2</span><h3>Spec → Resolve</h3><p><code>CartridgeSpec</code> 是纯 JSON；<code>specToCartridge()</code> 把 string key 绑定到 Three.js builder。</p></div>
-  <div class="cell"><span class="cell-num">3</span><h3>Generator</h3><p>一句话 → game-chat → JSON extraction → <code>validateSpec()</code> → 失败重试 → 写入 <code>gen-*.ts</code>。</p></div>
-  <div class="cell"><span class="cell-num">4</span><h3>Sprite 升级</h3><p><code>--sprites</code> 对 6 个敌人串行 txt2img，上传 R2，敌人 billboard 面朝相机。没图时回退 3D 模型。</p></div>
+  <div class="template-card hot"><span class="cell-num">1</span><h3>原游戏不动</h3><p>玩家移动、自动攻击、敌人包围、升级、得分，这些都还是 Block Party 的老手感。</p></div>
+  <div class="template-card"><span class="cell-num">2</span><h3>敌人换身份</h3><p>“快的敌人”还是快，只是名字从 runner 变成 Roomba Rush，外观变成银白家电。</p></div>
+  <div class="template-card"><span class="cell-num">3</span><h3>画面换气氛</h3><p>色盘从夜晚街区变成奶油色客厅；按钮、标题、提示也跟着猫主题走。</p></div>
+  <div class="template-card"><span class="cell-num">4</span><h3>需要更像时再出图</h3><p><code>--sprites</code> 可以给每种敌人生成专属图片；没有图片时先用 3D 模型换色。</p></div>
 </div>
 """, """
-<p>Block Party 是 canonical 引擎，因为它最能证明"锁机制、换表达"。讲 role/skin 时可以用猫 vs 扫地机器人例子：玩法完全没变，但世界已经变了。</p>
+<p>这页用猫 vs 扫地机器人讲清楚“角色身份变了，但角色职责没变”。不要先讲 lurker/runner/brute 这些工程名；把它翻译成“慢敌人、快敌人、厚敌人”。</p>
 """,
 short_en="Part 8 · Engine #1 Details",
 body_en="""<span class="eyebrow"><span class="dot"></span>Part 8 · Engine #1 · Block Party</span>
-<h2>Top-down survival:<br/>best for one-sentence generation.</h2>
+<h2 class="title">A real example:<br/><em>zombies become robot vacuums.</em></h2>
 <div class="grid">
-  <div class="cell"><span class="cell-num">1</span><h3>Role → Skin</h3><p>The engine only knows lurker / runner / brute / stalker / exploder / ghost / boss. Cartridge changes names, colors, sprites.</p></div>
-  <div class="cell"><span class="cell-num">2</span><h3>Spec → Resolve</h3><p><code>CartridgeSpec</code> is pure JSON; <code>specToCartridge()</code> binds string keys to Three.js builders.</p></div>
-  <div class="cell"><span class="cell-num">3</span><h3>Generator</h3><p>Sentence → game-chat → JSON extraction → <code>validateSpec()</code> → retry on errors → write <code>gen-*.ts</code>.</p></div>
-  <div class="cell"><span class="cell-num">4</span><h3>Sprite Upgrade</h3><p><code>--sprites</code> txt2img for 6 enemies, upload to R2, billboard faces camera. No sprite means 3D fallback.</p></div>
+  <div class="template-card hot"><span class="cell-num">1</span><h3>The old game stays</h3><p>Movement, auto-attack, enemy pressure, upgrades, score: all the proven Block Party feel remains.</p></div>
+  <div class="template-card"><span class="cell-num">2</span><h3>Enemies get new identities</h3><p>The fast enemy is still fast; it just becomes Roomba Rush with a silver appliance look.</p></div>
+  <div class="template-card"><span class="cell-num">3</span><h3>The mood changes</h3><p>The palette moves from night street to cream living room. Titles, buttons, and prompts follow the cat theme.</p></div>
+  <div class="template-card"><span class="cell-num">4</span><h3>Add art when needed</h3><p><code>--sprites</code> can generate custom enemy art. Without sprites, recolored 3D models are the fallback.</p></div>
 </div>""",
-notes_en="""Block Party is the canonical engine because it proves lock mechanics, swap expression. Use cat vs robot vacuums as the example.""")
+notes_en="""Use cat vs robot vacuums to explain that enemy identity changes while enemy job stays the same. Translate engineering roles into slow enemy, fast enemy, heavy enemy.""")
 
 add("template-3d-engine", "Part 8 · Engine #2 细节", "split flip", """
 <div class="col-visual">
@@ -1438,14 +1460,14 @@ add("template-3d-engine", "Part 8 · Engine #2 细节", "split flip", """
 </div>
 <div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · Engine #2 · 3D Timing</span>
-  <h2>把 3D 质感抽成<br/>共享引擎。</h2>
-  <p><strong>Shared engine：</strong><code>engine-3d</code> 抽出 prims、characters、audio、particles、camera、office / archetype builders。</p>
-  <p><strong>两个宿主：</strong>Corporate Climb 和 Sky Leap 都作为 submodule 接入同一套 3D 低多边形引擎。</p>
-  <p><strong>Cartridge 负责：</strong>天空、灯光、fog、bloom、world colors、motes、音效 mood、文案和角色语气。</p>
-  <p><strong>不负责：</strong>跳跃时机、失败窗口、combo、相机跟随、输入节奏。这些继续锁在游戏逻辑里。</p>
+  <h2 class="title">3D 游戏里，卡带更多是在换<em>气氛。</em></h2>
+  <p class="sub">有些游戏的手感很依赖时机：按多久、什么时候松手、失败窗口多窄。这些不能随便开放给用户。</p>
+  <div class="template-note"><strong>用户能换：</strong>天空、灯光、雾、颜色、音效气氛、角色语气、世界设定。</div>
+  <div class="template-note" style="margin-top: 14px;"><strong>用户不能换：</strong>跳跃时机、combo、失败判定、相机跟随、输入节奏。</div>
+  <p>所以 3D timing 的卡带不像 Block Party 那样主要换敌人，而是把同一套 3D 手感放进不同场景。</p>
 </div>
 """, """
-<p>这一页说明：不是所有 cartridge 都长得像 Block Party。3D timing 的 cartridge 更偏 atmosphere 和 copy，但边界原则一样。</p>
+<p>这一页说明：不同引擎的卡带长得不一样。3D timing 的重点是 atmosphere，不是敌人表。</p>
 <p>如果图片缺失或现场加载慢，就直接讲 shared engine/submodule 的结构。</p>
 """,
 short_en="Part 8 · Engine #2 Details",
@@ -1455,22 +1477,22 @@ body_en="""<div class="col-visual">
 </div>
 <div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · Engine #2 · 3D Timing</span>
-  <h2>Turn 3D polish into<br/>a shared engine.</h2>
-  <p><strong>Shared engine:</strong> <code>engine-3d</code> extracts prims, characters, audio, particles, camera, office / archetype builders.</p>
-  <p><strong>Two hosts:</strong> Corporate Climb and Sky Leap both consume the same low-poly 3D engine as a submodule.</p>
-  <p><strong>Cartridge owns:</strong> sky, lights, fog, bloom, world colors, motes, audio mood, copy and character tone.</p>
-  <p><strong>Not cartridge:</strong> jump timing, fail windows, combo, camera follow, input rhythm. Those stay locked in game logic.</p>
+  <h2 class="title">In 3D games, cartridges mostly change the <em>mood.</em></h2>
+  <p class="sub">Some games depend on timing: how long to hold, when to release, how tight the fail window is. Those should not be casually exposed.</p>
+  <div class="template-note"><strong>Users can change:</strong> sky, lighting, fog, colors, audio mood, character voice, world framing.</div>
+  <div class="template-note" style="margin-top: 14px;"><strong>Users cannot change:</strong> jump timing, combo, fail checks, camera follow, input rhythm.</div>
+  <p>So a 3D timing cartridge is less about enemy tables and more about putting the same play feel into a different scene.</p>
 </div>""",
-notes_en="""This slide explains that cartridges differ by engine. 3D timing cartridges are more about atmosphere and copy, but the boundary principle is the same.""")
+notes_en="""This slide explains that cartridges differ by engine. 3D timing cartridges are about atmosphere, not enemy tables.""")
 
 add("template-identity-engine", "Part 8 · Engine #4 细节", "split", """
 <div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · Engine #4 · Identity Transform</span>
-  <h2>照片原生的模板，<br/>不是小游戏换皮。</h2>
-  <p><strong>Past Life / Future Life</strong> 的核心输入是用户照片。它不是 action loop，而是 identity toy：生成一张“你是谁”的 AI 画像和解读。</p>
-  <p><strong>Cartridge 负责：</strong>生成 prompt、时代/未来设定、reading 语气、booking 文案、i18n copy、墙上的展示语言。</p>
-  <p><strong>Engine 负责：</strong>上传、等待仪式、AI 调用、保存、跨用户 Hall、详情页、分享/社交结构。</p>
-  <p>这一类证明：Engine/Cartridge 不只适用于游戏，也适用于 AlterU 最核心的“身份变形”体验。</p>
+  <h2 class="title">模板线不只做小游戏，<br/>也能做<em>身份体验。</em></h2>
+  <p class="sub">Past Life / Future Life 的输入不是一句话，而是用户照片。玩家想看的不是“我赢了吗”，而是“AI 把我看成谁”。</p>
+  <div class="template-note"><strong>卡带换的是：</strong>前世还是未来、画像 prompt、解读口吻、页面文案、墙上展示语言。</div>
+  <div class="template-note" style="margin-top: 14px;"><strong>引擎锁住的是：</strong>上传、等待仪式、AI 调用、保存、Hall、详情页、分享结构。</div>
+  <p>这类引擎把 AlterU 的核心说清楚：your AI self becomes the protagonist。</p>
 </div>
 <div class="col-visual">
   <img src="assets/gen/fake-identity.jpg" alt="Identity transformation reference" style="max-height: 68vh; object-fit: cover;" />
@@ -1481,101 +1503,97 @@ add("template-identity-engine", "Part 8 · Engine #4 细节", "split", """
 short_en="Part 8 · Engine #4 Details",
 body_en="""<div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · Engine #4 · Identity Transform</span>
-  <h2>Photo-native templates,<br/>not just reskinned games.</h2>
-  <p><strong>Past Life / Future Life</strong> starts from the user's photo. It is not an action loop; it is an identity toy: an AI portrait and reading of who you are.</p>
-  <p><strong>Cartridge owns:</strong> generation prompts, era/future framing, reading voice, booking copy, i18n copy, wall display language.</p>
-  <p><strong>Engine owns:</strong> upload, waiting ritual, AI call, save, cross-user Hall, detail page, share/social structure.</p>
-  <p>This proves Engine/Cartridge is not only for games. It also powers AlterU's core identity-transformation experiences.</p>
+  <h2 class="title">The template line is not only for games.<br/>It also makes <em>identity experiences.</em></h2>
+  <p class="sub">Past Life / Future Life starts from the user's photo. The player is not asking “did I win?” They are asking “who does AI see in me?”</p>
+  <div class="template-note"><strong>Cartridge changes:</strong> past vs future, image prompt, reading voice, page copy, wall display language.</div>
+  <div class="template-note" style="margin-top: 14px;"><strong>Engine locks:</strong> upload, waiting ritual, AI call, save, Hall, detail page, sharing structure.</div>
+  <p>This brings Part 8 back to AlterU's core: your AI self becomes the protagonist.</p>
 </div>
 <div class="col-visual"><img src="assets/gen/fake-identity.jpg" alt="Identity transformation reference" style="max-height: 68vh; object-fit: cover;" /></div>""",
-notes_en="""Tie Part 8 back to AlterU's brand: your AI self becomes the protagonist. This is not merely mass-producing mini-games; it is mass-producing identity experiences.""")
+notes_en="""Tie Part 8 back to AlterU's brand. The template line is not just mini-game mass production; it can also produce identity experiences.""")
 
 add("template-operating-model", "Part 8 · 新增引擎流程", "matrix-2x2", """
 <span class="eyebrow"><span class="dot"></span>Part 8 · 怎样新增一个模板引擎</span>
-<h2>不是先写 generator。<br/>先做一个稳的 canonical engine。</h2>
+<h2 class="title">先证明一个游戏好玩，<br/><em>再把它变成模板。</em></h2>
 <div class="grid">
-  <div class="cell"><span class="cell-num">1</span><h3>选宿主游戏</h3><p>必须已经好玩、首屏即玩、社交完整、build 稳。不要拿半成品当模板。</p></div>
-  <div class="cell"><span class="cell-num">2</span><h3>切边界</h3><p>列出所有字段，用“会不会改变难度/手感”逐项归类。Mechanics 留 engine，expression 进 cartridge。</p></div>
-  <div class="cell"><span class="cell-num">3</span><h3>做第二份卡带</h3><p>不是文档说可换，而是真的做一个主题完全不同的卡带，并保证 build 零回归。</p></div>
-  <div class="cell"><span class="cell-num">4</span><h3>再做 generator</h3><p>有第二份卡带后，把它作为 worked example 塞进 prompt；加 validate + retry，再考虑 sprite / image pipeline。</p></div>
+  <div class="template-card hot"><span class="cell-num">1</span><h3>做一个好玩的原版</h3><p>先有一个真的能玩、首屏即玩、社交完整、build 稳的游戏。半成品不能当模板。</p></div>
+  <div class="template-card"><span class="cell-num">2</span><h3>圈出哪些能换</h3><p>把所有内容分成两类：会影响难度的锁住；只影响表达的放进卡带。</p></div>
+  <div class="template-card"><span class="cell-num">3</span><h3>手工做第二个主题</h3><p>不要只说“理论上能换”。真的做一个完全不同的主题，证明玩法没坏。</p></div>
+  <div class="template-card hot"><span class="cell-num">4</span><h3>最后才自动生成</h3><p>把第二个主题当范例教给 LLM，再加校验、重试、图片生成、发布流程。</p></div>
 </div>
 """, """
-<p>这一页是给内部团队的流程。重点：generator 不是第一步。没有 canonical engine 和第二份卡带，LLM 生成只会把不稳定放大。</p>
+<p>这一页是给内部团队的流程。重点：不要一上来写 generator。没有一个好玩的原版和一个成功的第二主题，自动生成只会放大不稳定。</p>
 """,
 short_en="Part 8 · Adding Engines",
 body_en="""<span class="eyebrow"><span class="dot"></span>Part 8 · How to Add a Template Engine</span>
-<h2>Do not start with the generator.<br/>Start with a stable canonical engine.</h2>
+<h2 class="title">Prove one game is good.<br/><em>Then turn it into a template.</em></h2>
 <div class="grid">
-  <div class="cell"><span class="cell-num">1</span><h3>Pick host game</h3><p>It must already feel good, start instantly, have social complete, and build reliably. Do not template a half-finished game.</p></div>
-  <div class="cell"><span class="cell-num">2</span><h3>Cut the boundary</h3><p>List every field. Use the difficulty/play-feel test. Mechanics stay engine; expression enters cartridge.</p></div>
-  <div class="cell"><span class="cell-num">3</span><h3>Build cartridge #2</h3><p>Do not just document swappability. Make a truly different theme and keep build zero-regression.</p></div>
-  <div class="cell"><span class="cell-num">4</span><h3>Then generator</h3><p>Use cartridge #2 as the worked example in prompt. Add validate + retry, then image/sprite pipeline.</p></div>
+  <div class="template-card hot"><span class="cell-num">1</span><h3>Build a good original</h3><p>Start with a game that already feels good, starts instantly, has social complete, and builds reliably. Half-finished games are not templates.</p></div>
+  <div class="template-card"><span class="cell-num">2</span><h3>Circle what can change</h3><p>Split every field into two groups: difficulty-changing fields are locked; expression-only fields enter the cartridge.</p></div>
+  <div class="template-card"><span class="cell-num">3</span><h3>Hand-make theme #2</h3><p>Do not just claim it is swappable. Make a truly different theme and prove the play feel still works.</p></div>
+  <div class="template-card hot"><span class="cell-num">4</span><h3>Only then automate</h3><p>Use theme #2 as the LLM example, then add validation, retries, image generation, and publishing.</p></div>
 </div>""",
-notes_en="""Internal operating model. The key point: generator is not step one. Without a canonical engine and second cartridge, LLM generation only amplifies instability.""")
+notes_en="""Internal operating model. Do not start with the generator. Without a good original and a successful second theme, automation only amplifies instability.""")
 
 add("template-howto", "Part 8 · 如何生成", "split flip", """
 <div class="col-visual">
-  <div class="callout" style="padding:1.5em">
-    <code style="font-size:0.9em;line-height:1.7">
+  <div class="template-command">
 $ <strong>npx tsx scripts/gen-cartridge.ts</strong> \\<br>
 &nbsp;&nbsp;<strong>--sentence</strong> "a cat surviving robot vacuums" \\<br>
 &nbsp;&nbsp;<strong>--sprites</strong><br><br>
-→ LLM 出 CartridgeSpec JSON<br>
-→ txt2img × 6 出敌人 sprite<br>
-→ 上传 R2 永久存储<br>
-→ 写入 cartridge/gen-cat-vacuum.ts<br>
-→ swap index.ts → <strong>npm run build</strong><br>
-→ 🎮 FUR FLOOD 可玩
-    </code>
+→ 生成主题卡带<br>
+→ 生成 6 张敌人图<br>
+→ 写进游戏工程<br>
+→ build 通过<br>
+→ 新游戏可玩
   </div>
-  <p style="text-align:center;color:var(--ink-mid);margin-top:1em">从一句话到可玩游戏，<strong>全自动 ~60 秒</strong></p>
+  <p class="sub" style="text-align:center;margin-top:1em">从一句话到可玩游戏，大约一分钟。</p>
 </div>
 <div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · 如何使用</span>
-  <h2>一条命令，<br>一个游戏</h2>
-  <p>Generator 封装了整个流程：</p>
-  <ol>
-    <li><strong>LLM 拼 prompt</strong>——7 段 system prompt 教 LLM 产出合法 CartridgeSpec（schema/枚举/palette 指南/完整范例）</li>
-    <li><strong>JSON 提取+校验</strong>——4 层回退策略 + <code>validateSpec()</code>，不合法自动重试带错误纠正</li>
-    <li><strong>（可选）gen-image sprite</strong>——6 种敌人各调 txt2img 出图→R2 上传→引擎 billboard 渲染</li>
-    <li><strong>swap + build</strong>——改 cartrdge/index.ts 一行 → 新游戏</li>
-  </ol>
-  <p>当前可选：<code>--sprites</code>（gen-image 出敌人 sprite）、<code>--dry-run</code>（预览）、<code>--retries N</code></p>
+  <h2 class="title">真正给用户看的，<br/>应该更简单。</h2>
+  <p class="sub">命令行只是内部演示。最终产品里，用户只需要做三件事：</p>
+  <div class="template-flow" style="grid-template-columns: 1fr auto 1fr auto 1fr;">
+    <div class="template-step"><span class="label">1</span><h3>说一句话</h3><p>描述想玩的世界。</p></div>
+    <div class="template-arrow">→</div>
+    <div class="template-step"><span class="label">2</span><h3>看预览</h3><p>确认标题、角色、画面气氛对不对。</p></div>
+    <div class="template-arrow">→</div>
+    <div class="template-step"><span class="label">3</span><h3>发布</h3><p>进入 feed，可分享，可 remix。</p></div>
+  </div>
+  <p>内部工具仍保留 <code>--dry-run</code> 预览、<code>--sprites</code> 出图、<code>--retries</code> 自动纠错。</p>
 </div>
 """, """
-<p>演示实际 CLI 用法。强调全自动——不用碰代码。提一下 --sprites 标志的代价（~60s vs ~10s），让学员理解 trade-off。</p>
-<p>如果讲师有时间，可以现场演示一次 gen-cartridge --sentence "something silly" --dry-run 看 LLM 现场产出 JSON。</p>
+<p>这一页把“内部命令”和“最终用户体验”分开。命令行是给团队理解管线；真正产品里不能让用户看到这些复杂度。</p>
+<p>如果讲师有时间，可以现场演示一次 <code>--dry-run</code>，但演示重点是“用户一句话足够了”。</p>
 """,
 short_en="Part 8 · How to Generate",
 body_en="""<div class="col-visual">
-  <div class="callout" style="padding:1.5em">
-    <code style="font-size:0.9em;line-height:1.7">
+  <div class="template-command">
 $ <strong>npx tsx scripts/gen-cartridge.ts</strong> \\<br>
 &nbsp;&nbsp;<strong>--sentence</strong> "a cat surviving robot vacuums" \\<br>
 &nbsp;&nbsp;<strong>--sprites</strong><br><br>
-→ LLM outputs CartridgeSpec JSON<br>
-→ txt2img × 6 for enemy sprites<br>
-→ Upload to R2 for permanent storage<br>
-→ Write cartridge/gen-cat-vacuum.ts<br>
-→ Swap index.ts → <strong>npm run build</strong><br>
-→ 🎮 FUR FLOOD is playable
-    </code>
+→ Generate theme cartridge<br>
+→ Generate 6 enemy images<br>
+→ Write into the game repo<br>
+→ Build passes<br>
+→ New game is playable
   </div>
-  <p style="text-align:center;color:var(--ink-mid);margin-top:1em">One sentence → playable game, <strong>fully automatic ~60 seconds</strong></p>
+  <p class="sub" style="text-align:center;margin-top:1em">One sentence to playable game in about a minute.</p>
 </div>
 <div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · How to Use</span>
-  <h2>One command,<br>one game</h2>
-  <p>The generator packages the entire pipeline:</p>
-  <ol>
-    <li><strong>LLM prompt assembly</strong> — 7-section system prompt teaches the LLM to output valid CartridgeSpec (schema/enums/palette guide/worked example)</li>
-    <li><strong>JSON extraction + validation</strong> — 4 fallback strategies + <code>validateSpec()</code>, auto-retry with error feedback</li>
-    <li><strong>(Optional) gen-image sprites</strong> — txt2img for 6 enemy types → R2 upload → engine billboard rendering</li>
-    <li><strong>Swap + build</strong> — change one line in cartridge/index.ts → new game</li>
-  </ol>
-  <p>Flags: <code>--sprites</code> (gen-image enemy art), <code>--dry-run</code> (preview), <code>--retries N</code></p>
+  <h2 class="title">What users see should be much simpler.</h2>
+  <p class="sub">The command line is only an internal demo. In the product, users should only do three things:</p>
+  <div class="template-flow" style="grid-template-columns: 1fr auto 1fr auto 1fr;">
+    <div class="template-step"><span class="label">1</span><h3>Say one sentence</h3><p>Describe the world they want.</p></div>
+    <div class="template-arrow">→</div>
+    <div class="template-step"><span class="label">2</span><h3>Preview</h3><p>Check title, characters, and visual mood.</p></div>
+    <div class="template-arrow">→</div>
+    <div class="template-step"><span class="label">3</span><h3>Publish</h3><p>Enter the feed, share, and remix.</p></div>
+  </div>
+  <p>Internal tools still keep <code>--dry-run</code> preview, <code>--sprites</code> image generation, and <code>--retries</code> correction.</p>
 </div>""",
-notes_en="""Demo the actual CLI. Emphasize it's fully automatic — no code needed. Mention --sprites trade-off (~60s vs ~10s). If time permits, live-demo gen-cartridge --sentence "something silly" --dry-run to show LLM producing JSON in real time.""")
+notes_en="""Separate the internal command from the eventual user experience. The CLI explains the pipeline; the product must hide that complexity.""")
 
 
 # ═════════════════════════════════════════════════════════════════════

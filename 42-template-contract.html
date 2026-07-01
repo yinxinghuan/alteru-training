@@ -234,38 +234,38 @@
   <section class="slide matrix-2x2">
     <div data-only="zh">
 <span class="eyebrow"><span class="dot"></span>Part 8 · Engine / Cartridge 契约</span>
-<h2>最重要的不是 JSON，<br/>是边界。</h2>
+<h2 class="title">用户可以换世界，<br/><em>不能调坏手感。</em></h2>
 <div class="grid">
-  <div class="cell" style="border-color: var(--brand-pink);">
+  <div class="template-card hot">
     <span class="cell-num">1</span>
-    <h3>Engine owns Mechanics</h3>
-    <p>碰撞、速度、血量、生成曲线、计分、输入手感、相机、排行榜、通知。<strong>用户碰不到。</strong></p>
+    <h3>锁住的部分</h3>
+    <p>移动、碰撞、速度、血量、生成节奏、分数、排行榜、通知。这些决定“好不好玩”，所以用户不能碰。</p>
   </div>
-  <div class="cell" style="border-color: var(--brand-pink);">
+  <div class="template-card hot">
     <span class="cell-num">2</span>
-    <h3>Cartridge owns Expression</h3>
-    <p>主题、palette、角色皮、敌人名字、文案、sprite、audio mood、prompt framing。<strong>用户可以改。</strong></p>
+    <h3>可换的部分</h3>
+    <p>世界观、角色名字、颜色、图片、文案、声音气氛。这些决定“像不像我的点子”，所以用户可以改。</p>
   </div>
-  <div class="cell">
+  <div class="template-card">
     <span class="cell-num">3</span>
     <h3>唯一判断题</h3>
-    <p><strong class="pink">这个字段改了，会不会让游戏更难或更容易？</strong><br/>会 → Engine。不会 → Cartridge。</p>
+    <p><strong class="pink">改这个东西，会不会让游戏变难或变简单？</strong><br/>会，就锁进引擎；不会，就放进卡带。</p>
   </div>
-  <div class="cell">
+  <div class="template-card">
     <span class="cell-num">4</span>
-    <h3>Remix 的安全性</h3>
-    <p>Remix 不是给用户一堆 knobs。Remix 是让用户改世界观、身份和表层表达，但保留已调好的 play feel。</p>
+    <h3>为什么 Remix 安全</h3>
+    <p>Remix 不是给用户一堆旋钮，而是让他换故事、换角色、换视觉，同时保留我们已经调好的手感。</p>
   </div>
 </div>
     </div>
     <div data-only="en">
 <span class="eyebrow"><span class="dot"></span>Part 8 · Engine / Cartridge Contract</span>
-<h2>The point is not JSON.<br/>The point is the boundary.</h2>
+<h2 class="title">Users can change the world.<br/><em>They cannot break the feel.</em></h2>
 <div class="grid">
-  <div class="cell" style="border-color: var(--brand-pink);"><span class="cell-num">1</span><h3>Engine owns Mechanics</h3><p>Collision, speed, HP, spawn curves, scoring, input feel, camera, leaderboard, notifications. <strong>Users cannot touch these.</strong></p></div>
-  <div class="cell" style="border-color: var(--brand-pink);"><span class="cell-num">2</span><h3>Cartridge owns Expression</h3><p>Theme, palette, skins, enemy names, copy, sprites, audio mood, prompt framing. <strong>Users can change these.</strong></p></div>
-  <div class="cell"><span class="cell-num">3</span><h3>The one test</h3><p><strong class="pink">If this field changes, can the game become easier or harder?</strong><br/>Yes → Engine. No → Cartridge.</p></div>
-  <div class="cell"><span class="cell-num">4</span><h3>Safe Remix</h3><p>Remix is not a bag of knobs. Remix lets users change world, identity, and expression while keeping proven play feel.</p></div>
+  <div class="template-card hot"><span class="cell-num">1</span><h3>The locked part</h3><p>Movement, collision, speed, HP, spawn rhythm, score, leaderboard, notifications. These decide whether the game feels good, so users cannot touch them.</p></div>
+  <div class="template-card hot"><span class="cell-num">2</span><h3>The swappable part</h3><p>World, character names, colors, images, copy, audio mood. These decide whether the game feels like the user's idea, so users can change them.</p></div>
+  <div class="template-card"><span class="cell-num">3</span><h3>The one test</h3><p><strong class="pink">If this changes, can the game become harder or easier?</strong><br/>Yes: lock it in the engine. No: put it in the cartridge.</p></div>
+  <div class="template-card"><span class="cell-num">4</span><h3>Why Remix is safe</h3><p>Remix is not a bag of knobs. It changes story, characters, and visuals while keeping the tuned play feel.</p></div>
 </div>
     </div>
   </section>
@@ -273,11 +273,11 @@
   <div class="speaker-notes" id="speaker-notes">
     <h4><span data-only="zh">讲师备忘 · 按 S 关闭</span><span data-only="en">Speaker Notes · S to close</span></h4>
     <div data-only="zh">
-<p>这一页是 Part 8 的核心。不要把 cartridge 讲成"配置文件"这么低层；它本质是产品边界：什么让普通用户自由发挥，什么必须由我们锁住。</p>
-<p>如果有人问能不能开放速度/伤害/生成率，回答：可以进入深度制作路，但不要进入快速模板路。A 路要保护用户不把游戏做烂。</p>
+<p>这是 Part 8 最重要的一页。请反复使用“会不会改变难度”这个判断题。它比 Engine/Cartridge 的术语更容易记。</p>
+<p>如果有人问能不能开放速度/伤害/生成率，回答：可以进入深度制作路，但不要进入快速模板路。快速模板要保护用户不把游戏做烂。</p>
     </div>
     <div data-only="en">
-This is the core of Part 8. Do not present cartridge as merely a config file. It is a product boundary: what users can freely change, and what we must lock down.
+This is the core slide. Repeat the difficulty test. It is easier to remember than the Engine/Cartridge terminology.
     </div>
   </div>
 

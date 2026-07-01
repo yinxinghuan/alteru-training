@@ -239,11 +239,11 @@
 </div>
 <div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · Engine #2 · 3D Timing</span>
-  <h2>把 3D 质感抽成<br/>共享引擎。</h2>
-  <p><strong>Shared engine：</strong><code>engine-3d</code> 抽出 prims、characters、audio、particles、camera、office / archetype builders。</p>
-  <p><strong>两个宿主：</strong>Corporate Climb 和 Sky Leap 都作为 submodule 接入同一套 3D 低多边形引擎。</p>
-  <p><strong>Cartridge 负责：</strong>天空、灯光、fog、bloom、world colors、motes、音效 mood、文案和角色语气。</p>
-  <p><strong>不负责：</strong>跳跃时机、失败窗口、combo、相机跟随、输入节奏。这些继续锁在游戏逻辑里。</p>
+  <h2 class="title">3D 游戏里，卡带更多是在换<em>气氛。</em></h2>
+  <p class="sub">有些游戏的手感很依赖时机：按多久、什么时候松手、失败窗口多窄。这些不能随便开放给用户。</p>
+  <div class="template-note"><strong>用户能换：</strong>天空、灯光、雾、颜色、音效气氛、角色语气、世界设定。</div>
+  <div class="template-note" style="margin-top: 14px;"><strong>用户不能换：</strong>跳跃时机、combo、失败判定、相机跟随、输入节奏。</div>
+  <p>所以 3D timing 的卡带不像 Block Party 那样主要换敌人，而是把同一套 3D 手感放进不同场景。</p>
 </div>
     </div>
     <div data-only="en">
@@ -253,11 +253,11 @@
 </div>
 <div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · Engine #2 · 3D Timing</span>
-  <h2>Turn 3D polish into<br/>a shared engine.</h2>
-  <p><strong>Shared engine:</strong> <code>engine-3d</code> extracts prims, characters, audio, particles, camera, office / archetype builders.</p>
-  <p><strong>Two hosts:</strong> Corporate Climb and Sky Leap both consume the same low-poly 3D engine as a submodule.</p>
-  <p><strong>Cartridge owns:</strong> sky, lights, fog, bloom, world colors, motes, audio mood, copy and character tone.</p>
-  <p><strong>Not cartridge:</strong> jump timing, fail windows, combo, camera follow, input rhythm. Those stay locked in game logic.</p>
+  <h2 class="title">In 3D games, cartridges mostly change the <em>mood.</em></h2>
+  <p class="sub">Some games depend on timing: how long to hold, when to release, how tight the fail window is. Those should not be casually exposed.</p>
+  <div class="template-note"><strong>Users can change:</strong> sky, lighting, fog, colors, audio mood, character voice, world framing.</div>
+  <div class="template-note" style="margin-top: 14px;"><strong>Users cannot change:</strong> jump timing, combo, fail checks, camera follow, input rhythm.</div>
+  <p>So a 3D timing cartridge is less about enemy tables and more about putting the same play feel into a different scene.</p>
 </div>
     </div>
   </section>
@@ -265,11 +265,11 @@
   <div class="speaker-notes" id="speaker-notes">
     <h4><span data-only="zh">讲师备忘 · 按 S 关闭</span><span data-only="en">Speaker Notes · S to close</span></h4>
     <div data-only="zh">
-<p>这一页说明：不是所有 cartridge 都长得像 Block Party。3D timing 的 cartridge 更偏 atmosphere 和 copy，但边界原则一样。</p>
+<p>这一页说明：不同引擎的卡带长得不一样。3D timing 的重点是 atmosphere，不是敌人表。</p>
 <p>如果图片缺失或现场加载慢，就直接讲 shared engine/submodule 的结构。</p>
     </div>
     <div data-only="en">
-This slide explains that cartridges differ by engine. 3D timing cartridges are more about atmosphere and copy, but the boundary principle is the same.
+This slide explains that cartridges differ by engine. 3D timing cartridges are about atmosphere, not enemy tables.
     </div>
   </div>
 

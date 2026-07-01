@@ -235,45 +235,50 @@
     <div data-only="zh">
 <div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · Remix 为什么变容易</span>
-  <h2>Remix 从“改代码”<br/>降级成“改卡带”。</h2>
-  <p>以前 Remix 一个游戏，agent 需要读工程、理解玩法、改 UI、改素材、跑 build，任何一步都可能把手感弄坏。</p>
-  <p>现在 Remix 可以走受约束的数据路径：</p>
-  <div class="callout">
-    <code>原 cartridge → 用户一句话修改 → LLM 产新 spec → validate → build → publish</code>
+  <h2 class="title">Remix 不再是“拆游戏”，<br/><em>而是换世界。</em></h2>
+  <p class="sub">以前要 remix，一个 agent 需要读工程、改 UI、改素材、跑 build，任何一步都可能破坏手感。模板线把这件事变成一条更安全的路。</p>
+  <div class="template-flow" style="grid-template-columns: 1fr auto 1fr auto 1fr;">
+    <div class="template-step"><span class="label">Start</span><h3>选一个游戏</h3><p>比如 Block Party。</p></div>
+    <div class="template-arrow">→</div>
+    <div class="template-step"><span class="label">Say</span><h3>说想换什么</h3><p>“改成猫躲扫地机器人。”</p></div>
+    <div class="template-arrow">→</div>
+    <div class="template-step"><span class="label">Publish</span><h3>确认后发布</h3><p>手感不变，世界变了。</p></div>
   </div>
-  <p><strong>A 路：</strong>快速模板。理想只有一个确认屏：主题对不对？角色像不像？然后发布。</p>
-  <p><strong>B 路：</strong>深度制作。用户想要更多控制时，进入对话式编辑 cartridge；需要新机制时才升级成真正的 agent 开发。</p>
 </div>
 <div class="col-visual">
-  <div class="cell" style="height: 68vh; display: flex; flex-direction: column; justify-content: center;">
-    <h3 class="pink">铁律</h3>
-    <p style="font-size: 22px; line-height: 1.45;">不要为了“更自由”，把 A 路做成复杂编辑器。</p>
-    <p>快速模板的价值，就是让用户碰不到会破坏质感的层。</p>
+  <div class="template-card hot" style="min-height: 58vh; display: flex; flex-direction: column; justify-content: center;">
+    <span class="tag">产品原则</span>
+    <h3 style="font-size: clamp(28px, 3vw, 44px);">快速路要少选项。</h3>
+    <p style="font-size: 18px;">不要为了“更自由”，把一句话生成做成复杂编辑器。用户想深调时，再进入深度制作路。</p>
+    <div class="template-note" style="margin-top: 24px;">A 路负责快、稳、不会做烂。B 路才负责复杂控制。</div>
   </div>
 </div>
     </div>
     <div data-only="en">
 <div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · Why Remix Gets Easier</span>
-  <h2>Remix stops being code edits.<br/>It becomes cartridge edits.</h2>
-  <p>Previously, an agent had to read the repo, understand mechanics, change UI, change assets, run builds — any step could break play feel.</p>
-  <p>Now Remix can follow a constrained data path:</p>
-  <div class="callout"><code>source cartridge → user request → new spec → validate → build → publish</code></div>
-  <p><strong>Path A:</strong> fast template. Ideally one confirmation screen: is the theme right, does the hero feel right, then publish.</p>
-  <p><strong>Path B:</strong> deep making. If users want more control, edit cartridge conversationally. New mechanics become real agent development.</p>
+  <h2 class="title">Remix stops being “take the game apart.”<br/><em>It becomes changing the world.</em></h2>
+  <p class="sub">Previously, an agent had to read the repo, change UI, change assets, and run builds. Any step could break play feel. The template line makes the path safer.</p>
+  <div class="template-flow" style="grid-template-columns: 1fr auto 1fr auto 1fr;">
+    <div class="template-step"><span class="label">Start</span><h3>Pick a game</h3><p>For example, Block Party.</p></div>
+    <div class="template-arrow">→</div>
+    <div class="template-step"><span class="label">Say</span><h3>Describe the change</h3><p>“Make it a cat dodging robot vacuums.”</p></div>
+    <div class="template-arrow">→</div>
+    <div class="template-step"><span class="label">Publish</span><h3>Confirm and ship</h3><p>Same feel, new world.</p></div>
+  </div>
 </div>
-<div class="col-visual"><div class="cell" style="height: 68vh; display: flex; flex-direction: column; justify-content: center;"><h3 class="pink">Rule</h3><p style="font-size: 22px; line-height: 1.45;">Do not turn Path A into a complex editor in the name of freedom.</p><p>The value of fast templates is that users cannot touch the quality-breaking layers.</p></div></div>
+<div class="col-visual"><div class="template-card hot" style="min-height: 58vh; display: flex; flex-direction: column; justify-content: center;"><span class="tag">Product rule</span><h3 style="font-size: clamp(28px, 3vw, 44px);">Fast path means fewer choices.</h3><p style="font-size: 18px;">Do not turn one-sentence generation into a complex editor in the name of freedom. If users want deep control, move them into deep making.</p><div class="template-note" style="margin-top: 24px;">Path A is fast, stable, hard to break. Path B is where complex control belongs.</div></div></div>
     </div>
   </section>
 
   <div class="speaker-notes" id="speaker-notes">
     <h4><span data-only="zh">讲师备忘 · 按 S 关闭</span><span data-only="en">Speaker Notes · S to close</span></h4>
     <div data-only="zh">
-<p>这一页要把 Remix 的战略价值讲清楚。Engine/Cartridge 不是只为了生产新游戏，更是未来 Remix 的底层协议。</p>
-<p>强调 A/B 分路。A 路要极少选项；B 路可以深，但不能污染 A 路。</p>
+<p>这一页讲 Remix 的用户体验，不要讲协议。核心是：用户感觉自己在“换世界”，不是在“改代码”。</p>
+<p>强调 A/B 分路：快速路必须少选项，深度制作路可以慢慢聊。</p>
     </div>
     <div data-only="en">
-Make the strategic value clear: Engine/Cartridge is not just a production trick, it is the future Remix protocol. Stress Path A/B separation.
+Explain the user experience of Remix, not the protocol. Users should feel they are changing the world, not editing code. Stress the Path A/B split.
     </div>
   </div>
 

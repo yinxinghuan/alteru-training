@@ -234,22 +234,22 @@
   <section class="slide matrix-2x2">
     <div data-only="zh">
 <span class="eyebrow"><span class="dot"></span>Part 8 · 怎样新增一个模板引擎</span>
-<h2>不是先写 generator。<br/>先做一个稳的 canonical engine。</h2>
+<h2 class="title">先证明一个游戏好玩，<br/><em>再把它变成模板。</em></h2>
 <div class="grid">
-  <div class="cell"><span class="cell-num">1</span><h3>选宿主游戏</h3><p>必须已经好玩、首屏即玩、社交完整、build 稳。不要拿半成品当模板。</p></div>
-  <div class="cell"><span class="cell-num">2</span><h3>切边界</h3><p>列出所有字段，用“会不会改变难度/手感”逐项归类。Mechanics 留 engine，expression 进 cartridge。</p></div>
-  <div class="cell"><span class="cell-num">3</span><h3>做第二份卡带</h3><p>不是文档说可换，而是真的做一个主题完全不同的卡带，并保证 build 零回归。</p></div>
-  <div class="cell"><span class="cell-num">4</span><h3>再做 generator</h3><p>有第二份卡带后，把它作为 worked example 塞进 prompt；加 validate + retry，再考虑 sprite / image pipeline。</p></div>
+  <div class="template-card hot"><span class="cell-num">1</span><h3>做一个好玩的原版</h3><p>先有一个真的能玩、首屏即玩、社交完整、build 稳的游戏。半成品不能当模板。</p></div>
+  <div class="template-card"><span class="cell-num">2</span><h3>圈出哪些能换</h3><p>把所有内容分成两类：会影响难度的锁住；只影响表达的放进卡带。</p></div>
+  <div class="template-card"><span class="cell-num">3</span><h3>手工做第二个主题</h3><p>不要只说“理论上能换”。真的做一个完全不同的主题，证明玩法没坏。</p></div>
+  <div class="template-card hot"><span class="cell-num">4</span><h3>最后才自动生成</h3><p>把第二个主题当范例教给 LLM，再加校验、重试、图片生成、发布流程。</p></div>
 </div>
     </div>
     <div data-only="en">
 <span class="eyebrow"><span class="dot"></span>Part 8 · How to Add a Template Engine</span>
-<h2>Do not start with the generator.<br/>Start with a stable canonical engine.</h2>
+<h2 class="title">Prove one game is good.<br/><em>Then turn it into a template.</em></h2>
 <div class="grid">
-  <div class="cell"><span class="cell-num">1</span><h3>Pick host game</h3><p>It must already feel good, start instantly, have social complete, and build reliably. Do not template a half-finished game.</p></div>
-  <div class="cell"><span class="cell-num">2</span><h3>Cut the boundary</h3><p>List every field. Use the difficulty/play-feel test. Mechanics stay engine; expression enters cartridge.</p></div>
-  <div class="cell"><span class="cell-num">3</span><h3>Build cartridge #2</h3><p>Do not just document swappability. Make a truly different theme and keep build zero-regression.</p></div>
-  <div class="cell"><span class="cell-num">4</span><h3>Then generator</h3><p>Use cartridge #2 as the worked example in prompt. Add validate + retry, then image/sprite pipeline.</p></div>
+  <div class="template-card hot"><span class="cell-num">1</span><h3>Build a good original</h3><p>Start with a game that already feels good, starts instantly, has social complete, and builds reliably. Half-finished games are not templates.</p></div>
+  <div class="template-card"><span class="cell-num">2</span><h3>Circle what can change</h3><p>Split every field into two groups: difficulty-changing fields are locked; expression-only fields enter the cartridge.</p></div>
+  <div class="template-card"><span class="cell-num">3</span><h3>Hand-make theme #2</h3><p>Do not just claim it is swappable. Make a truly different theme and prove the play feel still works.</p></div>
+  <div class="template-card hot"><span class="cell-num">4</span><h3>Only then automate</h3><p>Use theme #2 as the LLM example, then add validation, retries, image generation, and publishing.</p></div>
 </div>
     </div>
   </section>
@@ -257,10 +257,10 @@
   <div class="speaker-notes" id="speaker-notes">
     <h4><span data-only="zh">讲师备忘 · 按 S 关闭</span><span data-only="en">Speaker Notes · S to close</span></h4>
     <div data-only="zh">
-<p>这一页是给内部团队的流程。重点：generator 不是第一步。没有 canonical engine 和第二份卡带，LLM 生成只会把不稳定放大。</p>
+<p>这一页是给内部团队的流程。重点：不要一上来写 generator。没有一个好玩的原版和一个成功的第二主题，自动生成只会放大不稳定。</p>
     </div>
     <div data-only="en">
-Internal operating model. The key point: generator is not step one. Without a canonical engine and second cartridge, LLM generation only amplifies instability.
+Internal operating model. Do not start with the generator. Without a good original and a successful second theme, automation only amplifies instability.
     </div>
   </div>
 
