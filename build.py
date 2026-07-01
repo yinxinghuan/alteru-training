@@ -1245,7 +1245,7 @@ add("template-concept", "Part 8 · 一句话做游戏", "split", """
 <div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · Game Template Line</span>
   <h2 class="title">一句话不是“写代码”，<br><em>是换一盒卡带。</em></h2>
-  <p class="sub">普通用户最难的不是想点子，而是把点子变成一个“不难玩、不难看、不难分享”的小游戏。我们的做法是：把好玩的手感先做好、锁住，再只让用户换主题。</p>
+  <p class="sub">这一章学习一个简单模型：先准备一个已经好玩的游戏框架，再用一句话替换主题。学完后，你应该能判断一个想法适合放进哪种模板。</p>
   <div class="template-flow">
     <div class="template-step"><span class="label">Input</span><h3>一句话</h3><p>“一只猫在客厅里躲扫地机器人。”</p></div>
     <div class="template-arrow">→</div>
@@ -1265,14 +1265,14 @@ add("template-concept", "Part 8 · 一句话做游戏", "split", """
   </div>
 </div>
 """, """
-<p>这一页先把抽象概念讲成人话。不要从 JSON、schema、resolve 讲起；先让学员理解“红白机 + 卡带”：机器负责手感，卡带负责世界。</p>
-<p>最关键的一句话：普通用户可以换世界，但不能把游戏调坏。</p>
+<p>教学重点：先建立“游戏机 + 卡带”的类比。游戏机负责玩法和手感，卡带负责世界和表达。</p>
+<p>课堂提问：如果把猫换成恐龙，哪些东西应该变化？哪些东西应该保持不变？</p>
 """,
 short_en="Part 8 · One Sentence = Game",
 body_en="""<div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · Game Template Line</span>
   <h2 class="title">One sentence is not “write code.”<br><em>It is swapping a cartridge.</em></h2>
-  <p class="sub">Users are not short on ideas. The hard part is turning an idea into a game that feels good, looks good, and is easy to share. So we build and lock the play feel first, then let users change the theme.</p>
+  <p class="sub">This chapter teaches a simple model: start with a proven game frame, then use one sentence to change the theme. By the end, you should know which template fits an idea.</p>
   <div class="template-flow">
     <div class="template-step"><span class="label">Input</span><h3>One sentence</h3><p>“A cat survives robot vacuums in a living room.”</p></div>
     <div class="template-arrow">→</div>
@@ -1284,7 +1284,7 @@ body_en="""<div class="col-text">
 <div class="col-visual">
   <div class="template-example"><img src="assets/gen/game-template-cartridge-swap.png" alt="Same game engine with two different cartridge worlds" /><div class="caption"><span>Same play feel</span><b>Theme swap</b><span>From zombie block party to cat vs robot vacuums</span></div></div>
 </div>""",
-notes_en="""Make the abstract idea concrete. Do not start with JSON/schema/resolve. Start with the console + cartridge analogy: the machine owns feel, the cartridge owns the world. Key sentence: users can change the world, but cannot tune the game into a broken state.""")
+notes_en="""Teaching focus: establish the console + cartridge analogy. The console owns play feel; the cartridge owns world and expression. Classroom prompt: if cats become dinosaurs, what should change and what should stay the same?""")
 
 add("template-engines", "Part 8 · 三类引擎", "matrix-2x2", """
 <span class="eyebrow"><span class="dot"></span>Part 8 · 三类引擎模板</span>
@@ -1303,20 +1303,20 @@ add("template-engines", "Part 8 · 三类引擎", "matrix-2x2", """
   <ul class="plain-list"><li>例子：办公室逃离 → 消防救援</li><li>可换：天空、灯光、角色语气</li></ul>
 </div>
 <div class="template-card">
-  <span class="tag">最像 AlterU</span>
+  <span class="tag">照片型体验</span>
   <h3>照片身份变形</h3>
   <p>像 Past Life / Future Life：用户上传照片，AI 把“我”变成另一个身份。</p>
   <ul class="plain-list"><li>例子：前世画像 / 未来身份</li><li>可换：prompt、叙事口吻、展示语言</li></ul>
 </div>
 <div class="template-card hot">
-  <span class="tag">怎么理解</span>
+  <span class="tag">学习重点</span>
   <h3>引擎 = 玩法盒子</h3>
-  <p>用户不是从零做游戏，而是在选择一个已经好玩的盒子，再把自己的主题装进去。</p>
-  <ul class="plain-list"><li>以后 generator 会自动帮用户选盒子</li></ul>
+  <p>先判断想法属于哪种玩法，再决定可替换的主题内容。不要把所有想法塞进同一个模板。</p>
+  <ul class="plain-list"><li>练习：给 3 个想法各选一个玩法盒子</li></ul>
 </div>
 </div>
 """, """
-<p>把“引擎”翻译成“玩法盒子”。这页不要讲太多实现，只要让学员理解：不是所有想法都塞进同一个模板，而是先判断它像哪一种体验。</p>
+<p>教学重点：让学员学会先分类，再生成。这里不需要解释工程实现。</p>
 """,
 short_en="Part 8 · Three Engine Types",
 body_en="""<span class="eyebrow"><span class="dot"></span>Part 8 · Three Engine Types</span>
@@ -1335,19 +1335,19 @@ body_en="""<span class="eyebrow"><span class="dot"></span>Part 8 · Three Engine
   <ul class="plain-list"><li>Example: office escape → firefighter rescue</li><li>Swap: sky, lights, character voice</li></ul>
 </div>
 <div class="template-card">
-  <span class="tag">Most AlterU</span>
+  <span class="tag">Photo-based experience</span>
   <h3>Photo identity transform</h3>
   <p>Like Past Life / Future Life: the user uploads a photo, and AI turns “me” into another identity.</p>
   <ul class="plain-list"><li>Example: past-life portrait / future identity</li><li>Swap: prompt, narrative voice, display copy</li></ul>
 </div>
 <div class="template-card hot">
-  <span class="tag">Mental model</span>
+  <span class="tag">Learning point</span>
   <h3>Engine = play box</h3>
-  <p>Users are not making a game from nothing. They pick a proven box, then put their own world inside.</p>
-  <ul class="plain-list"><li>Later, the generator chooses the box automatically.</li></ul>
+  <p>Classify the idea first, then choose what theme content can change. Do not force every idea into one template.</p>
+  <ul class="plain-list"><li>Exercise: pick a play box for 3 sample ideas.</li></ul>
 </div>
 </div>""",
-notes_en="""Translate engine into play box. Do not over-explain implementation. The learner only needs to understand that different ideas fit different proven experience shapes.""")
+notes_en="""Teaching focus: classify first, generate second. Do not explain engineering implementation here.""")
 
 add("template-contract", "Part 8 · 契约边界", "matrix-2x2", """
 <span class="eyebrow"><span class="dot"></span>Part 8 · Engine / Cartridge 契约</span>
@@ -1356,12 +1356,12 @@ add("template-contract", "Part 8 · 契约边界", "matrix-2x2", """
   <div class="template-card hot">
     <span class="cell-num">1</span>
     <h3>锁住的部分</h3>
-    <p>移动、碰撞、速度、血量、生成节奏、分数、排行榜、通知。这些决定“好不好玩”，所以用户不能碰。</p>
+    <p>移动、碰撞、速度、血量、生成节奏、分数、排行榜、通知。这些决定“好不好玩”，在模板里保持固定。</p>
   </div>
   <div class="template-card hot">
     <span class="cell-num">2</span>
     <h3>可换的部分</h3>
-    <p>世界观、角色名字、颜色、图片、文案、声音气氛。这些决定“像不像我的点子”，所以用户可以改。</p>
+    <p>世界观、角色名字、颜色、图片、文案、声音气氛。这些决定“像不像这个点子”，在模板里可以替换。</p>
   </div>
   <div class="template-card">
     <span class="cell-num">3</span>
@@ -1370,30 +1370,30 @@ add("template-contract", "Part 8 · 契约边界", "matrix-2x2", """
   </div>
   <div class="template-card">
     <span class="cell-num">4</span>
-    <h3>为什么 Remix 安全</h3>
-    <p>Remix 不是给用户一堆旋钮，而是让他换故事、换角色、换视觉，同时保留我们已经调好的手感。</p>
+    <h3>Remix 会保留什么</h3>
+    <p>换故事、换角色、换视觉时，移动、碰撞、难度和计分仍然保持稳定。</p>
   </div>
 </div>
 """, """
-<p>这是 Part 8 最重要的一页。请反复使用“会不会改变难度”这个判断题。它比 Engine/Cartridge 的术语更容易记。</p>
-<p>如果有人问能不能开放速度/伤害/生成率，回答：可以进入深度制作路，但不要进入快速模板路。快速模板要保护用户不把游戏做烂。</p>
+<p>教学重点：用一个判断题记住边界——改这个东西，会不会改变难度？</p>
+<p>课堂练习：把“敌人速度、敌人名字、背景颜色、得分规则、标题文案”分别放进 Engine 或 Cartridge。</p>
 """,
 short_en="Part 8 · Contract Boundary",
 body_en="""<span class="eyebrow"><span class="dot"></span>Part 8 · Engine / Cartridge Contract</span>
 <h2 class="title">Users can change the world.<br/><em>They cannot break the feel.</em></h2>
 <div class="grid">
-  <div class="template-card hot"><span class="cell-num">1</span><h3>The locked part</h3><p>Movement, collision, speed, HP, spawn rhythm, score, leaderboard, notifications. These decide whether the game feels good, so users cannot touch them.</p></div>
-  <div class="template-card hot"><span class="cell-num">2</span><h3>The swappable part</h3><p>World, character names, colors, images, copy, audio mood. These decide whether the game feels like the user's idea, so users can change them.</p></div>
+  <div class="template-card hot"><span class="cell-num">1</span><h3>The fixed part</h3><p>Movement, collision, speed, HP, spawn rhythm, score, leaderboard, notifications. These decide whether the game feels good, so they stay fixed.</p></div>
+  <div class="template-card hot"><span class="cell-num">2</span><h3>The swappable part</h3><p>World, character names, colors, images, copy, audio mood. These decide whether the game matches the idea, so they can change.</p></div>
   <div class="template-card"><span class="cell-num">3</span><h3>The one test</h3><p><strong class="pink">If this changes, can the game become harder or easier?</strong><br/>Yes: lock it in the engine. No: put it in the cartridge.</p></div>
-  <div class="template-card"><span class="cell-num">4</span><h3>Why Remix is safe</h3><p>Remix is not a bag of knobs. It changes story, characters, and visuals while keeping the tuned play feel.</p></div>
+  <div class="template-card"><span class="cell-num">4</span><h3>What Remix keeps</h3><p>Story, characters, and visuals can change while movement, collision, difficulty, and scoring stay stable.</p></div>
 </div>""",
-notes_en="""This is the core slide. Repeat the difficulty test. It is easier to remember than the Engine/Cartridge terminology.""")
+notes_en="""Teaching focus: use one boundary question. Exercise: sort enemy speed, enemy name, background color, scoring rule, and title copy into Engine or Cartridge.""")
 
 add("template-remix", "Part 8 · Remix 路径", "split", """
 <div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · Remix 为什么变容易</span>
-  <h2 class="title">Remix 不再是“拆游戏”，<br/><em>而是换世界。</em></h2>
-  <p class="sub">以前要 remix，一个 agent 需要读工程、改 UI、改素材、跑 build，任何一步都可能破坏手感。模板线把这件事变成一条更安全的路。</p>
+  <h2 class="title">Remix 的学习目标：<br/><em>换世界，不换手感。</em></h2>
+  <p class="sub">把一个已经会玩的游戏，改成另一个主题。重点不是改代码，而是说清楚“世界要变成什么”。</p>
   <div class="template-flow" style="grid-template-columns: 1fr auto 1fr auto 1fr;">
     <div class="template-step"><span class="label">Start</span><h3>选一个游戏</h3><p>比如 Block Party。</p></div>
     <div class="template-arrow">→</div>
@@ -1404,21 +1404,20 @@ add("template-remix", "Part 8 · Remix 路径", "split", """
 </div>
 <div class="col-visual">
   <div class="template-card hot" style="min-height: 58vh; display: flex; flex-direction: column; justify-content: center;">
-    <span class="tag">产品原则</span>
-    <h3 style="font-size: clamp(28px, 3vw, 44px);">快速路要少选项。</h3>
-    <p style="font-size: 18px;">不要为了“更自由”，把一句话生成做成复杂编辑器。用户想深调时，再进入深度制作路。</p>
-    <div class="template-note" style="margin-top: 24px;">A 路负责快、稳、不会做烂。B 路才负责复杂控制。</div>
+    <span class="tag">课堂练习</span>
+    <h3 style="font-size: clamp(28px, 3vw, 44px);">写一句 Remix 指令。</h3>
+    <p style="font-size: 18px;">从“猫躲扫地机器人”这个例子出发，再写 3 个新主题。每个主题只写一句话。</p>
+    <div class="template-note" style="margin-top: 24px;">格式：把这个游戏改成“_____”。主角是“_____”，敌人是“_____”，场景是“_____”。</div>
   </div>
 </div>
 """, """
-<p>这一页讲 Remix 的用户体验，不要讲协议。核心是：用户感觉自己在“换世界”，不是在“改代码”。</p>
-<p>强调 A/B 分路：快速路必须少选项，深度制作路可以慢慢聊。</p>
+<p>教学重点：让学员练习把想法写成清楚的一句话，并检查它是否能清楚地变成一个新世界。</p>
 """,
 short_en="Part 8 · Remix Path",
 body_en="""<div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · Why Remix Gets Easier</span>
-  <h2 class="title">Remix stops being “take the game apart.”<br/><em>It becomes changing the world.</em></h2>
-  <p class="sub">Previously, an agent had to read the repo, change UI, change assets, and run builds. Any step could break play feel. The template line makes the path safer.</p>
+  <h2 class="title">Remix learning goal:<br/><em>change the world, keep the feel.</em></h2>
+  <p class="sub">Take a game that already plays well and turn it into a new theme. The key is not editing code; it is clearly describing the new world.</p>
   <div class="template-flow" style="grid-template-columns: 1fr auto 1fr auto 1fr;">
     <div class="template-step"><span class="label">Start</span><h3>Pick a game</h3><p>For example, Block Party.</p></div>
     <div class="template-arrow">→</div>
@@ -1427,8 +1426,8 @@ body_en="""<div class="col-text">
     <div class="template-step"><span class="label">Publish</span><h3>Confirm and ship</h3><p>Same feel, new world.</p></div>
   </div>
 </div>
-<div class="col-visual"><div class="template-card hot" style="min-height: 58vh; display: flex; flex-direction: column; justify-content: center;"><span class="tag">Product rule</span><h3 style="font-size: clamp(28px, 3vw, 44px);">Fast path means fewer choices.</h3><p style="font-size: 18px;">Do not turn one-sentence generation into a complex editor in the name of freedom. If users want deep control, move them into deep making.</p><div class="template-note" style="margin-top: 24px;">Path A is fast, stable, hard to break. Path B is where complex control belongs.</div></div></div>""",
-notes_en="""Explain the user experience of Remix, not the protocol. Users should feel they are changing the world, not editing code. Stress the Path A/B split.""")
+<div class="col-visual"><div class="template-card hot" style="min-height: 58vh; display: flex; flex-direction: column; justify-content: center;"><span class="tag">Class exercise</span><h3 style="font-size: clamp(28px, 3vw, 44px);">Write one Remix sentence.</h3><p style="font-size: 18px;">Start from cat vs robot vacuums, then write 3 new themes. Each theme gets one sentence.</p><div class="template-note" style="margin-top: 24px;">Format: Change this game into “_____.” The hero is “_____,” the enemies are “_____,” and the scene is “_____.”</div></div></div>""",
+notes_en="""Teaching focus: help learners write a clear one-sentence theme, not discuss the internal generation path.""")
 
 add("template-block-party", "Part 8 · Engine #1 细节", "matrix-2x2", """
 <span class="eyebrow"><span class="dot"></span>Part 8 · Engine #1 · Block Party</span>
@@ -1437,10 +1436,10 @@ add("template-block-party", "Part 8 · Engine #1 细节", "matrix-2x2", """
   <div class="template-card hot"><span class="cell-num">1</span><h3>原游戏不动</h3><p>玩家移动、自动攻击、敌人包围、升级、得分，这些都还是 Block Party 的老手感。</p></div>
   <div class="template-card"><span class="cell-num">2</span><h3>敌人换身份</h3><p>“快的敌人”还是快，只是名字从 runner 变成 Roomba Rush，外观变成银白家电。</p></div>
   <div class="template-card"><span class="cell-num">3</span><h3>画面换气氛</h3><p>色盘从夜晚街区变成奶油色客厅；按钮、标题、提示也跟着猫主题走。</p></div>
-  <div class="template-card"><span class="cell-num">4</span><h3>需要更像时再出图</h3><p><code>--sprites</code> 可以给每种敌人生成专属图片；没有图片时先用 3D 模型换色。</p></div>
+  <div class="template-card"><span class="cell-num">4</span><h3>进阶：换专属图片</h3><p>如果只换颜色还不够，可以为每种敌人生成一张新图片，让主题更清楚。</p></div>
 </div>
 """, """
-<p>这页用猫 vs 扫地机器人讲清楚“角色身份变了，但角色职责没变”。不要先讲 lurker/runner/brute 这些工程名；把它翻译成“慢敌人、快敌人、厚敌人”。</p>
+<p>教学重点：角色身份可以变，但角色职责要保持。让学员找出“慢敌人、快敌人、厚敌人”在新主题里分别是谁。</p>
 """,
 short_en="Part 8 · Engine #1 Details",
 body_en="""<span class="eyebrow"><span class="dot"></span>Part 8 · Engine #1 · Block Party</span>
@@ -1449,9 +1448,9 @@ body_en="""<span class="eyebrow"><span class="dot"></span>Part 8 · Engine #1 ·
   <div class="template-card hot"><span class="cell-num">1</span><h3>The old game stays</h3><p>Movement, auto-attack, enemy pressure, upgrades, score: all the proven Block Party feel remains.</p></div>
   <div class="template-card"><span class="cell-num">2</span><h3>Enemies get new identities</h3><p>The fast enemy is still fast; it just becomes Roomba Rush with a silver appliance look.</p></div>
   <div class="template-card"><span class="cell-num">3</span><h3>The mood changes</h3><p>The palette moves from night street to cream living room. Titles, buttons, and prompts follow the cat theme.</p></div>
-  <div class="template-card"><span class="cell-num">4</span><h3>Add art when needed</h3><p><code>--sprites</code> can generate custom enemy art. Without sprites, recolored 3D models are the fallback.</p></div>
+  <div class="template-card"><span class="cell-num">4</span><h3>Advanced: custom images</h3><p>If color swaps are not enough, generate one new image per enemy type so the theme reads clearly.</p></div>
 </div>""",
-notes_en="""Use cat vs robot vacuums to explain that enemy identity changes while enemy job stays the same. Translate engineering roles into slow enemy, fast enemy, heavy enemy.""")
+notes_en="""Teaching focus: identity can change, but job stays the same. Ask learners to map slow enemy, fast enemy, and heavy enemy into the new theme.""")
 
 add("template-3d-engine", "Part 8 · Engine #2 细节", "split flip", """
 <div class="col-visual">
@@ -1461,14 +1460,13 @@ add("template-3d-engine", "Part 8 · Engine #2 细节", "split flip", """
 <div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · Engine #2 · 3D Timing</span>
   <h2 class="title">3D 游戏里，卡带更多是在换<em>气氛。</em></h2>
-  <p class="sub">有些游戏的手感很依赖时机：按多久、什么时候松手、失败窗口多窄。这些不能随便开放给用户。</p>
-  <div class="template-note"><strong>用户能换：</strong>天空、灯光、雾、颜色、音效气氛、角色语气、世界设定。</div>
-  <div class="template-note" style="margin-top: 14px;"><strong>用户不能换：</strong>跳跃时机、combo、失败判定、相机跟随、输入节奏。</div>
+  <p class="sub">有些游戏的体验来自“按多久、什么时候松手、失败窗口多窄”。学习时要把“气氛变化”和“操作规则”分开。</p>
+  <div class="template-note"><strong>气氛可以换：</strong>天空、灯光、雾、颜色、音效气氛、角色语气、世界设定。</div>
+  <div class="template-note" style="margin-top: 14px;"><strong>规则要保持：</strong>跳跃时机、combo、失败判定、相机跟随、输入节奏。</div>
   <p>所以 3D timing 的卡带不像 Block Party 那样主要换敌人，而是把同一套 3D 手感放进不同场景。</p>
 </div>
 """, """
-<p>这一页说明：不同引擎的卡带长得不一样。3D timing 的重点是 atmosphere，不是敌人表。</p>
-<p>如果图片缺失或现场加载慢，就直接讲 shared engine/submodule 的结构。</p>
+<p>教学重点：同样是卡带，不同玩法盒子的可替换内容不同。3D timing 主要练习“换气氛，不换操作”。</p>
 """,
 short_en="Part 8 · Engine #2 Details",
 body_en="""<div class="col-visual">
@@ -1478,81 +1476,82 @@ body_en="""<div class="col-visual">
 <div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · Engine #2 · 3D Timing</span>
   <h2 class="title">In 3D games, cartridges mostly change the <em>mood.</em></h2>
-  <p class="sub">Some games depend on timing: how long to hold, when to release, how tight the fail window is. Those should not be casually exposed.</p>
-  <div class="template-note"><strong>Users can change:</strong> sky, lighting, fog, colors, audio mood, character voice, world framing.</div>
-  <div class="template-note" style="margin-top: 14px;"><strong>Users cannot change:</strong> jump timing, combo, fail checks, camera follow, input rhythm.</div>
+  <p class="sub">Some games are defined by timing: how long to hold, when to release, how tight the fail window is. Separate “mood changes” from “control rules.”</p>
+  <div class="template-note"><strong>Mood can change:</strong> sky, lighting, fog, colors, audio mood, character voice, world framing.</div>
+  <div class="template-note" style="margin-top: 14px;"><strong>Rules should stay:</strong> jump timing, combo, fail checks, camera follow, input rhythm.</div>
   <p>So a 3D timing cartridge is less about enemy tables and more about putting the same play feel into a different scene.</p>
 </div>""",
-notes_en="""This slide explains that cartridges differ by engine. 3D timing cartridges are about atmosphere, not enemy tables.""")
+notes_en="""Teaching focus: cartridges differ by play box. For 3D timing, practice changing mood without changing controls.""")
 
 add("template-identity-engine", "Part 8 · Engine #4 细节", "split", """
 <div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · Engine #4 · Identity Transform</span>
-  <h2 class="title">模板线不只做小游戏，<br/>也能做<em>身份体验。</em></h2>
-  <p class="sub">Past Life / Future Life 的输入不是一句话，而是用户照片。玩家想看的不是“我赢了吗”，而是“AI 把我看成谁”。</p>
-  <div class="template-note"><strong>卡带换的是：</strong>前世还是未来、画像 prompt、解读口吻、页面文案、墙上展示语言。</div>
-  <div class="template-note" style="margin-top: 14px;"><strong>引擎锁住的是：</strong>上传、等待仪式、AI 调用、保存、Hall、详情页、分享结构。</div>
-  <p>这类引擎把 AlterU 的核心说清楚：your AI self becomes the protagonist。</p>
+  <h2 class="title">照片型模板：<br/>把“我”变成故事主角。</h2>
+  <p class="sub">有些模板不是动作游戏，而是身份体验。输入是一张照片，输出是一张 AI 画像和一段解释。</p>
+  <div class="template-note"><strong>可替换内容：</strong>前世还是未来、画像风格、解读口吻、页面文案、展示语言。</div>
+  <div class="template-note" style="margin-top: 14px;"><strong>固定流程：</strong>上传照片、等待生成、保存结果、进入展示墙、打开详情页、分享。</div>
+  <p>学习重点：模板线也可以服务“身份变形”，不只服务动作游戏。</p>
 </div>
 <div class="col-visual">
   <img src="assets/gen/fake-identity.jpg" alt="Identity transformation reference" style="max-height: 68vh; object-fit: cover;" />
 </div>
 """, """
-<p>这一页要把 Part 8 和 AlterU 品牌核心扣回来：your AI self becomes the protagonist。不要把模板线讲成“批量做小游戏”，它也是批量做 identity experiences。</p>
+<p>教学重点：让学员看到“模板”不等于“动作游戏模板”。照片型体验也可以拆成固定流程和可替换表达。</p>
 """,
 short_en="Part 8 · Engine #4 Details",
 body_en="""<div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · Engine #4 · Identity Transform</span>
-  <h2 class="title">The template line is not only for games.<br/>It also makes <em>identity experiences.</em></h2>
-  <p class="sub">Past Life / Future Life starts from the user's photo. The player is not asking “did I win?” They are asking “who does AI see in me?”</p>
-  <div class="template-note"><strong>Cartridge changes:</strong> past vs future, image prompt, reading voice, page copy, wall display language.</div>
-  <div class="template-note" style="margin-top: 14px;"><strong>Engine locks:</strong> upload, waiting ritual, AI call, save, Hall, detail page, sharing structure.</div>
-  <p>This brings Part 8 back to AlterU's core: your AI self becomes the protagonist.</p>
+  <h2 class="title">Photo templates:<br/>turn “me” into the protagonist.</h2>
+  <p class="sub">Some templates are not action games. They are identity experiences: input a photo, output an AI portrait and a reading.</p>
+  <div class="template-note"><strong>Swappable content:</strong> past vs future, image style, reading voice, page copy, display language.</div>
+  <div class="template-note" style="margin-top: 14px;"><strong>Fixed flow:</strong> upload photo, wait for generation, save result, enter the wall, open detail, share.</div>
+  <p>Learning point: the template line can support identity transformation, not only action games.</p>
 </div>
 <div class="col-visual"><img src="assets/gen/fake-identity.jpg" alt="Identity transformation reference" style="max-height: 68vh; object-fit: cover;" /></div>""",
-notes_en="""Tie Part 8 back to AlterU's brand. The template line is not just mini-game mass production; it can also produce identity experiences.""")
+notes_en="""Teaching focus: templates are not only action-game templates. Photo experiences also split into fixed flow and swappable expression.""")
 
-add("template-operating-model", "Part 8 · 新增引擎流程", "matrix-2x2", """
-<span class="eyebrow"><span class="dot"></span>Part 8 · 怎样新增一个模板引擎</span>
-<h2 class="title">先证明一个游戏好玩，<br/><em>再把它变成模板。</em></h2>
+add("template-operating-model", "Part 8 · 模板制作练习", "matrix-2x2", """
+<span class="eyebrow"><span class="dot"></span>Part 8 · 模板制作练习</span>
+<h2 class="title">把一个游戏变成模板，<br/><em>按这 4 步练。</em></h2>
 <div class="grid">
-  <div class="template-card hot"><span class="cell-num">1</span><h3>做一个好玩的原版</h3><p>先有一个真的能玩、首屏即玩、社交完整、build 稳的游戏。半成品不能当模板。</p></div>
-  <div class="template-card"><span class="cell-num">2</span><h3>圈出哪些能换</h3><p>把所有内容分成两类：会影响难度的锁住；只影响表达的放进卡带。</p></div>
-  <div class="template-card"><span class="cell-num">3</span><h3>手工做第二个主题</h3><p>不要只说“理论上能换”。真的做一个完全不同的主题，证明玩法没坏。</p></div>
-  <div class="template-card hot"><span class="cell-num">4</span><h3>最后才自动生成</h3><p>把第二个主题当范例教给 LLM，再加校验、重试、图片生成、发布流程。</p></div>
+  <div class="template-card hot"><span class="cell-num">1</span><h3>选一个原版</h3><p>选择一个已经能玩、规则清楚、体验完整的游戏。</p></div>
+  <div class="template-card"><span class="cell-num">2</span><h3>标出固定项</h3><p>把移动、碰撞、难度、得分、发布结构等不能乱改的内容标出来。</p></div>
+  <div class="template-card"><span class="cell-num">3</span><h3>标出可换项</h3><p>把主题、角色、颜色、图片、文案、声音气氛等可以替换的内容标出来。</p></div>
+  <div class="template-card hot"><span class="cell-num">4</span><h3>做第二个主题</h3><p>用一个完全不同的主题测试：游戏是否还是好玩？新世界是否一眼看懂？</p></div>
 </div>
 """, """
-<p>这一页是给内部团队的流程。重点：不要一上来写 generator。没有一个好玩的原版和一个成功的第二主题，自动生成只会放大不稳定。</p>
+<p>教学重点：让学员练习拆分“固定项”和“可换项”。这页只讲模板制作方法。</p>
 """,
-short_en="Part 8 · Adding Engines",
-body_en="""<span class="eyebrow"><span class="dot"></span>Part 8 · How to Add a Template Engine</span>
-<h2 class="title">Prove one game is good.<br/><em>Then turn it into a template.</em></h2>
+short_en="Part 8 · Template Exercise",
+body_en="""<span class="eyebrow"><span class="dot"></span>Part 8 · Template Exercise</span>
+<h2 class="title">Turn one game into a template.<br/><em>Practice with these 4 steps.</em></h2>
 <div class="grid">
-  <div class="template-card hot"><span class="cell-num">1</span><h3>Build a good original</h3><p>Start with a game that already feels good, starts instantly, has social complete, and builds reliably. Half-finished games are not templates.</p></div>
-  <div class="template-card"><span class="cell-num">2</span><h3>Circle what can change</h3><p>Split every field into two groups: difficulty-changing fields are locked; expression-only fields enter the cartridge.</p></div>
-  <div class="template-card"><span class="cell-num">3</span><h3>Hand-make theme #2</h3><p>Do not just claim it is swappable. Make a truly different theme and prove the play feel still works.</p></div>
-  <div class="template-card hot"><span class="cell-num">4</span><h3>Only then automate</h3><p>Use theme #2 as the LLM example, then add validation, retries, image generation, and publishing.</p></div>
+  <div class="template-card hot"><span class="cell-num">1</span><h3>Choose an original</h3><p>Pick a playable game with clear rules and a complete experience.</p></div>
+  <div class="template-card"><span class="cell-num">2</span><h3>Mark fixed parts</h3><p>Mark movement, collision, difficulty, scoring, and publishing structure as fixed.</p></div>
+  <div class="template-card"><span class="cell-num">3</span><h3>Mark swappable parts</h3><p>Mark theme, characters, colors, images, copy, and audio mood as swappable.</p></div>
+  <div class="template-card hot"><span class="cell-num">4</span><h3>Make theme #2</h3><p>Test with a very different theme: does the game still work, and is the new world clear?</p></div>
 </div>""",
-notes_en="""Internal operating model. Do not start with the generator. Without a good original and a successful second theme, automation only amplifies instability.""")
+notes_en="""Teaching focus: practice separating fixed parts from swappable parts. Do not teach automation implementation on this slide.""")
 
 add("template-howto", "Part 8 · 如何生成", "split flip", """
 <div class="col-visual">
-  <div class="template-command">
-$ <strong>npx tsx scripts/gen-cartridge.ts</strong> \\<br>
-&nbsp;&nbsp;<strong>--sentence</strong> "a cat surviving robot vacuums" \\<br>
-&nbsp;&nbsp;<strong>--sprites</strong><br><br>
-→ 生成主题卡带<br>
-→ 生成 6 张敌人图<br>
-→ 写进游戏工程<br>
-→ build 通过<br>
-→ 新游戏可玩
+  <div class="template-card hot" style="min-height: 54vh; display: flex; flex-direction: column; justify-content: center;">
+    <span class="tag">生成预览</span>
+    <h3 style="font-size: clamp(28px, 3vw, 44px);">“一只猫在客厅里躲扫地机器人。”</h3>
+    <ul class="plain-list" style="margin-top: 22px;">
+      <li><strong>标题：</strong>Fur Flood</li>
+      <li><strong>主角：</strong>客厅里的猫</li>
+      <li><strong>敌人：</strong>扫地机器人、吸尘器、小家电</li>
+      <li><strong>场景：</strong>暖色客厅、地毯、沙发、夜灯</li>
+      <li><strong>检查：</strong>还是同一个玩法，只是换了世界</li>
+    </ul>
   </div>
-  <p class="sub" style="text-align:center;margin-top:1em">从一句话到可玩游戏，大约一分钟。</p>
+  <p class="sub" style="text-align:center;margin-top:1em">生成后先看预览，再决定是否发布。</p>
 </div>
 <div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · 如何使用</span>
-  <h2 class="title">真正给用户看的，<br/>应该更简单。</h2>
-  <p class="sub">命令行只是内部演示。最终产品里，用户只需要做三件事：</p>
+  <h2 class="title">生成流程可以记成<br/>三个动作。</h2>
+  <p class="sub">不需要先理解代码。先记住从想法到发布的体验顺序：</p>
   <div class="template-flow" style="grid-template-columns: 1fr auto 1fr auto 1fr;">
     <div class="template-step"><span class="label">1</span><h3>说一句话</h3><p>描述想玩的世界。</p></div>
     <div class="template-arrow">→</div>
@@ -1560,30 +1559,31 @@ $ <strong>npx tsx scripts/gen-cartridge.ts</strong> \\<br>
     <div class="template-arrow">→</div>
     <div class="template-step"><span class="label">3</span><h3>发布</h3><p>进入 feed，可分享，可 remix。</p></div>
   </div>
-  <p>内部工具仍保留 <code>--dry-run</code> 预览、<code>--sprites</code> 出图、<code>--retries</code> 自动纠错。</p>
+  <p>课堂练习：把自己的游戏想法写成一句话，然后检查预览里的标题、角色和场景是否匹配。</p>
 </div>
 """, """
-<p>这一页把“内部命令”和“最终用户体验”分开。命令行是给团队理解管线；真正产品里不能让用户看到这些复杂度。</p>
-<p>如果讲师有时间，可以现场演示一次 <code>--dry-run</code>，但演示重点是“用户一句话足够了”。</p>
+<p>教学重点：让学员记住体验顺序，而不是记住命令参数。可见教程只展示预览和检查项。</p>
+<p>演示时请把重点放在：一句话是否清楚、预览是否匹配、发布前要检查什么。</p>
 """,
 short_en="Part 8 · How to Generate",
 body_en="""<div class="col-visual">
-  <div class="template-command">
-$ <strong>npx tsx scripts/gen-cartridge.ts</strong> \\<br>
-&nbsp;&nbsp;<strong>--sentence</strong> "a cat surviving robot vacuums" \\<br>
-&nbsp;&nbsp;<strong>--sprites</strong><br><br>
-→ Generate theme cartridge<br>
-→ Generate 6 enemy images<br>
-→ Write into the game repo<br>
-→ Build passes<br>
-→ New game is playable
+  <div class="template-card hot" style="min-height: 54vh; display: flex; flex-direction: column; justify-content: center;">
+    <span class="tag">Generated preview</span>
+    <h3 style="font-size: clamp(28px, 3vw, 44px);">“A cat dodges robot vacuums in a living room.”</h3>
+    <ul class="plain-list" style="margin-top: 22px;">
+      <li><strong>Title:</strong> Fur Flood</li>
+      <li><strong>Hero:</strong> living-room cat</li>
+      <li><strong>Enemies:</strong> robot vacuums, cleaners, small appliances</li>
+      <li><strong>Scene:</strong> warm living room, rug, sofa, night lamp</li>
+      <li><strong>Check:</strong> same play style, new world</li>
+    </ul>
   </div>
-  <p class="sub" style="text-align:center;margin-top:1em">One sentence to playable game in about a minute.</p>
+  <p class="sub" style="text-align:center;margin-top:1em">Review the preview before publishing.</p>
 </div>
 <div class="col-text">
   <span class="eyebrow"><span class="dot"></span>Part 8 · How to Use</span>
-  <h2 class="title">What users see should be much simpler.</h2>
-  <p class="sub">The command line is only an internal demo. In the product, users should only do three things:</p>
+  <h2 class="title">Remember the generation flow as three actions.</h2>
+  <p class="sub">You do not need to understand code first. Learn the experience sequence from idea to publish:</p>
   <div class="template-flow" style="grid-template-columns: 1fr auto 1fr auto 1fr;">
     <div class="template-step"><span class="label">1</span><h3>Say one sentence</h3><p>Describe the world they want.</p></div>
     <div class="template-arrow">→</div>
@@ -1591,9 +1591,9 @@ $ <strong>npx tsx scripts/gen-cartridge.ts</strong> \\<br>
     <div class="template-arrow">→</div>
     <div class="template-step"><span class="label">3</span><h3>Publish</h3><p>Enter the feed, share, and remix.</p></div>
   </div>
-  <p>Internal tools still keep <code>--dry-run</code> preview, <code>--sprites</code> image generation, and <code>--retries</code> correction.</p>
+  <p>Class exercise: write your own game idea as one sentence, then check whether the preview title, characters, and scene match.</p>
 </div>""",
-notes_en="""Separate the internal command from the eventual user experience. The CLI explains the pipeline; the product must hide that complexity.""")
+notes_en="""Teaching focus: learners should remember the experience sequence, not command flags. The visible tutorial shows previews and checks, not internal commands.""")
 
 
 # ═════════════════════════════════════════════════════════════════════

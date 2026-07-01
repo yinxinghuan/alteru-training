@@ -133,7 +133,7 @@
 <a class="menu-item" href="44-template-block-party.html"><span class="menu-num">44</span><span>Part 8 · Engine #1 细节</span></a>
 <a class="menu-item" href="45-template-3d-engine.html"><span class="menu-num">45</span><span>Part 8 · Engine #2 细节</span></a>
 <a class="menu-item" href="46-template-identity-engine.html"><span class="menu-num">46</span><span>Part 8 · Engine #4 细节</span></a>
-<a class="menu-item" href="47-template-operating-model.html"><span class="menu-num">47</span><span>Part 8 · 新增引擎流程</span></a>
+<a class="menu-item" href="47-template-operating-model.html"><span class="menu-num">47</span><span>Part 8 · 模板制作练习</span></a>
 <a class="menu-item" href="48-template-howto.html"><span class="menu-num">48</span><span>Part 8 · 如何生成</span></a>
 </div>
 <div class="menu-section">
@@ -215,7 +215,7 @@
 <a class="menu-item" href="44-template-block-party.html"><span class="menu-num">44</span><span>Part 8 · Engine #1 Details</span></a>
 <a class="menu-item" href="45-template-3d-engine.html"><span class="menu-num">45</span><span>Part 8 · Engine #2 Details</span></a>
 <a class="menu-item" href="46-template-identity-engine.html"><span class="menu-num">46</span><span>Part 8 · Engine #4 Details</span></a>
-<a class="menu-item" href="47-template-operating-model.html"><span class="menu-num">47</span><span>Part 8 · Adding Engines</span></a>
+<a class="menu-item" href="47-template-operating-model.html"><span class="menu-num">47</span><span>Part 8 · Template Exercise</span></a>
 <a class="menu-item" href="48-template-howto.html"><span class="menu-num">48</span><span>Part 8 · How to Generate</span></a>
 </div>
 <div class="menu-section">
@@ -239,12 +239,12 @@
   <div class="template-card hot">
     <span class="cell-num">1</span>
     <h3>锁住的部分</h3>
-    <p>移动、碰撞、速度、血量、生成节奏、分数、排行榜、通知。这些决定“好不好玩”，所以用户不能碰。</p>
+    <p>移动、碰撞、速度、血量、生成节奏、分数、排行榜、通知。这些决定“好不好玩”，在模板里保持固定。</p>
   </div>
   <div class="template-card hot">
     <span class="cell-num">2</span>
     <h3>可换的部分</h3>
-    <p>世界观、角色名字、颜色、图片、文案、声音气氛。这些决定“像不像我的点子”，所以用户可以改。</p>
+    <p>世界观、角色名字、颜色、图片、文案、声音气氛。这些决定“像不像这个点子”，在模板里可以替换。</p>
   </div>
   <div class="template-card">
     <span class="cell-num">3</span>
@@ -253,8 +253,8 @@
   </div>
   <div class="template-card">
     <span class="cell-num">4</span>
-    <h3>为什么 Remix 安全</h3>
-    <p>Remix 不是给用户一堆旋钮，而是让他换故事、换角色、换视觉，同时保留我们已经调好的手感。</p>
+    <h3>Remix 会保留什么</h3>
+    <p>换故事、换角色、换视觉时，移动、碰撞、难度和计分仍然保持稳定。</p>
   </div>
 </div>
     </div>
@@ -262,10 +262,10 @@
 <span class="eyebrow"><span class="dot"></span>Part 8 · Engine / Cartridge Contract</span>
 <h2 class="title">Users can change the world.<br/><em>They cannot break the feel.</em></h2>
 <div class="grid">
-  <div class="template-card hot"><span class="cell-num">1</span><h3>The locked part</h3><p>Movement, collision, speed, HP, spawn rhythm, score, leaderboard, notifications. These decide whether the game feels good, so users cannot touch them.</p></div>
-  <div class="template-card hot"><span class="cell-num">2</span><h3>The swappable part</h3><p>World, character names, colors, images, copy, audio mood. These decide whether the game feels like the user's idea, so users can change them.</p></div>
+  <div class="template-card hot"><span class="cell-num">1</span><h3>The fixed part</h3><p>Movement, collision, speed, HP, spawn rhythm, score, leaderboard, notifications. These decide whether the game feels good, so they stay fixed.</p></div>
+  <div class="template-card hot"><span class="cell-num">2</span><h3>The swappable part</h3><p>World, character names, colors, images, copy, audio mood. These decide whether the game matches the idea, so they can change.</p></div>
   <div class="template-card"><span class="cell-num">3</span><h3>The one test</h3><p><strong class="pink">If this changes, can the game become harder or easier?</strong><br/>Yes: lock it in the engine. No: put it in the cartridge.</p></div>
-  <div class="template-card"><span class="cell-num">4</span><h3>Why Remix is safe</h3><p>Remix is not a bag of knobs. It changes story, characters, and visuals while keeping the tuned play feel.</p></div>
+  <div class="template-card"><span class="cell-num">4</span><h3>What Remix keeps</h3><p>Story, characters, and visuals can change while movement, collision, difficulty, and scoring stay stable.</p></div>
 </div>
     </div>
   </section>
@@ -273,11 +273,11 @@
   <div class="speaker-notes" id="speaker-notes">
     <h4><span data-only="zh">讲师备忘 · 按 S 关闭</span><span data-only="en">Speaker Notes · S to close</span></h4>
     <div data-only="zh">
-<p>这是 Part 8 最重要的一页。请反复使用“会不会改变难度”这个判断题。它比 Engine/Cartridge 的术语更容易记。</p>
-<p>如果有人问能不能开放速度/伤害/生成率，回答：可以进入深度制作路，但不要进入快速模板路。快速模板要保护用户不把游戏做烂。</p>
+<p>教学重点：用一个判断题记住边界——改这个东西，会不会改变难度？</p>
+<p>课堂练习：把“敌人速度、敌人名字、背景颜色、得分规则、标题文案”分别放进 Engine 或 Cartridge。</p>
     </div>
     <div data-only="en">
-This is the core slide. Repeat the difficulty test. It is easier to remember than the Engine/Cartridge terminology.
+Teaching focus: use one boundary question. Exercise: sort enemy speed, enemy name, background color, scoring rule, and title copy into Engine or Cartridge.
     </div>
   </div>
 

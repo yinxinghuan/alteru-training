@@ -59,6 +59,6 @@
 - 44 · `44-template-block-party.html` — Part 8 · Engine #1 细节
 - 45 · `45-template-3d-engine.html` — Part 8 · Engine #2 细节
 - 46 · `46-template-identity-engine.html` — Part 8 · Engine #4 细节
-- 47 · `47-template-operating-model.html` — Part 8 · 新增引擎流程
+- 47 · `47-template-operating-model.html` — Part 8 · 模板制作练习
 - 48 · `48-template-howto.html` — Part 8 · 如何生成
 - 49 · `49-resources.html` — Resources
