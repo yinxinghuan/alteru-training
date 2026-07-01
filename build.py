@@ -1589,7 +1589,7 @@ add("template-identity-engine", "Part 8 · Engine #4 细节", "split", """
   <p>学习重点：模板线也可以服务“身份变形”，不只服务动作游戏。</p>
 </div>
 <div class="col-visual">
-  <img src="assets/gen/fake-identity.jpg" alt="Identity transformation reference" style="max-height: 68vh; object-fit: cover;" />
+  <img src="assets/gen/identity-template-flow.png" alt="Photo identity template flow reference" style="max-height: 68vh; object-fit: cover;" />
 </div>
 """, """
 <p>教学重点：让学员看到“模板”不等于“动作游戏模板”。照片型体验也可以拆成固定流程和可替换表达。</p>
@@ -1603,7 +1603,7 @@ body_en="""<div class="col-text">
   <div class="template-note" style="margin-top: 14px;"><strong>Fixed flow:</strong> upload photo, wait for generation, save result, enter the wall, open detail, share.</div>
   <p>Learning point: the template line can support identity transformation, not only action games.</p>
 </div>
-<div class="col-visual"><img src="assets/gen/fake-identity.jpg" alt="Identity transformation reference" style="max-height: 68vh; object-fit: cover;" /></div>""",
+<div class="col-visual"><img src="assets/gen/identity-template-flow.png" alt="Photo identity template flow reference" style="max-height: 68vh; object-fit: cover;" /></div>""",
 notes_en="""Teaching focus: templates are not only action-game templates. Photo experiences also split into fixed flow and swappable expression.""")
 
 add("template-operating-model", "Part 8 · 模板制作练习", "matrix-2x2", """
